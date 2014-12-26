@@ -1,0 +1,285 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/usercenter_context_bg"
+    android:orientation="vertical"
+     >
+     
+    <include layout="@layout/header_withlocation" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="@null"
+         >
+
+        <!-- 内容 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/usercenter_center_info_bg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/usercenter_bg_pic"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <com.huishen_app.all.mywidget.RoundImageView
+                    android:id="@+id/user_center_infobg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:contentDescription="@string/img_desc"
+                    android:src="@drawable/usercenter_userpic" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="小慈"
+                        android:textColor="#ff50564a"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/user_license"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="驾照类型：暂无"
+                        android:textColor="#ff50564a"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/user_school"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="驾校：暂无"
+                        android:textColor="#ff50564a"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 预约学车 预约模考 -->
+
+            <include layout="@layout/all_split_lay" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <Button
+                        android:id="@+id/user_center_yuyue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:text="@string/user_yyxc"
+                        android:textColor="#ff50564a"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/user_center_tip1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_toRightOf="@id/user_center_yuyue"
+                        android:background="@drawable/cricle_red"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/usercenter_tx_split_color"
+                    android:contentDescription="@string/img_desc" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <Button
+                        android:id="@+id/user_center_mokao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:text="@string/user_yymk"
+                        android:textColor="#ff50564a"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/user_center_tip2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_toRightOf="@id/user_center_mokao"
+                        android:background="@drawable/cricle_red"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/all_split_lay" />
+
+            <!-- 预约学车 预约模考结束 -->
+
+
+            <!-- 培训统计开始 -->
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="5dp"
+                android:background="@null"
+                android:contentDescription="@string/img_desc" />
+
+            <include layout="@layout/all_split_lay" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp" >
+
+                <ImageView
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/usercenter_pxtj_icon"
+                    android:contentDescription="@string/img_desc" />
+
+                <Button
+                    android:id="@+id/user_center_train_sta"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@null"
+                    android:text="@string/user_pxtj"
+                    android:textColor="#ff50564a"
+                    android:textSize="14sp" 
+                    android:gravity="center_vertical|left"
+                    />
+            </LinearLayout>
+
+            <include layout="@layout/all_split_lay" />
+
+            <!-- 培训统计结束 -->
+
+
+            <!-- 培训统计开始 -->
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="5dp"
+                android:background="@null"
+                android:contentDescription="@string/img_desc" />
+
+            <include layout="@layout/all_split_lay" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp" >
+
+                <ImageView
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/usercenter_pxls_icon"
+                    android:contentDescription="@string/img_desc" />
+
+                <Button
+                    android:id="@+id/user_center_train_his"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@null"
+                    android:text="@string/user_pxls"
+                    android:textColor="#ff50564a"
+                    android:textSize="14sp" 
+                    android:gravity="center_vertical|left"
+                    />
+            </LinearLayout>
+
+            <include layout="@layout/all_split_lay" />
+
+            <!-- 培训统计结束 -->
+
+
+            <!-- 培训统计开始 -->
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="5dp"
+                android:background="@null"
+                android:contentDescription="@string/img_desc" />
+
+            <include layout="@layout/all_split_lay" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp" >
+
+                <ImageView
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_height"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/usercenter_jfsc_icon"
+                    android:contentDescription="@string/img_desc" />
+
+                <Button
+                    android:id="@+id/user_center_prize"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@null"
+                    android:text="@string/user_jfsc"
+                    android:textColor="#ff50564a"
+                    android:textSize="14sp" 
+                    android:gravity="center_vertical|left"
+                    />
+            </LinearLayout>
+
+            <include layout="@layout/all_split_lay" />
+
+            <!-- 培训统计结束 -->
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:contentDescription="@string/img_desc" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

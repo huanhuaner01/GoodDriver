@@ -1,0 +1,283 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 头部信息 -->
+
+    <include layout="@layout/header_withback" />
+
+    <!-- 分隔符 -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/Grey"
+         >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          
+          >
+
+          <LinearLayout
+              android:id="@+id/book_imitate_center"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              style="@style/LabelStyle"
+              android:orientation="vertical" >
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:padding="5dp" >
+
+                  <ImageView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:background="@drawable/exam_apoint_icon" />
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:paddingLeft="20dp" >
+
+                      <TextView
+                          style="@style/book_imitate_txtstylenew"
+                          android:layout_width="match_parent"
+                          android:layout_height="0dp"
+                          android:layout_weight="1"
+                          android:gravity="center_vertical"
+                          android:text="确认基本信息" />
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:background="@color/book_imitate_textcolor"
+                          android:contentDescription="@string/nullvalue" />
+                  </LinearLayout>
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:orientation="horizontal"
+                  android:padding="5dp" >
+
+                  <TextView
+                     
+                      style="@style/book_imitate_txtstyle"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="预约学员：" />
+
+                  <TextView
+                      android:id="@+id/book_imitate_name"
+                      style="@style/book_imitate_txtstylenew"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:text="王力宏" />
+
+                  <TextView
+                      style="@style/book_imitate_txtstyle"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="本次费用：" />
+
+                  <TextView
+                      android:id="@+id/book_imitate_price"
+                      style="@style/book_imitate_txtstylenew"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:text="50元" />
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:orientation="horizontal"
+                  android:padding="5dp" >
+
+                  <TextView
+                     
+                      style="@style/book_imitate_txtstyle"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="身份证号：" />
+
+                  <TextView
+                      android:id="@+id/book_imitate_idnum"
+                      style="@style/book_imitate_txtstylenew"
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:text="5003128373783738376" />
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:orientation="horizontal"
+                  android:padding="5dp" >
+
+                  <TextView
+                      style="@style/book_imitate_txtstyle"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="联系电话：" />
+
+                  <TextView
+                      android:id="@+id/book_imitate_tel"
+                      style="@style/book_imitate_txtstylenew"
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:text="13980436029" />
+              </LinearLayout>
+          </LinearLayout>
+        
+              <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:background="@drawable/label_bg"
+          android:layout_margin="5dp"
+          >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/book_imitate_txtinputstylenew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="预约时间" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1" >
+                    <EditText
+                        android:id="@+id/book_imitate_txtdate"
+                        style="@style/book_imitate_txtinputstylenew"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:drawableRight="@drawable/exam_time_icon"
+                        android:focusable="false"
+                        android:hint="@string/nullvalue"
+                        android:onClick="openCalendar"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="6dp"
+                        android:singleLine="true" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/edit_line"
+                        android:contentDescription="@string/nullvalue" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/book_imitate_txtinputstylenew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="预约科目" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1" >
+
+                    <EditText
+                        android:id="@+id/book_imitate_kemu"
+                        style="@style/book_imitate_txtinputstylenew"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:focusable="false"
+                        android:hint="@string/nullvalue"
+                        android:onClick="opendataselect"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/edit_line"
+                        android:contentDescription="@string/nullvalue" />
+                </RelativeLayout>
+            </LinearLayout>
+
+      
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="30dp"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/login_input_height"
+                    android:background="@drawable/login_bt_edge"
+                    android:onClick="save_imitate"
+                    android:text="保存预约"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/login_input_height"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/botton_gray"
+                    android:text="取消"
+                    android:textColor="@color/book_imitate_textcolor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 底部信息 -->
+
+</LinearLayout>

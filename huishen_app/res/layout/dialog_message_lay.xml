@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+   <LinearLayout
+       android:id="@+id/dialog_message_lay"
+     android:layout_width="match_parent"
+     android:layout_height="@dimen/dialog_height"
+     android:orientation="vertical"
+        >
+    <!-- 标题栏 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_title_height"
+        android:background="@drawable/dialog_title_shape" >
+
+        <TextView
+            android:id="@+id/dialog_message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/dialog_message_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/cancel_bg"
+            android:contentDescription="@string/nullvalue"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/dialog_message_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:background="@color/white" 
+        android:textColor="@color/book_imitate_textcolornew"
+        android:lineSpacingMultiplier="1.5"
+        android:gravity="center"
+           android:scrollbars="vertical"
+            android:singleLine="false"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_vertical_margin"
+        android:background="@drawable/dialog_buttom"
+        />
+    </LinearLayout>
+</LinearLayout>

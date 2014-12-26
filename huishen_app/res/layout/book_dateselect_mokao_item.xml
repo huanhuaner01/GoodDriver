@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_height"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp" >
+
+    <CheckBox
+        android:id="@+id/book_mokao_icon_status"
+        android:layout_width="@dimen/list_checkbox_size"
+        android:layout_height="@dimen/list_checkbox_size"
+        android:focusable="false"    
+        android:focusableInTouchMode="false"    
+        android:clickable="false"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:background="@drawable/all_select_icon_selector"
+        android:button="@null"          
+         />
+
+    <TextView
+        android:id="@+id/book_imitate_his_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="2014-09-22"
+        android:textColor="@color/book_imitate_textcolornew"
+         />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/book_imitate_his_kemu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="科目二"
+            android:textColor="@color/book_imitate_textcolornew"
+             />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/book_imitate_his_cash"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:text="王丽丽" 
+        android:textColor="@color/book_imitate_textcolornew"
+        />
+
+    <TextView
+        android:id="@+id/book_mokao_his_states"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="带分配" />
+
+</LinearLayout>

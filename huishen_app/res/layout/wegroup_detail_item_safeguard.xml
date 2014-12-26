@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginTop="@dimen/wegroup_detail_defualtmargin"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/wegroup_detail_defualtmargin"
+        android:text="@string/wegroup_detail_safeguard"
+        android:textColor="@color/book_imitate_textcolornew"
+        android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/safegaurd_padding"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/safeguard1_ic" />
+
+            <TextView
+                style="@style/WeGroupItemSafeTv"
+                android:text="@string/wegroup_detail_safeguard_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/safegaurd_padding"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/safeguard2_ic" />
+
+            <TextView
+                style="@style/WeGroupItemSafeTv"
+                android:text="@string/wegroup_detail_safeguard_2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/safegaurd_padding"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/safeguard3_ic" />
+
+            <TextView
+                style="@style/WeGroupItemSafeTv"
+                android:text="@string/wegroup_detail_safeguard_3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/safegaurd_padding"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/safeguard4_ic" />
+
+            <TextView
+                style="@style/WeGroupItemSafeTv"
+                android:text="@string/wegroup_detail_safeguard_4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/safeguard5_ic" />
+
+            <TextView
+                style="@style/WeGroupItemSafeTv"
+                android:text="@string/wegroup_detail_safeguard_5" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+
+</LinearLayout>

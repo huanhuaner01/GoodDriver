@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <View 
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#d2d2d2"
+    />
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            >
+            <View
+                android:id="@+id/v1"
+                android:layout_width="22dp"
+                android:layout_height="30dp"
+                android:background="@drawable/gps_ic"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                />
+            <TextView
+                android:id="@+id/des_tv"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="当前定位城市"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/v1"
+                android:layout_marginLeft="5dp"
+                android:textColor="#9d9c9c"
+                />
+            <TextView
+                android:id="@+id/gps_city"
+                android:layout_alignParentRight="true"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:text="成都"
+                android:textColor="#6d6d6d"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/location_bt_bg"
+                android:gravity="center"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d2d2d2"
+                android:layout_alignParentBottom="true"
+                />
+            </RelativeLayout>
+
+</LinearLayout>

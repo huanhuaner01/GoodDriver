@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Grey"
+     >
+   <include layout="@layout/header_withback" />        <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/regist_lay_marginbuttom"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    style="@style/RegistText"
+                    android:text="@string/regist_realname"
+                    />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    >
+                <EditText
+                    android:id="@+id/regist_edit_realname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/regist_hint_realname"
+                    android:maxLength="20"
+                    style="@style/RegistEdit"
+                    />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/RegistEditLine" />
+                    </RelativeLayout>
+                </LinearLayout>
+                
+            <!-- 用户名 -->
+                     <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/regist_lay_marginbuttom"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    style="@style/RegistText"
+                    android:text="@string/regist_name"
+                    />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    >
+                <EditText
+                    android:id="@+id/regist_edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/regist_hint_name"
+                    style="@style/RegistEdit"
+                    android:maxLength="20"
+                    android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/RegistEditLine" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+                
+                     
+                <!-- 性别  -->
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/regist_lay_marginbuttom"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    style="@style/RegistText"
+                    android:text="@string/regist_sex"
+                    />
+                 <RadioGroup
+                android:id="@+id/regist_sex_rdgroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                >
+                <RadioButton
+                    android:id="@+id/regist_sex_boy"
+                    android:layout_width="@dimen/regist_rb_size"
+                    android:layout_height="@dimen/regist_rb_size"
+                    android:background="@drawable/judge_radio_bg"
+                    android:button="@null"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/regist_boy"
+                        android:layout_marginLeft="@dimen/regist_sex_tv_marginLeft"
+                        style="@style/RegistText"
+                        />
+                  <RadioButton
+                    android:id="@+id/regist_sex_girl"
+                    android:layout_width="@dimen/regist_rb_size"
+                    android:layout_height="@dimen/regist_rb_size"
+                    android:background="@drawable/judge_radio_bg"
+                    android:button="@null"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/regist_girl"
+                        android:layout_marginLeft="@dimen/regist_sex_tv_marginLeft"
+                        style="@style/RegistText"
+                        />
+                </RadioGroup>
+                </LinearLayout>
+                <!-- 身份证号 -->
+                     <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/regist_lay_marginbuttom"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    style="@style/RegistText"
+                    android:text="@string/regist_idnumber"
+                    />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    >
+                <EditText
+                    android:id="@+id/regist_edit_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/regist_hint_mustwrite"
+                    style="@style/RegistEdit"
+                    android:maxLength="18"
+                    />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/RegistEditLine" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+                
+                     
+                     <!-- E-mail -->
+                          <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/regist_lay_marginbuttom"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    style="@style/RegistText"
+                    android:text="@string/regist_email"
+                    />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    >
+                <EditText
+                    android:id="@+id/regist_edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/regist_hint_email"
+                    style="@style/RegistEdit"
+                    android:inputType="textEmailAddress"
+                    />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/RegistEditLine" />
+                    </RelativeLayout>
+                </LinearLayout>
+                
+                 <!-- 电话号码  -->
+                      <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/regist_lay_marginbuttom"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    style="@style/RegistText"
+                    android:text="@string/regist_tel"
+                    />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    >
+                <EditText
+                    android:id="@+id/regist_edit_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/regist_hint_mustwrite"
+                    style="@style/RegistEdit"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/RegistEditLine" />
+                    </RelativeLayout>
+                </LinearLayout>
+                
+                      <!-- 住址 -->
+                                            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/regist_lay_marginbuttom"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    style="@style/RegistText"
+                    android:text="@string/regist_address"
+                    />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    >
+                <EditText
+                    android:id="@+id/regist_edit_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/RegistEdit"
+                    />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/RegistEditLine" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <!-- 确认提交 -->
+                <Button
+                    android:id="@+id/regist_edit_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/login_input_height"
+                    android:background="@drawable/login_bt_edge"
+                    android:layout_marginTop="@dimen/regist_lay_marginbuttom"
+                    android:onClick="regist"
+                    android:text="@string/regist_ok"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/button_textSize" />
+        </LinearLayout>
+        
+        </ScrollView>
+</LinearLayout>

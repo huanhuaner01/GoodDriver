@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/dialog_item_height"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dialog_item_padding"
+    android:paddingRight="@dimen/dialog_item_padding" >
+
+    <TextView
+        android:id="@+id/dialog_dataselect_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/all_loading"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center" >
+
+        <RadioButton
+            android:layout_width="@dimen/list_checkbox_size"
+            android:layout_height="@dimen/list_checkbox_size"
+            android:background="@drawable/all_select_icon_selector"
+            android:button="@null"
+            android:focusable="false"    
+            android:focusableInTouchMode="false"    
+            android:clickable="false" 
+             />
+    </LinearLayout>
+
+</RelativeLayout>

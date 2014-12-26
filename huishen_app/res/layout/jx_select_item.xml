@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/wegroup_item_padding"
+        android:background="@drawable/label_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+            <ImageView
+                android:id="@+id/jx_select_ic"
+                android:layout_height="@dimen/lx_select_img_height"
+                android:layout_width="@dimen/wegroup_item_imageView_width"
+                android:contentDescription="@string/img_desc"
+                android:background="@drawable/jx_test_icon" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7"
+            android:orientation="vertical"
+            android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+            <TextView
+                android:id="@+id/jx_select_name"
+                style="@style/WeGroupClass"
+                android:text="蜀安驾校"
+                android:textColor="@color/jx_listview_item_title"
+                android:textSize="@dimen/button_textSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jx_select_addr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="金牛区3栋2单元111号"
+                android:textSize="@dimen/wegroup_item_des_tv_size" />
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/jx_select_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/wegroup_item_des_tv_size"
+                android:gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>

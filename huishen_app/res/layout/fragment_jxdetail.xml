@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Grey"
+    android:orientation="vertical"
+    tools:context="com.huishen_app.zc.ui.JXDetailActivity$PlaceholderFragment" >
+
+    <include layout="@layout/header_withback" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/id_swipe_ly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="@null" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <!-- 立刻报名 -->
+
+                <include layout="@layout/wegroup_detail_item_imgheader" />
+                <!-- 学员保障 -->
+
+                <include layout="@layout/wegroup_detail_item_safeguard" />
+                 <!-- 简介 -->
+                <include layout="@layout/wegroup_detail_item_des"/>
+                <!-- 报名须知  -->
+                <include layout="@layout/wegroup_detail_item_overleaf"/>
+                <!-- 学车流程  -->
+                <include layout="@layout/wegroup_detail_item_procedure"/>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+package com.huishen_app.zc.ui;
+
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
+import com.huishen_app.zc.ui.base.BaseActivity;
+import com.huishen_app.zc.ui.fragment.JLDetailFragment;
+
+
+public class JLDetailActivity extends BaseActivity {
+   private JLDetailFragment f_jldetail ;
+
+	@Override
+	protected void findViewById_Init() {
+		setContentView(R.layout.activity_jldetail);
+		f_jldetail = new JLDetailFragment(this ,0) ;
+		    FragmentManager fm = this.getSupportFragmentManager();  
+	        FragmentTransaction tx = fm.beginTransaction();  
+	        tx.add(R.id.container, f_jldetail,"f_jldetail");  
+	        tx.commit();
+	}
+	
+
+	@Override
+	protected void initView() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void initData() {
+		// TODO Auto-generated method stub
+		
+	}
+}

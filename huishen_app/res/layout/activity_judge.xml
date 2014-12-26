@@ -1,0 +1,270 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+     >
+
+    <include
+        layout="@layout/header_withback" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+         >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:padding="16dp"
+          android:focusable="true" 
+          android:focusableInTouchMode="true" 
+          >
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="1"
+              android:orientation="horizontal"
+             
+              >
+              <TextView
+                  android:id="@+id/judge_teacher"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="教练：高平平"
+                  style="@style/book_imitate_txtinputstylenew"
+                  />
+
+              <TextView
+                  android:id="@+id/judge_kemu"
+                  style="@style/book_imitate_txtinputstylenew"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="课程：科目二" />
+
+              </LinearLayout>
+             <TextView
+                 android:id="@+id/judge_lessonCode"
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  android:text="培训代码：555232233"
+                  style="@style/book_imitate_txtinputstylenew"
+                  android:layout_marginTop="@dimen/judge_tv_margintop"
+                  />
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  android:text="评价"
+                  android:layout_marginTop="@dimen/judge_tv_margintop"
+                  />
+               <EditText
+                  android:id="@+id/jugde_content"
+                  android:layout_width="match_parent"
+                  android:layout_height="120dp"
+                  android:maxLength="250"
+                  android:gravity="top"
+                  android:singleLine="false"
+                  android:inputType="textMultiLine"
+                  android:background="@drawable/inputerea_bg"
+                  android:padding="3dp"
+                  android:layout_marginTop="@dimen/judge_tv_margintop"
+                  android:hint="限250字内"
+                  android:textSize="14sp"
+                  />
+               <!-- 评分 -->
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="评分"
+                   android:layout_marginTop="@dimen/judge_tv_margintop"
+                   />
+               
+               <!-- 教学质量评价 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:layout_marginTop="@dimen/judge_tv_margintop"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="教学质量"
+                    android:textColor="@color/book_imitate_textcolornew"
+                     />
+
+                <RatingBar
+                    android:id="@+id/jugde_rb_ql"
+                    style="@style/foodRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:stepSize="1"
+                    android:layout_marginLeft="5dp"
+                     >
+                </RatingBar>
+
+                <TextView
+                    android:id="@+id/jugde_quality"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0分 " />
+            </LinearLayout>
+             
+            <!-- 教学态度 -->
+                        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:layout_marginTop="@dimen/judge_starlay_margintop"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="教学态度"
+                    android:textColor="@color/book_imitate_textcolornew"
+                     />
+
+                <RatingBar
+                    android:id="@+id/jugde_rb_at"
+                    style="@style/foodRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:stepSize="1"
+                    android:layout_marginLeft="5dp"
+                     >
+                </RatingBar>
+
+                <TextView
+                    android:id="@+id/jugde_attitude"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0分 " />
+            </LinearLayout>
+            
+                        <!-- 教学规范 -->
+                                    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:layout_marginTop="@dimen/judge_starlay_margintop"
+                android:layout_marginBottom="@dimen/judge_starlay_margintop"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="教学规范"
+                    android:textColor="@color/book_imitate_textcolornew"
+                     />
+
+                <RatingBar
+                    android:id="@+id/jugde_rb_st"
+                    style="@style/foodRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:stepSize="1"
+                    android:layout_marginLeft="5dp"
+                     >
+                </RatingBar>
+
+                <TextView
+                    android:id="@+id/jugde_standard"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0分 " />
+            </LinearLayout>
+            <!-- 评价方式 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <View 
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    />
+            <RadioGroup
+                android:id="@+id/jugde_rdgroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="评价方式"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/judge_starlay_margintop"
+                >
+                <RadioButton
+                    android:id="@+id/jugde_rb_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="匿名"
+                    android:textColor="@color/book_imitate_textcolornew"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:button="@drawable/judge_radio_bg"
+                    >
+                    </RadioButton>
+                  <RadioButton
+                    android:id="@+id/jugde_rb_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="公开"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/book_imitate_textcolornew"
+                    android:button="@drawable/judge_radio_bg"
+                    android:layout_marginRight="5dp"
+                    ></RadioButton>
+                </RadioGroup>
+                                <View 
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    />
+                </LinearLayout>
+            <!-- 提交按钮 -->
+            <Button 
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/login_bt_edge"
+                android:layout_marginTop="@dimen/judge_button_margin"
+                android:text="提交"
+                android:onClick="jugdeCommit"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                />
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

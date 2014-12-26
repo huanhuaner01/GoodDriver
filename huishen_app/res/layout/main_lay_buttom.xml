@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_tab_splitcolor_fisrt"
+        android:contentDescription="@string/img_desc" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_tab_splitcolor_end"
+        android:contentDescription="@string/img_desc" />
+
+    <RadioGroup
+        android:id="@+id/home_radio_button_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/home_tab_main"
+            style="@style/home_tab_bottom"
+            android:checked="true"
+            android:drawableTop="@drawable/home_tab_main_background_selector"
+            android:text="@string/main_tab_main" />
+
+        <RadioButton
+            android:id="@+id/home_tab_djt"
+            style="@style/home_tab_bottom"
+            android:drawableTop="@drawable/home_tab_regist_background_selector"
+            android:text="@string/main_tab_baom" />
+
+        <RadioButton
+            android:id="@+id/home_tab_book"
+            style="@style/home_tab_bottom"
+            android:drawableTop="@drawable/home_tab_book_background_selector"
+            android:text="@string/main_tab_book" />
+
+        <RadioButton
+            android:id="@+id/home_tab_usercenter"
+            style="@style/home_tab_bottom"
+            android:drawableTop="@drawable/home_tab_usercenter_background_selector"
+            android:text="@string/main_tab_usercenter" />
+    </RadioGroup>
+
+</LinearLayout>

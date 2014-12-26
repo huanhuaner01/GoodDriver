@@ -1,0 +1,304 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Grey"
+    android:orientation="vertical" >
+    <include layout="@layout/header_withback"
+        />
+   <!-- 课程信息 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/LabelStyle"
+         >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/train_hisdetail_infoitem_icon_size"
+            android:gravity="center"
+            android:orientation="vertical" >
+            <View
+                android:id="@+id/v1"
+                android:background="@drawable/train_detail_courseinfo_icon"
+                style="@style/train_his_detail_infoicon"
+                />
+            <TextView
+                android:id="@+id/train_detail_course_info_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/v1"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/train_hisdetail_infoitem_title_right"
+                android:text="课程信息" 
+                android:textColor="@color/black"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/train_hisdetail_infoitem_titleline_height"
+                android:background="@color/item_bg"
+                android:layout_toRightOf="@id/v1"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/train_hisdetail_infoitem_margin_top"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+            <TableRow
+                >
+             <TextView
+                 android:text="培训教练:"
+                 />
+              <TextView
+                 android:id="@+id/train_instructor"
+                 android:text="高平平"
+                 android:textColor="@color/black"
+                 />
+               <TextView
+                 android:text="驾照类型："
+                 
+                 />
+                <TextView
+                 android:id="@+id/train_license_type"
+                 android:text="C1"
+                 android:textColor="@color/black"
+                 />
+             </TableRow>
+             <TableRow
+                 android:layout_marginTop="@dimen/train_hisdetail_infoitem_margin_top">
+             <TextView
+                 android:text="培训科目:"
+                 />
+              <TextView
+                 android:id="@+id/train_sub_t"
+                 android:text="科目二"
+                 android:textColor="@color/black"
+                 />
+               <TextView
+                 android:text="培训状态："
+                 
+                 />
+                <TextView
+                 android:id="@+id/train_state_t" 
+                 android:text="未完成"
+                 android:textColor="@color/black"
+                 />
+             </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+  <!-- 课程时间 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/LabelStyle"
+         >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/train_hisdetail_infoitem_icon_size"
+            android:gravity="center"
+            android:orientation="vertical" >
+            <View
+                android:id="@+id/v2"
+                android:background="@drawable/train_detail_coursetime_icon"
+                style="@style/train_his_detail_infoicon"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/v2"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/train_hisdetail_infoitem_title_right"
+                android:text="课程时间" 
+                android:textColor="@color/black"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/train_hisdetail_infoitem_titleline_height"
+                android:background="@color/item_bg"
+                android:layout_toRightOf="@id/v2"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/train_hisdetail_infoitem_margin_top"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+            <TableRow
+                >
+               <TextView
+                 android:text="培训日期："
+                 />
+                <TextView
+                 android:id="@+id/train_trainingtime"
+                 android:text="2014-12-2"
+                 android:textColor="@color/black"
+                 />
+                       <TextView
+                 android:text="培训时段:"
+                 />
+              <TextView
+                  android:id="@+id/train_time"
+                 android:text="12:00-13:00"
+                 android:textColor="@color/black"
+                 />
+             </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+  <!-- 车辆信息 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/LabelStyle"
+         >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/train_hisdetail_infoitem_icon_size"
+            android:gravity="center"
+            android:orientation="vertical" >
+            <View
+                android:id="@+id/v3"
+                android:background="@drawable/train_detail_coursecar_icon"
+                style="@style/train_his_detail_infoicon"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/v3"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/train_hisdetail_infoitem_title_right"
+                android:text="车辆信息" 
+                android:textColor="@color/black"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/train_hisdetail_infoitem_titleline_height"
+                android:background="@color/item_bg"
+                android:layout_toRightOf="@id/v3"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/train_hisdetail_infoitem_margin_top"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+            <TableRow
+                >
+             <TextView
+                 android:text="培训车辆:"
+                 />
+              <TextView
+                  android:id="@+id/train_car"
+                 android:text="桑塔拉415DE"
+                 android:textColor="@color/black"
+                 />
+               <TextView
+                 android:text="培训金额："
+                 
+                 />
+                <TextView
+                 android:id="@+id/train_money"
+                 android:text="110元"
+                 android:textColor="@color/black"
+                 />
+             </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_title_background"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/train_hisdetail_infoitem_margin_top"
+        android:orientation="horizontal"
+        android:padding="@dimen/train_hisdetail_infoitem_padding" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/book_yuyue_his_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="培训项目" 
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/book_yuyue_his_kemu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="次数" 
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/book_yuyue_his_jl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="时间"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="成绩"
+            android:textColor="@color/white" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/train_his_detail_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:divider="@color/item_bg"  
+        android:dividerHeight="@dimen/train_hisdetail_infoitem_titleline_height"
+        android:padding="@dimen/train_hisdetail_infoitem_padding"
+         >
+    </ListView>
+
+</LinearLayout>

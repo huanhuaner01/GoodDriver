@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 头部信息 
+
+    <FrameLayout
+        android:id="@+id/head_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/main_title_height" />
+        -->
+
+    <!-- 中间信息 -->
+
+    <FrameLayout
+        android:id="@+id/center_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttom_fragment"/>
+
+    <!-- 底部信息 -->
+
+    <FrameLayout
+        android:id="@+id/buttom_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

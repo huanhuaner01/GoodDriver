@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/wegroup_item_padding"
+        android:background="@drawable/label_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+            <ImageView
+                android:id="@+id/prizelist_item_ic"
+                android:layout_height="@dimen/prizelist_item_iconheight"
+                android:layout_width="@dimen/prizelist_item_iconwidth"
+                android:contentDescription="@string/img_desc"
+                android:background="@drawable/jx_test_icon" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7"
+            android:orientation="vertical"
+            android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+            <TextView
+                android:id="@+id/prizelist_prize"
+                style="@style/WeGroupClass"
+                android:text="300元代金券"
+                android:textColor="@color/jx_listview_item_title"
+                android:textSize="@dimen/button_textSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/prizelist_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="获奖时间："
+                android:textSize="@dimen/wegroup_item_des_tv_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

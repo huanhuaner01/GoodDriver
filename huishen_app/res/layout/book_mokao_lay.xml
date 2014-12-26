@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- 头部信息 -->
+
+    <include layout="@layout/header_withback" />
+
+    <!-- 分隔符 -->
+
+    <ListView
+        android:id="@+id/book_mokao_selected"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/wegroup_item_line_color"
+        android:dividerHeight="@dimen/listview_divider_height"
+         >
+    </ListView>
+
+    <include layout="@layout/listview_sp_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/book_dateselect_sureok"
+            android:onClick="add_mokao"
+            android:text="添加模考"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:onClick="delete_mokao"
+            android:text="删除预约"
+            android:textColor="@drawable/book_yuyue_bt_wordscolor"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>

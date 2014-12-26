@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 有先后顺序  即最后的是才是默认的 -->
+    <item android:state_pressed="true"><shape>
+            <solid android:color="@color/Grey"/>
+            <corners android:radius="@dimen/button_radius" />
+            <!-- padding：Button里面的文字与Button边界的间隔 -->
+            <padding android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp" />
+        </shape></item>
+    <item><shape>
+
+             <stroke android:width="1dp" android:color="@color/book_imitate_textcolor" />
+             <solid android:color="@color/white"/>
+            <corners android:radius="@dimen/button_radius" />
+            <!-- padding：Button里面的文字与Button边界的间隔 -->
+            <padding android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp" />
+        </shape></item>
+
+</selector>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+        <View
+            android:id="@+id/jl_detail_v_photo"
+            android:layout_width="@dimen/jl_detail_photo_width"
+            android:layout_height="@dimen/jl_detail_photo_height"
+            android:background="@drawable/jl_test_icon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/jl_detail_photo_height"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/wegroup_detail_defualtmargin"
+             >
+
+            <!-- 教练姓名 ，所在驾校 -->
+
+            <TextView
+                android:id="@+id/jl_detail_tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="王安石（蜀娟驾校）"
+                android:textColor="@color/jx_listview_item_title"
+                android:textSize="@dimen/jl_name_textsize"
+                android:textStyle="bold" />
+            <!-- 报名价格 -->
+
+            <TextView
+                android:id="@+id/jl_detail_tv_price"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="@string/wegroup_detail_price_pre"
+                android:textSize="@dimen/jl_score_destsize"
+                android:gravity="center_vertical"
+                 />
+            <!-- 教练能力等级 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.3"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/jl_detail_tv_year"
+                        style="@style/style_jl_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text="10" />
+
+                    <TextView
+                        style="@style/style_jl_desscore"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/jl_detail_header_seniority" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/wegroup_item_line_size"
+                    android:layout_height="match_parent"
+                    android:background="@color/wegroup_item_line_color" />
+
+                <!-- 评价评分 -->
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/jl_detail_tv_score"
+                        style="@style/style_jl_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text="4.5" />
+
+                    <TextView
+                        
+                        style="@style/style_jl_desscore"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/jl_detail_header_score" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/wegroup_item_line_size"
+                    android:layout_height="match_parent"
+                    android:background="@color/wegroup_item_line_color" />
+                <!-- 评价数 -->
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/jl_detail_judgenum"
+                        style="@style/style_jl_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text="200" />
+
+                    <TextView
+                        style="@style/style_jl_desscore"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/jl_detail_header_judgenum" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 立即报名 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/wegroup_detail_defualtmargin"
+        android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+        <Button
+            android:id="@+id/jl_detail_btn_submmit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/login_bt_edge"
+            android:padding="@dimen/wegroup_detail_defualtmargin"
+            android:text="@string/wegroup_detail_submmit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_textSize" />
+     <View
+                    android:layout_width="@dimen/wegroup_detail_defualtmargin"
+                    android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/jl_detail_btn_consult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/consult_bg"
+            android:padding="@dimen/wegroup_detail_defualtmargin"
+            android:text="@string/consult"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_textSize" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+
+</LinearLayout>

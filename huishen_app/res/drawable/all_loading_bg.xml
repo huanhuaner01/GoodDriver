@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item><shape>
+            <gradient android:endColor="@color/loading_bg" android:startColor="@color/loading_bg" />
+
+            <!-- <stroke android:width="2dp" android:color="@color/main_title_textedgecolor" /> -->
+
+            <corners android:radius="@dimen/button_radius" />
+            <!-- padding：Button里面的文字与Button边界的间隔 -->
+            <padding android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp" />
+        </shape></item>
+
+</selector>

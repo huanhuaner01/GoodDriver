@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/luckdraw_bgcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/header_withback" />`
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/id_swipe_ly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="@null"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/luckdrawfragment_centerbg"
+            android:orientation="vertical" >
+
+            <View
+                android:id="@+id/luck_header_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/luckdraw_headerimg" />
+            <!-- 积分抽奖转盘 -->
+
+      <!--        <View
+                android:id="@+id/luck_title_img"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/luckdraw_title_img" />
+                -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <View 
+                  android:id="@+id/luck_center_bg"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@drawable/luckdraw_roundbg"
+                   />
+                  <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                 >
+                 <View
+                     android:id="@+id/luck_view_top"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="@drawable/luckdraw_topimg"
+                     />
+            <LinearLayout
+                android:id="@+id/luck_ly_center"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:orientation="vertical"
+                 >
+
+                    <LinearLayout 
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+
+                        <ImageView
+                            android:id="@+id/lottery_item_1"
+                            style="@style/style_grid_lottery"
+                            android:contentDescription="@null" />
+
+                        <ImageView
+                            android:id="@+id/lottery_item_2"
+                            style="@style/style_grid_lottery"
+                            android:contentDescription="@null" />
+
+                        <ImageView
+                            android:id="@+id/lottery_item_3"
+                            style="@style/style_grid_lottery"
+                            android:contentDescription="@null" />
+                    </LinearLayout>
+
+                     <LinearLayout 
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+
+                        <ImageView
+                            android:id="@+id/lottery_item_4"
+                            style="@style/style_grid_lottery"
+                            android:contentDescription="@null" />
+
+                        <ImageView
+                            android:id="@+id/lottery_item_5"
+                            style="@style/style_grid_lottery"
+                            android:background="@drawable/shape_bkg_lottery_operator_btn"
+                            android:contentDescription="@null"
+                            android:src="@drawable/bkg_lottery_center_optr" />
+                         
+                        <ImageView
+                            android:id="@+id/lottery_item_6"
+                            style="@style/style_grid_lottery"
+                            android:contentDescription="@null" />
+                    </LinearLayout>
+
+                     <LinearLayout 
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        >
+
+                        <ImageView
+                            android:id="@+id/lottery_item_7"
+                            style="@style/style_grid_lottery"
+                            android:contentDescription="@null" />
+
+                        <ImageView
+                            android:id="@+id/lottery_item_8"
+                            style="@style/style_grid_lottery"
+                            android:contentDescription="@null" />
+
+                        <ImageView
+                            android:id="@+id/lottery_item_9"
+                            style="@style/style_grid_lottery"
+                            android:contentDescription="@null" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            </FrameLayout>
+            
+            <TextView
+                android:id="@+id/luck_tv_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/style_luck_tv"
+                android:visibility="invisible"
+                />
+            <View
+                android:id="@+id/luck_v_role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/luck_role"
+                />
+            <TextView
+                android:id="@+id/luck_tv_role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/style_luck_tv"
+                android:textSize="12sp"
+                android:text="@string/luck_role_string"
+                />
+               <LinearLayout
+                   android:id="@+id/luck_listbg"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@drawable/luck_list_bg"
+                   android:orientation="vertical"
+                   >
+                <View
+                android:id="@+id/luck_v_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/luck_list"
+                />
+                <ListView
+                    android:id="@+id/luck_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:layout_margin="55dp"
+                    android:divider="@null"
+                    android:stackFromBottom="true"    
+                    android:transcriptMode="alwaysScroll" 
+                    />
+                </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

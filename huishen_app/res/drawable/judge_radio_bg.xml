@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 未选中-->  
+    <item    
+         android:state_checked="false"    
+         android:drawable="@drawable/judge_radiobuton_nor" /> 
+<!--选中-->    
+    <item    
+        android:state_checked="true"    
+        android:drawable="@drawable/judge_radiobutton_selected" />  
+
+</selector>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_height"
+    android:orientation="horizontal" 
+    android:paddingLeft="@dimen/order_item_horizontal_margin"
+    android:paddingRight="@dimen/order_item_horizontal_margin"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    >
+   <TextView
+       android:id="@+id/item_key"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="项目"
+       android:textColor="@color/book_imitate_textcolornew"
+       android:textSize="@dimen/wegroup_item_pricebtn_tsize"
+       /> 
+  <TextView
+       android:id="@+id/item_value"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_weight="2"
+       android:text="教练"
+       android:gravity="right"
+       android:textColor="@color/book_imitate_textcolornew"
+       android:textSize="@dimen/wegroup_item_pricebtn_tsize"
+       /> 
+</LinearLayout>

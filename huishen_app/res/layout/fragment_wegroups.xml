@@ -1,0 +1,152 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Grey"
+    android:orientation="vertical"
+    tools:context="com.huishen_app.zc.ui.WegroupSActivity$PlaceholderFragment" >
+
+    <include layout="@layout/header_withback" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/wegroup_detail_defualtmargin"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/wegroup_item_line_size"
+                android:background="@color/wegroup_item_line_color" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/wegroup_detail_defualtmargin"
+                android:text="@string/wegroup_detail_order_selectinfo"
+                android:textColor="@color/book_imitate_textcolornew"
+                android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/wegroup_item_line_size"
+                android:background="@color/wegroup_item_line_color" />
+            <!-- 参团人数 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/wegroup_detail_defualtmargin"
+                    android:text="@string/wegroup_detail_order_num"
+                    android:textColor="@color/book_imitate_textcolornew"
+                    android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
+
+                <TextView
+                    android:id="@+id/wegroup_s_num"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:padding="@dimen/wegroup_detail_defualtmargin"
+                    android:textColor="@color/book_imitate_textcolornew"
+                    android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
+            </LinearLayout>
+            
+            
+            <!-- 学车类型 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/wegroup_detail_defualtmargin"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/wegroup_detail_defualtmargin"
+                    android:text="@string/wegroup_detail_order_num"
+                    android:textColor="@color/book_imitate_textcolornew"
+                    android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
+
+                <com.huishen_app.all.mywidget.ListGridView
+                    android:id="@+id/wegroup_s_gv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:horizontalSpacing="@dimen/wegroup_detail_defualtmargin"
+                    android:listSelector="@drawable/rect_pre"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="@dimen/wegroup_detail_defualtmargin" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/wegroup_item_line_size"
+                android:background="@color/wegroup_item_line_color" />
+           
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/wegroup_detail_defualtmargin"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/wegroup_detail_defualtmargin"
+                    android:text="@string/wegroup_detail_order_total"
+                    android:textColor="@color/book_imitate_textcolornew"
+                    android:textSize="@dimen/wegroup_item_pricebtn_tsize"
+                    />
+                 <!-- 合计  -->
+                     <TextView
+                         android:id="@+id/wegroup_s_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:padding="@dimen/wegroup_detail_defualtmargin"
+                    android:textColor="@color/book_imitate_textcolornew"
+                    android:textSize="@dimen/wegroup_item_pricebtn_tsize"
+                    android:gravity="right"
+                    />
+            </LinearLayout>
+                 <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/wegroup_item_line_size"
+                android:background="@color/wegroup_item_line_color" />
+                 <!-- 提交订单 -->
+            <Button
+                android:id="@+id/wegroup_order_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_input_height"
+                android:layout_margin="@dimen/wegroup_detail_defualtmargin"
+                android:background="@drawable/login_bt_edge"
+                android:text="@string/submit_orders"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_textSize"
+                />
+               <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/wegroup_item_line_size"
+                android:background="@color/wegroup_item_line_color" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

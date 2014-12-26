@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:shape="rectangle">
+    <corners android:radius="@dimen/lottery_itembkg_cornerRadius"/>
+    <stroke android:width="@dimen/lottery_itembkg_strokeWidth" android:color="#aa0a14"/>
+    <gradient android:startColor="#ec6f17" android:endColor="#e6400b" android:type="radial" android:gradientRadius="100"/>
+</shape>

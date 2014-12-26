@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <View
+        android:id="@+id/wegroup_item_header_bg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/wegroup_bg"
+        />
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="@dimen/wegroup_item_padding"
+         android:text="@string/wegroup_item_header_tv"
+         android:textColor="@color/wegroup_item_buttomtv_color"
+         android:textSize="@dimen/wegroup_item_pricebtn_tsize"
+         />
+</LinearLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 通用的颜色 -->
+    <color name="all_null_color">#00000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="all_white_bg">#fff5f5f5</color>
+    <color name="listview_sp_color">#ffbfbfbf</color>
+    <color name="loading_bg">#99fc9d60</color>
+    <color name="title_bg_color">#ffff6604</color>
+    <color name="dialog_text_color">#ff393939</color>
+    <color name="all_back_bt_press_color">#ffe71b1b</color>
+    
+    <color name="Grey">#faf9f8</color>
+    <color name="Grey_line">#dddddd</color>
+    <color name="red_dark">#da251c</color>
+    <!-- 通用颜色结束 -->
+    
+    <!-- 历史培训折线图所用颜色 -->
+    <color name = "green_light">#7bd269</color>
+    <color name = "orange_dark">#da5804</color>
+    <color name = "purple_dark">#7d26b5</color>
+    <color name = "blue_dark">#0b2671</color>
+    <color name = "green_ldark">#3e952d</color>
+    <color name = "blue_light">#3999cd</color>
+    <color name="green_Dark">#37bcb2</color>
+    
+    <!-- 驾校列表 -->
+    <color name="jx_list_bg">#fff6f6f6</color>
+    <color name="jx_listview_important">#ffe74100</color>
+    <color name="jx_listview_item_title">#ff6d6d6d</color>
+
+    <!-- 驾校列表结束 -->
+
+
+    <!-- 驾校列表 -->
+    <color name="jl_condition_text_press">#ffff6603</color>
+    <color name="jl_condition_text_nomal">#ff6d6d6d</color>
+
+    <!-- 驾校列表结束 -->
+
+
+    <!-- 地址选择颜色 -->
+    <color name="addr_localtion_title_bg">#fff0f0f0</color>
+    <color name="addr_localtion_text_bg">#ffd4d4d4</color>
+
+    <!-- 地址选择颜色结束 -->
+
+
+    <!-- main_lay 开始 -->
+    <!-- 下面几个选项的背景和字体颜色 -->
+    <color name="main_tab_backgroundcolor">#fff9f9f7</color>
+    <color name="main_tab_textcolor">#ff656566</color>
+    <color name="main_tab_textcolor_press">#ffff6501</color>
+
+    <!-- 上线分割线颜色 -->
+    <color name="main_tab_splitcolor_fisrt">#ffbebebc</color>
+    <color name="main_tab_splitcolor_end">#ffffffff</color>
+
+    <!-- 标题栏颜色 -->
+    <color name="main_title_background">#fffd6601</color>
+
+    <!-- 搜索输入框颜色  边框颜色 -->
+    <color name="main_title_textbackground">#fffd883b</color>
+    <color name="main_title_textedgecolor">#fff1b68c</color>
+
+    <!-- main_lay 结束 -->
+
+
+    <!-- 登录页面 -->
+    <color name="login_bt_bgcolor">#ffff6603</color>
+    <color name="login_bt_bgcolor_press">#ffed6004</color>
+
+    <!-- 登录页面结束 -->
+
+
+    <!-- 个人中心 -->
+    <color name="usercenter_context_bg">#fffcfbf9</color>
+
+    <!-- 头像边框颜色 -->
+    <color name="usercenter_tx_stroke_bg">#ffedeee6</color>
+    <color name="usercenter_tx_split_color">#ffe5e5e5</color>
+
+    <!-- 个人中心结束 -->
+
+
+    <!-- 预约选择 fef6c7 -->
+    <color name="book_dateselect_titlecolorbg">#fffef6c7</color>
+    <color name="book_dateselect_unselected_color">#ffcecece</color>
+
+    <!-- 时间分隔符 表格分隔符颜色 -->
+    <color name="book_dateselect_spcolor">#ffeaeaea</color>
+    <color name="book_dateselect_jl_bg">#fff9f9f9</color>
+    <color name="book_dateselect_jl_sp">#ffd2d2d0</color>
+
+    <!-- 230 87 0 在线预约 的选中课程的分隔颜色 -->
+    <color name="book_dateselect_spbigcolor">#fff66304</color>
+    <!-- 230 87 0 在线预约确认按钮样式  以及边框 -->
+    <color name="book_dateselect_sure_bt_begin">#fffeb970</color>
+    <color name="book_dateselect_sure_bt_end">#fff88409</color>
+    <color name="book_dateselect_sure_bt_sp">#ffd55400</color>
+
+    <!-- 课程选中后的  序号颜色 -->
+    <color name="book_dateselect_xuhao">#ff88dc60</color>
+    <!-- 确认选课按钮颜色 32b16a -->
+    <color name="book_dateselect_sureok">#ff32b16a</color>
+    <color name="book_dateselect_sureok_press">#ff278e56</color>
+
+    <!-- 预约选择结束 -->
+
+
+    <!-- 预约模考 -->
+    <color name="book_imitate_textcolor">#ffb5b5b5</color>
+    <color name="book_imitate_textcolornew">#ff6d6d6d</color>
+    <color name="book_imitate_bt_deletecolor">#ff2858d4</color>
+
+    <!-- 预约模考结束 -->
+
+
+    <!-- 日历控件的所有颜色 -->
+    <!-- listview条目背景色 -->
+    <color name="black">#000</color>
+    <color name="item_bg">#F1F1F1</color> <!-- 条目初始状态颜色 -->
+    <color name="pressed_bg">#E0E0E0</color> <!-- item被点击时的颜色 -->
+
+
+    <!-- 界面标题栏 -->
+    <color name="head_title_bg_color">#ffff6503</color> <!-- 标题栏背景颜色 -->
+    <color name="head_title_text_color">#FFF</color> <!-- 所有界面标题栏字体颜色 -->
+    <color name="head_title_btn_border_color">#1040A0</color> <!-- 标题栏按钮边框颜色 -->
+    <color name="head_btn_pressed_bg">#1E5B92</color> <!-- item被点击时的颜色 -->
+
+
+    <!-- 日历按键的颜色 -->
+    <color name="calendar_bt_bg_color">#fffea36a</color> <!-- 日历按键样式 -->
+    <color name="calendar_bt_bg_color_press">#ffff6503</color> <!-- 日历按键样式 -->
+
+
+    <!-- 日历控件界面 -->
+    <color name="calendar_other_month_text">#CBCBCB</color> <!-- 日历界面其他月份方格背景色 -->
+    <color name="calendar_current_month_text">#2E2E2E</color> <!-- 日历界面当前月份方格背景色 -->
+    <color name="calendar_bg">#EDEDED</color> <!-- 日历界面当前主背景色 -->
+    <color name="calendar_selected_date_text">#B71814</color> <!-- 日历界面当前月份选中文本颜色 -->
+    <color name="calendar_selected_date_bg">#DCDCDC</color> <!-- 日历界面当前月份选中背景色 -->
+    <color name="calendar_cell_border">#CBCBCB</color> <!-- 日历界面当前月份方格边框颜色 -->
+    <color name="year_choose">#DADADAFF</color> <!-- 年份选择时的背景色 -->
+    <color name="year_item_text_color">#000</color> <!-- 年份选择时字体颜色 -->
+    <color name="year_nochoose">#EDF1F2</color> <!-- 年份未选择时的背景色 -->
+    <color name="year_line">#DCDCDC</color> <!-- Item分割颜色 -->
+    <color name="year_gap">#FFFFFF</color> <!-- Item分割中间色 -->
+    <color name="calendar_bottom_text_color">#5d6161</color> <!-- 日历界面底部按钮、文字的颜色 -->
+
+
+
+    <!-- 日历控件所有颜色结束 -->
+    <!-- 登录信息 -->
+    <color name="hand_welcome_content_bt_border_color">#909090</color> <!-- 按钮边框颜色 -->
+    <!-- 注册 -->
+    <color name="regist_textcolor_hint">#a7a7a7</color>
+    <!-- 地址选择的 颜色 -->
+    <color name="addr_item_bg">#EDEDED</color> <!-- 下拉列表选中背景色 -->
+    <color name="addr_item_bg_press">#ffffff</color> <!-- 下拉列表未选中背景色 -->
+
+
+    <!-- 地址控件界面 -->
+    <color name="address_top_item_text_color">#282828</color> <!-- 地址条目顶部文字的颜色 -->
+    <color name="address_item_text_color">#000</color> <!-- 地址条目文字的颜色 -->
+    <color name="province">#D5D5D5</color> <!-- 地址条目省级背景的颜色 -->
+    <color name="city">#E5E5E5</color> <!-- 地址条目市级背景的颜色 -->
+        <!-- 地址选择颜色结束 -->
+        <!-- 大家团item -->
+    <color name="wegroup_item_class_tv_color">#6d6d6d</color>
+    <color name="wegroup_item_price_tv_color">#e74100</color>
+    <color name="wegroup_item_btn_price_color">#ff0000</color>
+    <color name="wegroup_item_line_color">#e1e1e1</color>
+    <color name="wegroup_item_buttomtv_color">#b6b6b6</color>
+    <!-- 积分商城 -->
+    <color name="guaguaka_bgcolor">#e85a2f</color>
+    <color name="luckdraw_bgcolor">#66c03a</color>
+       <color name="color_lighter_gray">#d2d2d2</color>
+    
+    <color name="color_all_bkg">@android:color/white</color>
+    <color name="color_theme_front">#ff6600</color>
+    
+    
+    <!-- 找驾校  -->
+    <color name="color_jl_consult">#ffa063</color>
+    
+    <color name="color_refresh_1">#fde058</color>
+    <color name="color_refresh_2">#fcb226</color>
+    <color name="color_refresh_3">#fc840e</color>
+    <color name="color_refresh_4">#f35804</color>
+    
+</resources>

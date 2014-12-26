@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 这是最底层的颜色，为分割线的颜色  -->
+    <item>
+        <shape>
+             <solid android:color="#CACACA" />
+        </shape>
+    </item> 
+</layer-list> 

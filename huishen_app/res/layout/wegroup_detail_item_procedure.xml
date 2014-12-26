@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginTop="@dimen/wegroup_detail_defualtmargin"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/wegroup_detail_defualtmargin"
+        android:text="@string/wegroup_detail_procedure"
+        android:textColor="@color/book_imitate_textcolornew"
+        android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_line"
+        android:background="@color/main_title_background" />
+    <ImageView
+        android:id="@+id/wegroup_detail_img_procedure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wegroup_pro"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+</LinearLayout>

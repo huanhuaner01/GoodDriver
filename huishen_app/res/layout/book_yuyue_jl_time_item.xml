@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:background="@color/book_dateselect_spcolor"
+    android:paddingBottom="1dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="1dp" >
+
+    <LinearLayout
+        android:id="@+id/dateselect_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/book_yuyue_timetext"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:textColor="@color/dialog_text_color"
+            android:gravity="center"
+            android:text="9:00"
+            android:textSize="16sp" />
+           <TextView
+            android:id="@+id/book_yuyue_statetext"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:singleLine="true"
+            android:textColor="@color/main_title_background"
+            android:text="已无"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="16sp" />
+       <ImageView
+            android:id="@+id/book_yuyue_timeicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/img_desc"
+            android:src="@drawable/book_time_selected"
+            android:visibility="gone" />
+            
+    </LinearLayout>
+
+</RelativeLayout>

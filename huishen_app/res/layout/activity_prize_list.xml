@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Grey"
+     >
+  <include layout="@layout/header_withback"/>
+      <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/id_swipe_ly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+  <ListView 
+      android:id="@+id/prize_list"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scrollbars="none"
+      android:divider="@null"
+      android:listSelector="@android:color/transparent"
+      ></ListView>
+</android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

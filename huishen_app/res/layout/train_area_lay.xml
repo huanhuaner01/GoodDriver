@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginTop="@dimen/wegroup_detail_defualtmargin"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/wegroup_detail_defualtmargin"
+        android:text="@string/jl_trainspace"
+        android:textColor="@color/book_imitate_textcolornew"
+        android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_line"
+        android:background="@color/main_title_background" />
+
+       <ListView
+           android:id="@+id/trainarea_list"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/jl_trainarea_listheight"
+           android:divider="@color/wegroup_item_line_color"
+           android:dividerHeight="@dimen/listview_divider_height"
+           android:scrollbars="none"
+           />
+           
+           <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+           
+        <LinearLayout
+        android:id="@+id/trainarea_seemore"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/see_more_layheight"
+        android:orientation="horizontal"
+        android:padding="@dimen/wegroup_detail_defualtmargin"
+        android:background="@drawable/item_defualt_bg"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:text="@string/see_more"
+            android:textColor="@color/book_imitate_textcolornew"
+            android:focusable="false"
+            />
+         <View
+             android:layout_width="@dimen/see_more_iconwidth"
+             android:layout_height="@dimen/see_more_iconheight"
+             android:background="@drawable/all_go_icon"
+             android:layout_gravity="center_vertical"
+             />
+        </LinearLayout>
+        
+        
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+</LinearLayout>

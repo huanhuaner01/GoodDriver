@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/main_title_height"
+    android:layout_alignParentTop="true"
+    android:background="@color/main_title_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/main_head_back_marginleft"
+        android:layout_marginRight="@dimen/main_head_back_marginleft"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/head_back"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/all_back_bt_selector"
+            android:contentDescription="@string/img_desc"
+            android:drawableLeft="@drawable/head_back"
+            android:onClick="backIntent"
+            android:text="@string/head_back" />
+
+        <TextView
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/login_title"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/login_regist"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/all_back_bt_selector"
+            android:text="@string/login_regist" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_tab_splitcolor_fisrt"
+            android:contentDescription="@string/img_desc" />
+
+        <ImageView
+            android:id="@+id/title_spilt_buttom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_tab_splitcolor_end"
+            android:contentDescription="@string/img_desc" />
+    </LinearLayout>
+
+</LinearLayout>

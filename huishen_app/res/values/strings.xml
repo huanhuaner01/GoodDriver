@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 通用配置 -->
+    <string name="next">下一步</string>
+    <string name="close">关闭</string>
+    <string name="submit_orders">提交订单</string>
+    <string name="submission">确认提交</string>
+    <string name="confirm_order">确认订单</string>
+    <string name="commit_succeeds">提交成功</string>
+    <string name="consult">我要咨询</string>
+    <string name="see_img_more">查看图文详情</string>
+    <string name="see_more">查看更多</string>
+    <!-- APP的服务URL -->
+    <!-- <string name="webbaseurl">http://huishen1.wicp.net/</string> -->
+    <!-- --><string name="webbaseurl">http://192.168.0.210:8080/</string> 
+    <!--  
+    <string name="webbaseurl">http://huishen.wicp.net/</string>-->
+
+    <!-- 学生可以选择的有哪些 istu/queryTeacherLessonInfo.do -->
+    <string name="get_jz_timeinfo">drivingSchool/mobile/queryTeacherTimePlan</string>
+    <!-- 获取教练时间段的价格 -->
+    <string name="get_jltime_price">drivingSchool/mobile/queryPlanDateTimePrice</string>
+    <!-- 日历控件界面 -->
+    <string name="testtimestr">12:00</string>
+    <string name="calendar_today">今天</string>
+    <string name="encoding">UTF-8</string>
+    <string name="all_loading">正在加载. . .</string>
+    <string name="nullvalue"></string>
+    <string name="img_desc"></string>
+    <string name="head_back">返回</string>
+    <string name="app_name">好司机</string>
+    <string name="title_activity_login_ui">Login_ui</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_book_ui">Book_ui</string>
+    <string name="usercenter">个人中心</string>
+
+    <!-- 获取驾照URL -->
+    <!-- 查询所有的 预约历史 -->
+
+    <string name="get_addmokao">drivingSchool/mobile/addTestInfoSubmit</string>
+    <string name="get_cancelmokao">drivingSchool/mobile/cancelPExam</string>
+    <string name="get_addplan">drivingSchool/mobile/addLessonInfoSubmit</string>
+    <string name="get_cancelplan">drivingSchool/mobile/cancelLessonPlan</string>
+    <string name="get_yuyue">drivingSchool/mobile/queryStuLessonPlanInfo</string>
+    <string name="get_timeprice">drivingSchool/mobile/queryPlanDateTimePrice</string>
+    <string name="get_imitate">drivingSchool/mobile/queryStuTestInfo</string>
+    <string name="get_imitateprice">drivingSchool/mobile/queryTestInfo</string>
+    <!-- 科目二统计界面url -->
+    <string name="get_sub2trainurl">drivingSchool/mobile/queryTrainStatistics</string>
+    <!-- 统计进度界面url -->
+    <string name="get_staurl">drivingSchool/mobile/queryPeriodStatistics</string>
+    <!-- 培训详细界面 -->
+    <string name="get_straindetail">drivingSchool/mobile/qureyStuLessonTrainInfo</string>
+    <string name="get_todetailurl">drivingSchool/mobile/toTrainDetail</string>
+    <string name="get_todeductioninfo">drivingSchool/mobile/toDeductionInfo</string>
+    <!-- 评价界面 -->
+    <string name="get_judgeinfourl">drivingSchool/mobile/queryComment</string>
+    <string name="submit_judgeurl">drivingSchool/mobile/addCommentSubmit</string>
+    <!-- 通用配置结束 -->
+
+
+    <!-- 登录界面 -->
+    <!-- http://huishen.wicp.net/istu/queryStudentInfo.do?userName=stu0001&password=123456&drivingSchool/mobileFlag=333111999 -->
+    <string name="loginurl_new">drivingSchool/mobile/queryStuInfo</string>
+    <string name="loginurl">istu/queryStudentInfo.do</string>
+    <string name="login_regist">注册</string>
+    <string name="login_title">好司机登录</string>
+    <string name="login_usertext_hint">用户名/邮箱/手机号</string>
+    <string name="login_passwordtext_hint">密码</string>
+    <string name="login_loginbt_text">登&#160;&#160;&#160;&#160;录</string>
+
+    <!-- main_lay 开始 -->
+    <string name="main_tab_main">首&#160;&#160;&#160;&#160;页</string>
+    <string name="main_tab_baom">学员报名</string>
+    <string name="main_tab_book">在线预约</string>
+    <string name="main_tab_usercenter">个人中心</string>
+    <string name="main_city">成都</string>
+    
+    <!-- menu -->
+    <string name="main_menu_zjx">找驾校</string>
+    <string name="main_menu_zjl">找教练</string>
+    <string name="main_menu_zxyy">在线预约</string>
+    <string name="main_menu_xclc">学车流程</string>
+    <string name="main_menu_jfsc">报名有礼</string>
+    <string name="main_menu_djt">大家团</string>
+
+    <!-- main_lay 结束 -->
+
+
+    <!-- 在线预约 开始 -->
+    <string name="book_title_text">在线预约</string>
+    <string name="book_menu_yypx">预约培训</string>
+    <string name="book_menu_yymk">预约模考</string>
+    <string name="yy_time">预约时间</string>
+    <string name="yy_kemu">预约科目</string>
+    <string name="book_dateselect_imgsize">40</string>
+    <string name="book_dateselect_jlwidth">80</string>
+    <string name="book_head_xuece">预约学车</string>
+    <string name="book_head_mokao">预约模考</string>
+    <string name="book_dateselect_buttomtitle">已选课程</string>
+    <string name="book_dateselect_buttombt">确认选课</string>
+
+    <!-- 在线预约 结束 -->
+
+    <string name="title_activity_book_dateselect_ui">Book_dateselect_ui</string>
+    <string name="title_activity_book_imitate_ui">Book_imitate_ui</string>
+    <string name="title_activity_book_mokao_ui">Book_mokao_ui</string>
+    <string name="title_activity_book_yuyue_ui">Book_yuyue_ui</string>
+    <string name="title_activity_book_yuyue_first_ui">Book_yuyue_first_ui</string>
+    <string name="title_activity_user_center">UserCenter</string>
+    <string name="title_activity_main_fragment_ui">Main_fragment_ui</string>
+
+    <!-- 个人中心 -->
+    <string name="url_user_update">/drivingSchool/mobile/editStuInfoSubmit</string>
+    <string name="user_yyxc">预约学车</string>
+    <string name="user_yymk">预约模考</string>
+    <string name="user_pxtj">培训统计</string>
+    <string name="user_pxls">培训历史</string>
+    <string name="user_jfsc">我的中奖</string>
+    <string name="title_activity_find_jl_ui">Find_jl_ui</string>
+    <string name="title_activity_jxlist_ui">JXList_ui</string>
+    <string name="title_activity_book_train_ui">Book_train_ui</string>
+    <!-- 培训历史 -->
+    <string name="train_his_peixuntxt">最近七次培训走势图</string>
+    <string name="title_activity_train_his_detail_ui">Train_his_detail_ui</string>
+    <string name="title_activity_user_center_detail_fragment">UserCenterDetailFragment</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_train_sta_ui">TrainSta_ui</string>
+    <string name="trainhistab">培训历史界面</string>
+    <string name="title_activity_judge">JudgeActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 注册 -->
+    <string name="regist_title">注册</string>
+    <string name="regist_realname">真实姓名</string>
+    <string name="regist_name">用户名</string>
+    <string name="regist_sex">性&#160;&#160;&#160;&#160;别</string>
+    <string name="regist_idnumber">身份证号</string>
+    <string name="regist_email">E-mail</string>
+    <string name="regist_tel">电&#160;&#160;&#160;&#160;话</string>
+    <string name="regist_address">住&#160;&#160;&#160;&#160;址</string>
+    <string name="regist_password">密&#160;&#160;&#160;&#160;码</string>
+    <string name="regist_ok">完成注册</string>
+    <string name="regist_hint_realname">请填写真实姓名</string>
+    <string name="regist_hint_name">请输入4~20个字符</string>
+    <string name="regist_boy">男</string>
+    <string name="regist_girl">女</string>
+    <string name="regist_hint_mustwrite">必填</string>
+    <string name="regist_hint_email">请输常用邮箱</string>
+    <string name="regist_password_check">密码确认</string>
+    <string name="regist_url_checkusername">drivingSchool/mobile/validateUserName</string>
+    <string name="regist_url_checkidnumber">drivingSchool/mobile/validateCode</string>
+    <string name="regist_url_checkemail">drivingSchool/mobile/validateEmail</string>
+    <string name="regist_url_submit">drivingSchool/mobile/registerStuSbmitInfo</string>
+    <!-- 大家团 -->
+    <string name="wegroup_item_header_tv">所有团购</string>
+    <string name="title_activity_we_group_detail">WeGroupDetailActivity</string>
+    <!-- 大家团详细 -->
+    <string name="wegroup_detail_title">团购详细</string>
+    <string name="wegroup_detail_header_des">大学生团(分期付款，无忧学车)</string>
+    <string name="wegroup_detail_price_pre">价格：￥</string>
+    <string name="wegroup_detail_submmit">立即报名</string>
+    <string name="wegroup_detail_safeguard">学员保障</string>
+    <string name="wegroup_detail_safeguard_1">先学后付</string>
+    <string name="wegroup_detail_safeguard_2">保障学员权益</string>
+    <string name="wegroup_detail_safeguard_3">无隐性消费</string>
+    <string name="wegroup_detail_safeguard_4">网上约课</string>
+    <string name="wegroup_detail_safeguard_5">挂科保障</string>
+    <string name="wegroup_detail_des">团购简介</string>
+    <string name="wegroup_detail_overleaf">报名须知</string>
+    <string name="wegroup_detail_procedure">学车流程</string>
+    <!-- 提交订单界面 -->
+    <string name="wegroup_detail_order_selectinfo">选择团购信息</string>
+    <string name="wegroup_detail_order_num">参团人数：</string>
+    <string name="wegroup_detail_order_car">学车类型：</string>
+    <string name="wegroup_detail_order_total">合计：</string>
+    <string name="confirm_info">确认基本信息</string>
+    <string name="order_project">项目</string>
+    <string name="order_model">模式</string>
+    <string name="order_cartype">学车类型</string>
+    <string name="old_unit_price">原单价</string>
+    <string name="new_unit_price">现单价</string>
+
+    <!-- 积分商城 -->
+    <string name="url_getluckinfo">drivingSchool/mobile/queryLotteryinfo</string>
+    <string name="url_getluckresult">drivingSchool/mobile/queryPrizeInfo</string>
+    <string name="url_getlucklist">drivingSchool/mobile/queryPrizeInfoList</string>
+    <string name="guaguakafragment_title">积分刮刮乐</string>
+    <string name="guagua_my">我的刮刮卡：</string>
+    <string name="guagua_awardlist">获奖名单</string>
+    <string name="guagua_awardset">奖品设置</string>
+    <string name="guagua_explain">活动说明</string>
+    <string name="luckdrawfragment_title">报名有礼</string>
+    <string name="luck_role_string">         1.每个账号仅限抽奖一次。
+\n2.点击抽奖后提示中奖内容，点击“我的奖品”查看获奖内容。
+\n3.可进入个人中心，点击“我的奖品”查看获奖内容。
+\n4.奖品领取成功后，使用有效期为2014年12月30日至2015年4月30日
+\n5.代金券仅限科目二、科目三选课使用。
+\n6.好司机学车网保留对此次活动的所有解释权。</string>
+
+    <!-- 找教练 -->
+    <string name="jl_detail_header_seniority">教龄(年)</string>
+    <string name="jl_detail_header_score">评价(分)</string>
+    <string name="jl_detail_header_judgenum">评价(条)</string>
+    <string name="jl_seniority">教龄：</string>
+    <string name="jl_driveryear">驾龄：</string>
+    <string name="jl_id">教龄证号：</string>
+    <string name="jl_des">教练介绍：</string>
+    <string name="jl_trainspace">训练场地</string>
+    <string name="jl_judge">评价</string>
+    <string name="jl_detail_jldes">教练简介</string>
+    <string name="title_activity_process">ProcessActivity</string>
+    <string name="title_activity_jldetail">JLDetailActivity</string>
+    <string name="title_activity_jxdetail">JXDetailActivity</string>
+    <string name="title_activity_gua_gua_ka">GuaGuaKaActivity</string>
+    <string name="title_activity_prize_list">PrizeListActivity</string>
+
+</resources>

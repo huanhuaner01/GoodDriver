@@ -1,0 +1,236 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light"></style>
+
+    <style name="AppTheme" parent="AppBaseTheme"> <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- 通用的数据选择 dialog -->
+    <style name="dataselectstyle" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/all_null_color</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- 通用的登录dialog -->
+    <style name="loadingstyle" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/all_loading_bg</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- 标题的字体样式 -->
+    <style name="title_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/main_head_textradiu</item>
+        <item name="android:paddingRight">@dimen/main_head_textradiu_right</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- main_lay 中的 主窗口切换 -->
+    <style name="home_tab_bottom">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/main_button_textsize</item>
+        <item name="android:textColor">@drawable/home_tab_text_background</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:background">@color/main_tab_backgroundcolor</item>
+    </style>
+
+    <!-- 教练选择  条件按钮style -->
+    <style name="jl_select_condition_style">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/main_button_textsize</item>
+        <item name="android:textColor">@drawable/home_tab_text_background</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:background">@color/main_tab_backgroundcolor</item>
+    </style>
+
+    <!-- main_lay 结束 -->
+
+
+    <!-- login 登录style -->
+
+    <style name="login_title_stitle">
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="login_content_input">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- login 登录style结束 -->
+
+
+    <!-- 预约模考 -->
+    <!-- main_lay 中的 主窗口切换 -->
+    <style name="book_imitate_txtstyle">
+        <item name="android:textSize">@dimen/book_imitate_txtsize</item>
+        <item name="android:textColor">@color/book_imitate_textcolor</item>
+    </style>
+
+    <style name="book_imitate_txtstylenew" parent="book_imitate_txtstyle">
+        <item name="android:textColor">@color/book_imitate_textcolornew</item>
+    </style>
+
+    <style name="book_imitate_txtinputstyle">
+        <item name="android:textSize">@dimen/book_imitate_txtinputsize</item>
+        <item name="android:textColor">@color/book_imitate_textcolor</item>
+    </style>
+
+    <style name="book_imitate_txtinputstylenew" parent="book_imitate_txtinputstyle">
+        <item name="android:textColor">@color/book_imitate_textcolornew</item>
+    </style>
+    <!-- 预约模考 结束 -->
+
+
+    <!-- 在线预约教练 选项 -->
+    <style name="book_yuyue_jl">
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:drawableRight">@drawable/book_yuyue_jl_selector</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/yuyue_rb_textsize</item>
+        <item name="android:textColor">@drawable/home_tab_text_background</item>
+        <item name="android:background">@drawable/book_yuyue_jl_item_bg_seletor</item>
+    </style>
+    <!-- 培训历史详情界面基本信息 -->
+    <style name="LabelStyle">
+         <item name="android:layout_marginLeft">@dimen/train_hisdetail_infoitem_margin_lr</item>
+         <item name="android:layout_marginRight">@dimen/train_hisdetail_infoitem_margin_lr</item>
+         <item name="android:layout_marginTop">@dimen/train_hisdetail_infoitem_margin_top</item>
+         <item name="android:background">@drawable/label_bg</item>
+         <item name="android:paddingTop">@dimen/train_hisdetail_infoitem_padding</item>
+         <item name="android:paddingBottom">@dimen/train_hisdetail_infoitem_padding</item>
+         <item name="android:paddingLeft">@dimen/train_hisdetail_infoitem_title_right</item>
+         <item name="android:paddingRight">@dimen/train_hisdetail_infoitem_title_right</item>
+        </style>
+        <!-- 培训历史界面图标样式 -->
+        <style name="train_his_detail_infoicon">
+            <item name="android:layout_width">@dimen/train_hisdetail_infoitem_icon_size</item>
+            <item name="android:layout_height">@dimen/train_hisdetail_infoitem_icon_size</item>
+            <item name="android:layout_alignParentLeft">true</item>
+            <item name="android:layout_centerVertical">true</item>
+            </style>
+            
+       <!-- 评价界面 -->
+         <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+
+        <!-- 指向star_rating_bar_full.xml文件 -->
+        <item name="android:progressDrawable">@drawable/star_rating_bar_full</item>
+         <item name="android:minHeight">31dp</item>    
+        <item name="android:maxHeight">60dp</item>
+    </style>
+    <!-- 注册界面style -->
+    <style name="RegistText">
+      <item  name="android:textColor">@color/book_imitate_textcolornew</item>
+      <item name="android:textSize">@dimen/regist_input_testSize</item>
+      <item name="android:paddingRight">@dimen/regist_tv_paddingRight</item>
+       <item name="android:gravity">center|left</item>
+    </style>
+    <style name="RegistEdit">
+      <item name="android:textColor">@color/book_imitate_textcolornew</item>
+      <item name="android:textSize">@dimen/regist_input_testSize</item>
+      <item name="android:gravity">center|left</item>
+      <item name="android:background">@null</item>
+      <item name="android:textColorHint">@color/regist_textcolor_hint</item>
+      <item name="android:padding">@dimen/regist_edit_padding</item>
+        </style>
+        
+        <style name="RegistEditLine">
+          <item name="android:layout_alignParentBottom">true</item>
+          <item name="android:layout_alignParentLeft">true</item>
+          <item name="android:background">@drawable/edit_line</item>
+          <item name="android:contentDescription">@string/nullvalue</item>
+        </style>
+        
+      <style name="WeGroupClass">
+        <item name="android:textColor">@color/wegroup_item_class_tv_color</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+      </style>
+      
+      <style name="WeGroupItemSafeTv">
+            <item name="android:layout_width">match_parent</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:gravity">center</item>
+            <item name="android:textSize">@dimen/wegroup_item_buttomtv_textsize</item>
+            <item name="android:layout_marginTop">@dimen/wegroup_detail_defualtmargin</item>
+            <item name="android:textColor">@color/book_imitate_textcolornew</item>
+          </style>
+          
+          <!-- 价格的字体样式 -->
+      <style name="PriceDefualtStyle">
+          <item name="android:textColor">@color/wegroup_item_price_tv_color</item>
+          <item name="android:textSize">@dimen/wegroup_item_price_tsize</item>
+          </style>
+          
+          <!--  抽奖积分 -->
+    <style name="style_common_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/color_lighter_gray</item>
+    </style>
+    
+    <style name="style_grid_lottery">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>:
+        <item name="android:layout_marginTop">@dimen/lottery_item_margin</item>
+        <item name="android:layout_marginBottom">@dimen/lottery_item_margin</item>
+        <item name="android:layout_marginLeft">@dimen/lottery_item_margin</item>
+        <item name="android:layout_marginRight">@dimen/lottery_item_margin</item>
+        <item name="android:padding">@dimen/lottery_item_padding</item>
+        <item name="android:background">@drawable/sel_bkg_lottery_item</item>
+        <item name="android:src">@drawable/icon_lottery_questionmark</item>
+    </style>
+    
+    <style name="style_luck_tv">
+         <item name="android:textColor">@color/white</item>
+         <item name="android:paddingLeft">@dimen/luck_tv_paddingleft</item>
+         <item name="android:paddingRight">@dimen/luck_tv_paddingright</item>
+         <item name="android:paddingTop">@dimen/luck_tv_paddingtop</item>
+         <item name="android:paddingBottom">@dimen/luck_tv_paddingbottom</item>
+         <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+    
+    <!-- 找驾校 -->
+    <style name="style_jl_score">
+        <item name="android:textColor">@color/jx_listview_item_title</item>
+        <item name="android:textSize">@dimen/jl_score_textsize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+    
+    <style name="style_jl_desscore">
+         <item name="android:singleLine">true</item>
+         <item name="android:gravity">center_horizontal|bottom</item>
+         <item name="android:textSize">@dimen/jl_score_destsize</item>
+    </style>
+    
+    
+    </resources>

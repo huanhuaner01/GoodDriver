@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/calendar_item_bg"
+     >
+	  <TextView 
+	      android:id="@+id/val"
+	      android:layout_width="0dp"
+	      android:layout_height="@dimen/calendar_year_item_hight"
+	      android:gravity="center"
+	      android:textSize="@dimen/calendar_year_item_text_size"
+	      android:textColor="@color/year_item_text_color"
+	      android:layout_weight="1"
+	      />
+</LinearLayout>

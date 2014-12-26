@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/Grey"
+    >
+    <include layout="@layout/header_withback"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/tip_margintop"
+        android:gravity="center_horizontal"
+        >
+        <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+             >
+             <!-- 提示图标 -->
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/tip_icon_size"
+            android:layout_height="@dimen/tip_icon_size"
+            android:src="@drawable/sucess_su_ic"
+            android:contentDescription="@string/nullvalue"
+            />
+           <!-- 提示文字 -->
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/tip_tvl_height"
+               android:orientation="vertical"
+               android:padding="@dimen/activity_horizontal_margin"
+               android:gravity="center_vertical"
+               >
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="0dp"
+                   android:layout_weight="1"
+                   android:text="提示信息成功"
+                   android:textSize="@dimen/tip_tv_textsize"
+                   android:textColor="@color/book_imitate_textcolornew"
+                   />
+                 <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="0dp"
+                   android:layout_weight="1"
+                   android:gravity="center_vertical"
+                   android:text="工作人员将在两个工作日内联系您"
+                   android:textColor="@color/book_imitate_textcolornew"
+                   />
+               </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

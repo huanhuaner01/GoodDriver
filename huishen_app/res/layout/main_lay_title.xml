@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/main_title_height"
+    android:layout_alignParentTop="true"
+    android:background="@color/main_title_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+             <Button
+            android:id="@+id/header_city"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/all_back_bt_selector"
+            android:contentDescription="@string/img_desc"
+            android:drawableRight="@drawable/down_arrow_ic"
+            android:text="@string/main_city"
+            android:layout_alignParentLeft="true" 
+            android:maxWidth="100dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            />
+
+        <EditText
+            android:id="@+id/head_search"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/head_searchtext_height"
+            android:layout_weight="1"
+            android:background="@drawable/home_title_edge"
+            android:drawableRight="@drawable/head_title_search"
+            android:singleLine="true"
+            android:hint="@string/nullvalue"
+            android:paddingLeft="@dimen/main_head_textradiu"
+            android:paddingRight="@dimen/main_head_textradiu_right" 
+            android:layout_marginRight="@dimen/main_head_textradiu_right"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_tab_splitcolor_fisrt"
+            android:contentDescription="@string/img_desc" />
+
+        <ImageView
+            android:id="@+id/title_spilt_buttom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_tab_splitcolor_end"
+            android:contentDescription="@string/img_desc" />
+    </LinearLayout>
+
+</LinearLayout>

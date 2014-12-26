@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+     >
+
+   <include
+       layout="@layout/header_withback" />
+   <ListView
+       android:id="@+id/list"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="10"
+       android:divider="@color/Grey_line"
+       android:dividerHeight="@dimen/wegroup_item_line_size"
+        >
+   </ListView>
+   <!-- 底部总计和提交按钮 -->
+
+   <LinearLayout
+       android:id="@+id/buttom"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       
+       >
+                  <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/wegroup_item_line_size"
+                        android:background="@color/wegroup_item_line_color" />
+                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" 
+                        android:padding="@dimen/activity_horizontal_margin"
+                        android:background="@color/white"
+                        >
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:padding="@dimen/wegroup_detail_defualtmargin"
+                            android:text="@string/wegroup_detail_order_total"
+                            android:textSize="@dimen/wegroup_detail_price_pre_size" />
+
+                        <Button
+                            android:id="@+id/submmit"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="@dimen/wegroup_detail_defualtmargin"
+                            android:background="@drawable/login_bt_edge"
+                            android:text="@string/submit_orders"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/button_textSize"
+                             />
+                    </LinearLayout>
+   </LinearLayout>
+</LinearLayout>

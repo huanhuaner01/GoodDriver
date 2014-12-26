@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/book_yuyue_his_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="2014-09-22"
+            android:textColor="@color/book_imitate_textcolornew"
+             />
+ 
+        <TextView
+            android:id="@+id/book_yuyue_his_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="已完成"
+            android:textColor="@color/head_title_bg_color" />
+           
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/book_yuyue_his_kemu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/book_imitate_textcolornew"
+            android:text="科目二" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/book_yuyue_his_jl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="王丽丽"
+        android:textSize="18sp"
+        android:textColor="@color/book_imitate_textcolornew"
+         />
+    <LinearLayout
+        android:id="@+id/book_yuyue_his_states"
+         android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+    <TextView
+        android:id="@+id/book_yuyue_his_judge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="评价"
+        android:textColor="@color/main_title_background"
+        />
+    <ImageView
+        android:id="@+id/book_yuyue_his_see"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/train_his_item_iconheight"
+        android:gravity="center"
+        android:src="@drawable/search_ic"
+        />
+     </LinearLayout>
+</LinearLayout>

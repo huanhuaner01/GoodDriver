@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Grey"
+    android:orientation="vertical" >
+       <include layout="@layout/header_withback" />
+      <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+         >
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             >
+           <include layout="@layout/jl_detail_header"/>
+           <include layout="@layout/wegroup_detail_item_safeguard"/>
+           <include layout="@layout/jl_detail_jldes"/>
+           <include layout="@layout/wegroup_detail_item_overleaf"/>
+           <include layout="@layout/wegroup_detail_item_procedure"/>
+         </LinearLayout>
+         </ScrollView>  
+
+</LinearLayout>
