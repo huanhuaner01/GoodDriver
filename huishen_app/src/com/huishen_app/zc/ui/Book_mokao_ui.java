@@ -90,7 +90,8 @@ public class Book_mokao_ui extends BaseActivity {
             	
             	String viewid = view.getTag() == null ? "" : view.getTag()
         				.toString();
-        		if (book_mokao_selected.isItemChecked(position)||listview_date.get(position).get("status_id").equals("0")) {// Ìí¼Ó
+				if (book_mokao_selected.isItemChecked(position)
+						&& listview_date.get(position).get("status_id").equals("0")) {// Ìí¼Ó
         			select_id.add(viewid);
         			
         		} else {// É¾³ý

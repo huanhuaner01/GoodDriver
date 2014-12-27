@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AbsListView;
@@ -31,13 +32,15 @@ import com.huishen_app.zc.ui.Book_yuyue_first_ui;
 import com.huishen_app.zc.ui.R;
 
 public class Calendar_ui extends Activity {
-
+	
+	private static final String LOG_TAG = "Calendar_ui";
+	
 	private Calendar_Adapter calAdp;
 	private ListView calListView;
 	private TextView activeMonthTextView;
 	private TextView selectedDateTextView;
 	private static final DateFormat format1 = new SimpleDateFormat(
-			Book_yuyue_first_ui.DATASTRUCT);
+			Book_yuyue_first_ui.DATASTRUCT, Locale.CHINA);
 	private LinearLayout headRowView;
 	private LinearLayout headTitle;
 	private RelativeLayout centerView;
@@ -53,41 +56,55 @@ public class Calendar_ui extends Activity {
 	public static final int REFRESH_SELECTED_DATE = 1;
 	public static final int REFRESH_ACTIVE_MONTH = 2;
 	private List<String> year = new ArrayList<String>();
+	
+	private OnTodaySelectedListener todayListener;
+	
+	protected final void setOnTodaySelectedListener(OnTodaySelectedListener listener){
+		todayListener = listener;
+	}
+	protected static interface OnTodaySelectedListener{
+		void onTodaySelected();
+	}
+	
+	protected static final int MSG_RETURN = 0x1100;
 	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-			// TODO Auto-generated method stub
 			Calendar date = (Calendar) msg.obj;
 			selectDate = date.get(Calendar.YEAR) + "/"
 					+ (date.get(Calendar.MONTH) + 1) + "/"
 					+ date.get(Calendar.DAY_OF_MONTH);
 			reCalendar = (Calendar) date.clone();
 			switch (msg.what) {
-			case 0x1100:
-				Intent intent = new Intent();
-				if (selectDate != null){
-					
-					if(compare_date(selectDate)){
-						intent.putExtra("selectDate", selectDate);
-					}else{
-						Toast.makeText(Calendar_ui.this, "对不起，不能选中之前的时间", Toast.LENGTH_SHORT).show();
-						return ;
-					}
-					
-				}
-				if (reCalendar != null)
-					intent.putExtra("reCalendar", reCalendar);
-				
-				Calendar_ui.this.setResult(RESULT_OK, intent);
-				// 当调用finsh()方法时，这个intent就会传递回调用这个Activity的源Activity的onActivityResult()方法里
-				Calendar_ui.this.finish();
+			case MSG_RETURN:
+				setResultAndReturn();
 				break;
 			case REFRESH_SELECTED_DATE:
 				selectedDateTextView.setText(format1.format(date.getTime()));
 				refreshYearMonthView();
 				break;
 			}
+		}
+		
+		private void setResultAndReturn(){
+			Intent intent = new Intent();
+			if (selectDate != null){
+				
+				if(compare_date(selectDate)){
+					intent.putExtra("selectDate", selectDate);
+				}else{
+					Toast.makeText(Calendar_ui.this, "对不起，不能选中之前的时间", Toast.LENGTH_SHORT).show();
+					return ;
+				}
+				
+			}
+			if (reCalendar != null)
+				intent.putExtra("reCalendar", reCalendar);
+			
+			Calendar_ui.this.setResult(RESULT_OK, intent);
+			// 当调用finsh()方法时，这个intent就会传递回调用这个Activity的源Activity的onActivityResult()方法里
+			Calendar_ui.this.finish();
 		}
 	};
 
@@ -100,6 +117,7 @@ public class Calendar_ui extends Activity {
 		setContentView(R.layout.calendar_lay);
 		calAdp = new Calendar_Adapter(this, mHandler, bacWeeks, preWeeks);
 		// confirmButton = (Button) findViewById(R.id.calendar_ok_btn);
+		setOnTodaySelectedListener(calAdp);
 		activeMonthTextView = (TextView) findViewById(R.id.active_month);
 		selectedDateTextView = (TextView) findViewById(R.id.title);
 		headRowView = (LinearLayout) findViewById(R.id.headrow);
@@ -164,7 +182,6 @@ public class Calendar_ui extends Activity {
 			try {
 				date = format1.parse(calString);
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			can = Calendar.getInstance();
@@ -199,19 +216,19 @@ public class Calendar_ui extends Activity {
 				// calListView.setSelection(calAdp.setSelectedDate(can)-3);//calAdp.selectedPosition-2);
 				current_yearButton.setText(can.get(Calendar.YEAR) + "");
 				// calAdp.notifyDataSetChanged();
-
+				if (todayListener != null){
+					todayListener.onTodaySelected();
+				}
 			}
 		});
 		calListView.setOnScrollListener(new OnScrollListener() {
 
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
-				// TODO Auto-generated method stub
 
 			}
 
 			public void onScroll(AbsListView view, int firstVisibleItem,
 					int visibleItemCount, int totalItemCount) {
-				// TODO Auto-generated method stub
 				Calendar lastSelect = (Calendar) calAdp.activeMonth.clone();
 				calAdp.setActiveMonth(firstVisibleItem + visibleItemCount / 2);
 				if (calAdp.activeMonth.get(Calendar.MONTH) != lastSelect
@@ -237,27 +254,31 @@ public class Calendar_ui extends Activity {
 				.setText((calAdp.activeMonth.get(Calendar.MONTH) + 1) + "月");
 		current_yearButton.setText(year + "");
 	}
-	
-    public boolean compare_date(String time) {
-        
-        
-        DateFormat daf = new SimpleDateFormat("yyyy/MM/dd");
-        try {
-            Date dt = new Date();
-            String str  = daf.format(dt);
-            dt = daf.parse(str);
-            Date date = daf.parse(time);
-            if (dt.compareTo(date)>0) {
-                return false ;
-            } else {
-            	return true ;
-            }
 
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-        
+	public boolean compare_date(String time) {
+		DateFormat daf = new SimpleDateFormat("yyyy/MM/dd", Locale.CHINA);
+		//skip today compare
+		String today = daf.format(new Date());
+		Log.d(LOG_TAG, "today="+today+", param time="+time);
+		if (today.equals(time)){
+			Log.d(LOG_TAG, "today is selected.");
+			return true;
+		}
+		
+		try {
+			Date dt = new Date();
+			String str = daf.format(dt);
+			dt = daf.parse(str);
+			Date date = daf.parse(time);
+			if (dt.compareTo(date) > 0) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
 		return false;
-            }
+	}
 
 }

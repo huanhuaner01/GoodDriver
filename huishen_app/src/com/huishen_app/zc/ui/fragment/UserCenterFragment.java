@@ -139,6 +139,12 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 		userlicense.setText("驾照类型："+json.optString("DrivingLicenceType","暂无"));
 		userschool.setText("驾校："+json.optString("school","暂无"));
 //		设置预约的数目
+		if(father.readString("yuyuenum").equals("0")){
+			tip1.setVisibility(View.GONE);
+		}
+		if(father.readString("testnum").equals("0")){
+			tip2.setVisibility(View.GONE);
+		}
 		tip1.setText(father.readString("yuyuenum")); 
 		tip2.setText(father.readString("testnum")); 
 		getUserPhoto(json.getString("path"));

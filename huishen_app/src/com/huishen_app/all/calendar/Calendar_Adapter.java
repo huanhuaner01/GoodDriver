@@ -6,7 +6,9 @@ import static java.util.Calendar.MINUTE;
 import static java.util.Calendar.SECOND;
 
 import java.util.Calendar;
+import java.util.Locale;
 
+import com.huishen_app.all.calendar.Calendar_ui.OnTodaySelectedListener;
 import com.huishen_app.zc.ui.R;
 
 import android.content.Context;
@@ -19,8 +21,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-
-public class Calendar_Adapter extends BaseAdapter {
+public class Calendar_Adapter extends BaseAdapter implements
+		OnTodaySelectedListener {
     public Calendar startDate;
     public Calendar activeMonth;
 
@@ -56,24 +58,21 @@ public class Calendar_Adapter extends BaseAdapter {
     }
 
     public int getCount() {
-        // TODO Auto-generated method stub
         return count;
     }
 
     public Object getItem(int arg0) {
-        // TODO Auto-generated method stub
         Calendar itemDate = (Calendar) startDate.clone();
         itemDate.add(Calendar.DATE, arg0 * 7);
         return itemDate;
     }
 
     public long getItemId(int position) {
-        // TODO Auto-generated method stub
         return position;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
+    @SuppressWarnings("deprecation")
+	public View getView(int position, View convertView, ViewGroup parent) {
         Calendar itemDate = (Calendar) startDate.clone();
         itemDate.add(Calendar.DATE, position * 7);
 
@@ -90,7 +89,6 @@ public class Calendar_Adapter extends BaseAdapter {
             week[i].setTag(position);
             week[i].setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
-                    // TODO Auto-generated method stub
                     selectedPosition = (Integer) v.getTag();
                     Calendar itemDate = (Calendar) startDate.clone();
 
@@ -102,8 +100,12 @@ public class Calendar_Adapter extends BaseAdapter {
                             break;
                         }
                     }
-                    sendRefreshMsg(itemDate, Calendar_ui.REFRESH_SELECTED_DATE);
-                    sendRefreshMsg(itemDate, 0x1100);
+//                    msg.what = type;
+//                    msg.obj = date;
+//                    sendRefreshMsg(itemDate, Calendar_ui.REFRESH_SELECTED_DATE);
+                    mHandler.sendMessage(Message.obtain(mHandler, Calendar_ui.REFRESH_SELECTED_DATE, itemDate));
+                    mHandler.sendMessage(Message.obtain(mHandler, Calendar_ui.MSG_RETURN, itemDate));
+//                    sendRefreshMsg(itemDate, 0x1100);
                 }
             });
             if (selectedPosition == position && i == selectedDay) {// 已选择的日期
@@ -133,12 +135,12 @@ public class Calendar_Adapter extends BaseAdapter {
         return currentView;
     }
 
-    private void sendRefreshMsg(Calendar date, int type) {
-        Message msg = new Message();
-        msg.what = type;
-        msg.obj = date;
-        mHandler.sendMessage(msg);
-    }
+//    private void sendRefreshMsg(Calendar date, int type) {
+//        Message msg = new Message();
+//        msg.what = type;
+//        msg.obj = date;
+//        mHandler.sendMessage(msg);
+//    }
 
     public int setSelectedDate(Calendar date) {
         long start = startDate.getTimeInMillis();
@@ -149,7 +151,8 @@ public class Calendar_Adapter extends BaseAdapter {
         selectedDay = day % 7;
         setActiveMonth(selectedPosition);
         this.notifyDataSetChanged();
-        sendRefreshMsg(date, Calendar_ui.REFRESH_SELECTED_DATE);
+        mHandler.sendMessage(Message.obtain(mHandler, Calendar_ui.REFRESH_SELECTED_DATE, date));
+//        sendRefreshMsg(date, Calendar_ui.REFRESH_SELECTED_DATE);
         return selectedPosition;
     }
 
@@ -159,5 +162,12 @@ public class Calendar_Adapter extends BaseAdapter {
         cal.set(SECOND, 0);
         cal.set(MILLISECOND, 0);
     }
+
+	@Override
+	public void onTodaySelected() {
+		Calendar today = Calendar.getInstance(Locale.CHINA);
+		mHandler.sendMessage(Message.obtain(mHandler, Calendar_ui.REFRESH_SELECTED_DATE, today));
+		mHandler.sendMessage(Message.obtain(mHandler, Calendar_ui.MSG_RETURN, today));
+	}
 
 }

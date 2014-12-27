@@ -64,6 +64,7 @@ public class HuishenHttpClient {
 
 			// 新建HTTPOST
 			httppost = new HttpPost(url);
+			Log.w("Huishen", url);
 
 			// 新建参数
 			List<NameValuePair> nvps = new ArrayList<NameValuePair>();
@@ -84,7 +85,7 @@ public class HuishenHttpClient {
 
 			// 打开处理连接并返回
 			response = httpclient.execute(httppost);
-
+			Log.w("Huishen", response.getStatusLine().getStatusCode()+"");
 			// 判断是否请求成功
 			if (response.getStatusLine().getStatusCode() >= 200
 					&& response.getStatusLine().getStatusCode() < 300) {

@@ -142,7 +142,7 @@ public class JXDetailFragment extends BaseFragment implements SwipeRefreshLayout
             //封装一个拨打电话的intent，并且将电话号码包装成一个Uri对象传入
 			//（1）ACTION_CALL：直接拨号；
 			//（2）ACTION_DIAL：调用拨号程序，手工拨出。
-            Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:13558657902"));
+            Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:02887877236"));
             this.father.startActivity(intent);//内部类
 		}
 		

@@ -9,8 +9,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/main_head_back_marginleft"
-        android:layout_marginRight="@dimen/main_head_back_marginleft"
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
