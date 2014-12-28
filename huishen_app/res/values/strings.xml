@@ -14,6 +14,7 @@
     <!-- APP的服务URL -->
     <string name="webbaseurl">http://huishen1.wicp.net/</string>
     <!-- <string name="webbaseurl">http://192.168.0.210:8080/</string>  -->
+   <!--  <string name="webbaseurl">http://192.168.0.225:8080/</string>  -->
     <!--  
     <string name="webbaseurl">http://huishen.wicp.net/</string>-->
 

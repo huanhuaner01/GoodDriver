@@ -762,7 +762,7 @@ public class LuckDrawFragment extends BaseFragment implements SwipeRefreshLayout
 		Map<String, Object> param = new HashMap<String, Object>();
 		param.put("lotteryInfoId", lotteryInfoId);
 
-		param.put("mobileFlag",MyUtil.getUuid());
+		param.put("mobileFlag",father.readString("mobileFlag"));
         
 		param.put("operateurl", operurl);
 		param.put("encoding", father.getStringValue(R.string.encoding));
