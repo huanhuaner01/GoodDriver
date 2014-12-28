@@ -83,7 +83,7 @@ public class PrizeListActivity extends BaseActivity implements SwipeRefreshLayou
 
 			@Override
 			public void onClick(View arg0) {
-				String[] str = new String[]{"1.该代金券仅限好司机旗下合作驾校使用。","2.该代金券仅限科目二、科目三选课使用。","3.该代金卷不以兑换现金。","4.该代金券使用有效期为2014年12月30日至2015年12月31日","5.好司机学车网保留对此次活动的所有解释权。"};
+				String[] str = new String[]{"1.该代金券仅限好司机旗下合作驾校使用。","2.该代金券仅限科目二、科目三选课使用。","3.该代金券不以兑换现金。","4.该代金券使用有效期为2014年12月30日至2015年12月31日","5.好司机学车网保留对此次活动的所有解释权。"};
 				ArrayList<HashMap<String ,String>> array= new ArrayList<HashMap<String ,String>>();
 				for(int i = 0 ; i<str.length;i++){
 				HashMap<String ,String> map = new HashMap<String , String>();
@@ -165,7 +165,7 @@ public class PrizeListActivity extends BaseActivity implements SwipeRefreshLayou
 					      }
 					      map.put("icon", prizeid);
 					      map.put("prize", jobj.getJSONObject(i).getString("prizeName"));
-					      map.put("time", "获奖时间："+jobj.getJSONObject(i).getString("createTime"));
+					      map.put("time", "抽奖时间："+jobj.getJSONObject(i).getString("createTime"));
 					      data.add(map);
 						}
 						adapter.notifyDataSetChanged();

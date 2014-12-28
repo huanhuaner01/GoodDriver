@@ -147,19 +147,21 @@ public class RegistActivity extends BaseActivity {
 		nameparam.put("operateurl", getOperateURL(R.string.webbaseurl,
 				R.string.regist_url_checkusername));
 		nameparam.put("encoding", getStringValue(R.string.encoding));
-		
+//		param.put("mobileFlag",MyUtil.getUuid());
 		//身份证号
 		Map<String, Object> idparam = new HashMap<String, Object>();
 		idparam.put("licenceCode", idnumber.getText().toString());
 		idparam.put("operateurl", getOperateURL(R.string.webbaseurl,
 				R.string.regist_url_checkidnumber));
 		idparam.put("encoding", getStringValue(R.string.encoding));
+//		param.put("mobileFlag",MyUtil.getUuid());
 		//邮箱
 		Map<String, Object> emailparam = new HashMap<String, Object>();
 		emailparam.put("email", email.getText().toString());
 		emailparam.put("operateurl", getOperateURL(R.string.webbaseurl,
 				R.string.regist_url_checkemail));
 		emailparam.put("encoding", getStringValue(R.string.encoding));
+//		param.put("mobileFlag",MyUtil.getUuid());
 		//提交
 		Map<String, Object> commitparam = new HashMap<String, Object>();
 		/**
@@ -176,6 +178,7 @@ public class RegistActivity extends BaseActivity {
 		commitparam.put("operateurl", getOperateURL(R.string.webbaseurl,
 				R.string.regist_url_submit));
 		commitparam.put("encoding", getStringValue(R.string.encoding));
+//		param.put("mobileFlag",MyUtil.getUuid());
 		//添加进入列表
 		list.add(nameparam);
 		list.add(idparam);

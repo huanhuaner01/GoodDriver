@@ -12,9 +12,9 @@
     <string name="see_img_more">查看图文详情</string>
     <string name="see_more">查看更多</string>
     <!-- APP的服务URL -->
-    <string name="webbaseurl">http://huishen1.wicp.net/</string>
+    <string name="webbaseurl">http://huishen1.wicp.net/</string> 
     <!-- <string name="webbaseurl">http://192.168.0.210:8080/</string>  -->
-   <!--  <string name="webbaseurl">http://192.168.0.225:8080/</string>  -->
+    <!--  <string name="webbaseurl">http://192.168.0.225:8080/</string> -->
     <!--  
     <string name="webbaseurl">http://huishen.wicp.net/</string>-->
 
@@ -87,7 +87,7 @@
     <string name="main_menu_djt">大家团</string>
 
     <!-- main_lay 结束 -->
-
+    
 
     <!-- 在线预约 开始 -->
     <string name="book_title_text">在线预约</string>
@@ -157,6 +157,7 @@
     <!-- 大家团 -->
     <string name="wegroup_item_header_tv">所有团购</string>
     <string name="title_activity_we_group_detail">WeGroupDetailActivity</string>
+    
     <!-- 大家团详细 -->
     <string name="wegroup_detail_title">团购详细</string>
     <string name="wegroup_detail_header_des">大学生团(分期付款，无忧学车)</string>
