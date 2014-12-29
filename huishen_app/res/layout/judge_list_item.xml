@@ -12,11 +12,13 @@
        android:orientation="horizontal"
        > 
        <ImageView
+           android:id="@+id/judge_listitem_star"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:src="@drawable/star_five"
            />
        <TextView 
+           android:id="@+id/judge_listitem_stuname"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:textColor="@color/book_imitate_textcolornew"
@@ -26,6 +28,7 @@
            />
        </LinearLayout>
        <TextView
+           android:id="@+id/judge_listitem_content"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:textColor="@color/book_imitate_textcolornew"

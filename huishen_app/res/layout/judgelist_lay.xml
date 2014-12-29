@@ -3,7 +3,7 @@
      android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    android:layout_marginTop="@dimen/wegroup_detail_defualtmargin"
+    android:layout_marginTop="@dimen/lay_TopMargin"
     android:orientation="vertical" >
 
     <View
@@ -24,10 +24,10 @@
         android:layout_height="@dimen/tab_line"
         android:background="@color/main_title_background" />
 
-       <ListView
+       <com.huishen_app.all.mywidget.NoScrollListView
            android:id="@+id/judge_list"
            android:layout_width="match_parent"
-           android:layout_height="@dimen/jl_trainarea_listheight"
+           android:layout_height="wrap_content"
            android:divider="@color/wegroup_item_line_color"
            android:dividerHeight="@dimen/listview_divider_height"
            android:scrollbars="none"

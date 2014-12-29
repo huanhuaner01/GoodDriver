@@ -3,7 +3,7 @@
      android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    android:layout_marginTop="@dimen/wegroup_detail_defualtmargin"
+    android:layout_marginTop="@dimen/lay_TopMargin"
     android:orientation="vertical" >
 
     <View

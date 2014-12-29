@@ -11,8 +11,8 @@
     <color name="dialog_text_color">#ff393939</color>
     <color name="all_back_bt_press_color">#ffe71b1b</color>
     
-    <color name="Grey">#faf9f8</color>
-    <color name="Grey_line">#dddddd</color>
+    <color name="Grey">#f5f5f5</color>
+    <color name="Grey_line">#d8d8d8</color>
     <color name="red_dark">#da251c</color>
     <!-- 通用颜色结束 -->
     
@@ -172,7 +172,7 @@
     <color name="wegroup_item_class_tv_color">#6d6d6d</color>
     <color name="wegroup_item_price_tv_color">#e74100</color>
     <color name="wegroup_item_btn_price_color">#ff0000</color>
-    <color name="wegroup_item_line_color">#e1e1e1</color>
+    <color name="wegroup_item_line_color">#d8d8d8</color>
     <color name="wegroup_item_buttomtv_color">#b6b6b6</color>
     <!-- 积分商城 -->
     <color name="guaguaka_bgcolor">#e85a2f</color>

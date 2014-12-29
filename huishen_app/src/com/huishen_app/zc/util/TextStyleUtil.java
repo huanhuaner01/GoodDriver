@@ -43,7 +43,7 @@ public class TextStyleUtil {
 	    return spanString;  
 	} 
 	
-	//设置价格外观
+	//设置字体外观（加粗，换颜色，并且自定大小比例）
 	public static SpannableString setTextAppearanceSpan(Context context,String price ,float f) { 
 		if(price.equals("")){
 			return null;
@@ -57,6 +57,20 @@ public class TextStyleUtil {
 	    spanString.setSpan(new RelativeSizeSpan(f), 0, price.length(),Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
 	    return spanString;  
 	} 
+	
+	//str1正常显示 ，str2加粗，换颜色
+	public static SpannableString setTextAppearanceSpan(Context context,String str1 ,String str2) { 
+		if(str1.equals("")||str2.equals("")){
+			return null;
+		}
+	    SpannableString spanString = new SpannableString(str1+str2);  
+	    StyleSpan boldspan = new StyleSpan(Typeface.BOLD);
+	    ForegroundColorSpan colorspan = new ForegroundColorSpan(context.getResources().getColor(R.color.main_title_background));
+	    
+	    spanString.setSpan(boldspan, str1.length(), str2.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE); 
+	    spanString.setSpan(colorspan, str1.length(), str2.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+	    return spanString;  
+	}
 	
 	//设置文字删除线
 	public static void addStrikeSpan(TextView tv ,String str) {  

@@ -417,7 +417,7 @@ public class Book_dateselect_ui extends BaseActivity implements
 			obj.put("studyDate", date);
 			obj.put("studyTime", getTimeSlot(ars[1]));
 			obj.put("subject", kemu.equalsIgnoreCase("¿ÆÄ¿Èý") ? "2" : "1");
-			obj.put("payWay", "1");
+			obj.put("planWay", "1");
 			array.add(obj);
 		}
 		load_web_data_add(array);
