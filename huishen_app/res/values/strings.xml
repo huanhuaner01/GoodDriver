@@ -11,9 +11,9 @@
     <string name="consult">我要咨询</string>
     <string name="see_img_more">查看图文详情</string>
     <string name="see_more">查看更多</string>
-    <!-- APP的服务URL 
-    <string name="webbaseurl">http://huishen1.wicp.net/</string> -->
-    <!--  --><string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> 
+    <!-- APP的服务URL -->
+    <string name="webbaseurl">http://huishen1.wicp.net/</string> 
+    <!--  <string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> -->
     <!--  <string name="webbaseurl">http://192.168.2.128:8080/drivingSchool/</string> -->
     <!--  
     <string name="webbaseurl">http://huishen.wicp.net/</string> -->
@@ -30,7 +30,7 @@
     <string name="nullvalue"></string>
     <string name="img_desc"></string>
     <string name="head_back">返回</string>
-    <string name="app_name">好司机</string>
+    <string name="app_name">学车好司机</string>
     <string name="title_activity_login_ui">Login_ui</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_book_ui">Book_ui</string>

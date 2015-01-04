@@ -39,6 +39,7 @@ import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.util.AndroidUtil;
 import com.huishen_app.zc.util.DateStruct;
+import com.huishen_app.zh.netTool.NetUtil;
 
 public class Book_dateselect_ui extends BaseActivity implements
 		OnTouchListener, OnCheckedChangeListener, OnClickListener {
@@ -109,11 +110,14 @@ public class Book_dateselect_ui extends BaseActivity implements
 	}
 
 	private void load_web_data() {
-
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl,
 				R.string.get_jz_timeinfo);
 		// 登录10s超时 且只收一条消息
-		HanderListObject loginhander = new HanderListObject(6, true) {
+		HanderListObject loginhander = new HanderListObject(5, true) {
 			public void handleMessage(Message msg) {
 				if (msg.what == 13) {
 
@@ -308,7 +312,10 @@ public class Book_dateselect_ui extends BaseActivity implements
 	}
 
 	public void add_xuanke(View view) {
-
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		// 获取组件的大小
 		LinearLayout.LayoutParams c_params = new LinearLayout.LayoutParams(
 				LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
@@ -332,7 +339,7 @@ public class Book_dateselect_ui extends BaseActivity implements
 		String operurl = getOperateURL(R.string.webbaseurl,
 				R.string.get_jltime_price);
 		// 登录10s超时 且只收一条消息
-		HanderListObject loginhander = new HanderListObject(6, true) {
+		HanderListObject loginhander = new HanderListObject(5, true) {
 
 			public void handleMessage(Message msg) {
 
@@ -431,7 +438,10 @@ public class Book_dateselect_ui extends BaseActivity implements
 			startActivity(intent);
 			return;
 		}
-
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl,
 				R.string.get_addplan);
 		// 登录10s超时 且只收一条消息

@@ -16,6 +16,7 @@ import com.huishen_app.zc.ui.adapter.Book_TrainHistory_Adapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.ContentDialog_ui;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
+import com.huishen_app.zh.netTool.NetUtil;
 
 import android.annotation.SuppressLint;
 import android.os.Message;
@@ -79,10 +80,13 @@ public class TrainHisDetailActivity extends BaseActivity implements OnItemClickL
 
 	@Override
 	protected void initData() {
-		
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl, R.string.get_todetailurl);
 		// 登录10s超时 且只收一条消息
-		HanderListObject loginhander = new HanderListObject(5, true) {
+		HanderListObject loginhander = new HanderListObject(6, true) {
 			public void handleMessage(Message msg) {
 				if(msg.what==13){
 
@@ -196,7 +200,10 @@ public class TrainHisDetailActivity extends BaseActivity implements OnItemClickL
 	 * 点击list的响应事件
 	 */
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl, R.string.get_todeductioninfo);
 		// 登录10s超时 且只收一条消息
 		HanderListObject loginhander = new HanderListObject(5, true) {

@@ -29,6 +29,7 @@ import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.ui.dialog.SelectDialog_ui;
 import com.huishen_app.zc.ui.dialog.adapter.DialogItemSelectInterface;
 import com.huishen_app.zc.util.DateStruct;
+import com.huishen_app.zh.netTool.NetUtil;
 
 @SuppressLint("SimpleDateFormat")
 public class Book_imitate_ui extends BaseActivity implements
@@ -107,6 +108,10 @@ public class Book_imitate_ui extends BaseActivity implements
 	}
 
 	private void add_imitate(Map<String, Object> param) {
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl,
 				R.string.get_addmokao);
 		// 登录10s超时 且只收一条消息
@@ -174,6 +179,10 @@ public class Book_imitate_ui extends BaseActivity implements
 	}
 	
 	public void getPrice(){
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		if((!date.getText().toString().equals(""))&&(!kemu.getText().toString().equals(""))){
 			String operurl = getOperateURL(R.string.webbaseurl, R.string.get_imitateprice);
 			// 登录10s超时 且只收一条消息

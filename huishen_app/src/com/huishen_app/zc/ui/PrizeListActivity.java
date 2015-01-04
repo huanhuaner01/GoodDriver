@@ -13,6 +13,7 @@ import com.huishen_app.zc.ui.adapter.PrizeListAdapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.ui.dialog.MessageDialog_ui;
+import com.huishen_app.zh.netTool.NetUtil;
 
 import android.os.Bundle;
 import android.os.Message;
@@ -125,12 +126,15 @@ public class PrizeListActivity extends BaseActivity implements SwipeRefreshLayou
 		 * "phone":"123456","school":"长安训练场",
 		 * "sex":true,"stuId":11,"stuname":"张三"}
 		 */
-		
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = this
 				.getOperateURL(R.string.webbaseurl,
 				R.string.url_getlucklist);
 		// 登录10s超时 且只收一条消息
-		HanderListObject loginhander = new HanderListObject(10, true) {
+		HanderListObject loginhander = new HanderListObject(6, true) {
 			@Override
 			public void handleMessage(Message msg) {
 				if(msg.what==13){

@@ -31,7 +31,7 @@ public class UserCenterDetailActivity extends BaseActivity implements View.OnCli
 	public final static int LOGINCODE = 1000;
 	public final static String LoginstateName = "loginState";
 	private String TAG = "UserCenterDetailActivity";
-
+    
 	/** µÇÂ¼±êÖ¾ */
 	private boolean logintrage = true;
 	

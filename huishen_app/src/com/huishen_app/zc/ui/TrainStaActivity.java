@@ -21,6 +21,7 @@ import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zh.netTool.AppController;
+import com.huishen_app.zh.netTool.NetUtil;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -97,6 +98,10 @@ public class TrainStaActivity extends BaseActivity {
 
 	@Override
 	protected void initData() {
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		url = getOperateURL(R.string.webbaseurl, R.string.get_staurl);
        //使用Volley进行网络请求
 		HanderListObject loginhander = new HanderListObject(5, true) {

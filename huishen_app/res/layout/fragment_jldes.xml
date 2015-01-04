@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    
+     >
+    <include layout="@layout/header_withback" />
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jl_detail_tv_overleaf"
+        android:gravity="left"
+        android:padding="@dimen/wegroup_detail_defualtmargin"
+        android:textSize="@dimen/listview_defualt_tvsize"
+        android:textColor="@color/Grey_Text"
+        android:lineSpacingMultiplier="1.5"
+        /> 
+        
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="10dp"
+            /> 
+
+</LinearLayout>

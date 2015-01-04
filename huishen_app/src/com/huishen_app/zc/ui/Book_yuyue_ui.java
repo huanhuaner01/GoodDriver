@@ -17,6 +17,7 @@ import com.huishen_app.zc.operate_thread.GetHttpResultThread;
 import com.huishen_app.zc.ui.adapter.Book_YuYue_Adapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
+import com.huishen_app.zh.netTool.NetUtil;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -141,10 +142,14 @@ public class Book_yuyue_ui extends BaseActivity {
 	}
 
 	private void load_web_data(List<String> idlist) {
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl,
 				R.string.get_cancelplan);
 		// 登录10s超时 且只收一条消息
-		HanderListObject loginhander = new HanderListObject(12, true) {
+		HanderListObject loginhander = new HanderListObject(6, true) {
 			public void handleMessage(Message msg) {
 				if(msg.what == 13){
 					Toast.makeText(Book_yuyue_ui.this,"对不起，您已下线，请重新登录", Toast.LENGTH_SHORT).show();
@@ -182,6 +187,10 @@ public class Book_yuyue_ui extends BaseActivity {
 	}
 
 	private void load_web_data_resume() {
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
         //清空数据
 		book_xuyue_selected.clearChoices();
 		select_id.clear();

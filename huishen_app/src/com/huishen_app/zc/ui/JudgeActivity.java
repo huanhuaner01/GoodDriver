@@ -8,6 +8,7 @@ import com.huishen_app.all.alarmservice.HanderListObject;
 import com.huishen_app.zc.operate_thread.GetHttpResultThread;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
+import com.huishen_app.zh.netTool.NetUtil;
 
 import android.os.Bundle;
 import android.os.Message;
@@ -136,11 +137,14 @@ public class JudgeActivity extends BaseActivity implements OnRatingBarChangeList
 		//如何处理评星0分问题
 		
 		//提交评价
-		
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl,
 				R.string.submit_judgeurl);
 		// 登录10s超时 且只收一条消息
-		HanderListObject commithander = new HanderListObject(10, true) {
+		HanderListObject commithander = new HanderListObject(6, true) {
 			public void handleMessage(Message msg) {
 				if (msg.what == 13) {
 

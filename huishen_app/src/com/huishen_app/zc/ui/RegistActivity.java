@@ -10,6 +10,7 @@ import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.util.MyUtil;
 import com.huishen_app.zc.util.VerifyIdCard;
+import com.huishen_app.zh.netTool.NetUtil;
 
 import android.os.Message;
 import android.util.Log;
@@ -118,8 +119,12 @@ public class RegistActivity extends BaseActivity {
 	
 	
 	public void CheckCommit(){
-		// 登录10s超时 且只收一条消息
-		HanderListObject loginhander = new HanderListObject(10, true) {
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
+		// 登录6s超时 且只收一条消息
+		HanderListObject loginhander = new HanderListObject(6, true) {
 			public void handleMessage(Message msg) {
 			
 			if (msg.what == 11) {

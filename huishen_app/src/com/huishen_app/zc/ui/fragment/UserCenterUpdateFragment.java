@@ -28,6 +28,7 @@ import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.util.MyUtil;
+import com.huishen_app.zh.netTool.NetUtil;
 
 @SuppressLint("ValidFragment")
 public class UserCenterUpdateFragment extends BaseFragment {
@@ -114,6 +115,10 @@ public class UserCenterUpdateFragment extends BaseFragment {
 			Toast.makeText(father, "电话号码不符合规范", Toast.LENGTH_SHORT).show();
 			return;
 		}
+		if(!NetUtil.isNetworkConnected(this.father)){
+			Toast.makeText(this.father, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 //		String operurl = "http://192.168.0.100:8080/Test/TestServlet";
 		String operurl = father.getOperateURL(R.string.webbaseurl, R.string.url_user_update);
 		// 登录10s超时 且只收一条消息
@@ -151,7 +156,7 @@ public class UserCenterUpdateFragment extends BaseFragment {
 					} catch (JSONException e) {
 						
 						e.printStackTrace();
-						Toast.makeText(father, "网络异常，修改失败",
+						Toast.makeText(father, "数据异常，修改失败",
 								Toast.LENGTH_SHORT).show();
 					}
 					// {"addr":"电子科大","id":1,"licence":"C1","name":"杨俊",
@@ -202,6 +207,10 @@ public class UserCenterUpdateFragment extends BaseFragment {
 	 * 修改地址
 	 */
 	private void updateAddr() {
+		if(!NetUtil.isNetworkConnected(this.father)){
+			Toast.makeText(this.father, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String newphone = edit.getText().toString();
 //		String operurl = "http://192.168.0.100:8080/Test/TestServlet";
 		String operurl = father.getOperateURL(R.string.webbaseurl, R.string.url_user_update);

@@ -20,6 +20,7 @@ import com.huishen_app.zc.ui.TrainHisDetailActivity;
 import com.huishen_app.zc.ui.adapter.Book_TrainHistory_Adapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
+import com.huishen_app.zh.netTool.NetUtil;
 import com.huishen_app.zh.ui.Chart.ChartBean;
 import com.huishen_app.zh.ui.Chart.ChartLineBean;
 import com.huishen_app.zh.ui.Chart.ZhChart;
@@ -171,6 +172,10 @@ public class TrainHisFragment extends BaseFragment implements
 		 * ,"2014-11-19 07:00:00","2014-11-18 07:00:00","2014-11-17 07:00:00"
 		 * ,"2014-11-16 07:00:00","2014-11-15 07:00:00"]}
 		 */
+		if(!NetUtil.isNetworkConnected(this.father)){
+			Toast.makeText(this.father, "Õ¯¬ÁŒ¥¡¨Ω”", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		// ’€œﬂÕºurl
 		String operurl = father.getOperateURL(R.string.webbaseurl,
 				R.string.get_sub2trainurl);

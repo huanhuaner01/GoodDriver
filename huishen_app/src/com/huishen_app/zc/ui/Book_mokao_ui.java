@@ -15,6 +15,7 @@ import com.huishen_app.zc.operate_thread.GetHttpResultThread;
 import com.huishen_app.zc.ui.adapter.Book_Mokao_Adapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
+import com.huishen_app.zh.netTool.NetUtil;
 
 import android.content.Intent;
 import android.os.Message;
@@ -108,6 +109,10 @@ public class Book_mokao_ui extends BaseActivity {
 	}
 
 	private void load_web_data() {
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "ÍøÂçÎ´Á¬½Ó", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl,
 				R.string.get_imitate);
 

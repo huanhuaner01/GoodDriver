@@ -40,6 +40,7 @@ import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.ui.dialog.MessageDialog_ui;
 import com.huishen_app.zc.util.AndroidUtil;
 import com.huishen_app.zc.util.MyUtil;
+import com.huishen_app.zh.netTool.NetUtil;
 /**
  * 积分抽奖
  * @author zhanghuan
@@ -613,7 +614,10 @@ public class LuckDrawFragment extends BaseFragment implements SwipeRefreshLayout
 		 * "phone":"123456","school":"长安训练场",
 		 * "sex":true,"stuId":11,"stuname":"张三"}
 		 */
-		
+		if(!NetUtil.isNetworkConnected(this.father)){
+			Toast.makeText(this.father, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = LuckDrawFragment.this.father.getOperateURL(R.string.webbaseurl,
 				R.string.url_getluckinfo);
 		// 登录10s超时 且只收一条消息
@@ -694,7 +698,10 @@ public class LuckDrawFragment extends BaseFragment implements SwipeRefreshLayout
 	}
 	/** 获取奖品 */
 	private void getPrizeResult() {
-		
+		if(!NetUtil.isNetworkConnected(this.father)){
+			Toast.makeText(this.father, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = LuckDrawFragment.this.father.getOperateURL(R.string.webbaseurl,
 				R.string.url_getluckresult);
 		// 登录10s超时 且只收一条消息

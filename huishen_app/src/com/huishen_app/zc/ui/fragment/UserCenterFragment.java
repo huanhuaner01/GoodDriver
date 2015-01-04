@@ -30,6 +30,7 @@ import com.huishen_app.zc.ui.UserCenterDetailActivity;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zh.netTool.AppController;
+import com.huishen_app.zh.netTool.NetUtil;
 
 @SuppressLint("ValidFragment")
 public class UserCenterFragment extends BaseFragment implements OnClickListener {
@@ -197,6 +198,10 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 			Log.i(TAG, "头像为空");
 			return ;
 			
+		}
+		if(!NetUtil.isNetworkConnected(this.father)){
+			Toast.makeText(this.father, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
 		}
 		AppController.getInstance().getRequestQueue().getCache().remove(url);
 		Log.i(TAG, "url"+url);
