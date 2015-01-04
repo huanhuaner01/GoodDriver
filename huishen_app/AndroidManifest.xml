@@ -154,7 +154,7 @@
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >
         </activity>
         <activity
-            android:name=".fragment.UserCenterDetailFragment"
+            android:name=".UserCenterDetailActivity"
             android:label="@string/title_activity_user_center_detail_fragment"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >

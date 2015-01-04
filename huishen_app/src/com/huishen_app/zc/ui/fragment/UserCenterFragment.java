@@ -26,6 +26,7 @@ import com.huishen_app.zc.ui.PrizeListActivity;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.TrainHisTabActivity;
 import com.huishen_app.zc.ui.TrainStaActivity;
+import com.huishen_app.zc.ui.UserCenterDetailActivity;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zh.netTool.AppController;
@@ -108,15 +109,6 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 		if(father.readString("city")!= null &&!father.readString("city").equals("")){
 			city.setText(father.readString("city").toString());
 		}
-//		city.setOnClickListener(new OnClickListener(){
-//
-//			@Override
-//			public void onClick(View arg0) {
-//				Intent i = new Intent(father ,LocationActivity.class);
-//				father.startActivity(i);
-//			}
-//			
-//		});
 		title.setText("个人中心");
 		// 行布局
 		int width = father.getWidth() > 100 ? father.getWidth() : 200;
@@ -147,7 +139,7 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 		}
 		tip1.setText(father.readString("yuyuenum")); 
 		tip2.setText(father.readString("testnum")); 
-		getUserPhoto(json.getString("path"));
+		getUserPhoto(this.father.readString("path"));
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -177,7 +169,7 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 			startActivity(i);
 		} else if (v.getId() == R.id.usercenter_center_info_bg) {
 			
-			Intent i = new Intent(father, UserCenterDetailFragment.class);
+			Intent i = new Intent(father, UserCenterDetailActivity.class);
 			 startActivityForResult(i, 0);
 		}else if (v.getId() == R.id.user_center_train_his) {
 			if(!this.father.readString("roleId").equals("6")){
@@ -201,6 +193,11 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 	public void getUserPhoto(String path){
 //		String url = "http://huishen.wicp.net/jxsys/attchment/images//IMG_201411051128290188114.jpg";
 		String url = getString(R.string.webbaseurl)+path;
+		if(path.equals("")){
+			Log.i(TAG, "头像为空");
+			return ;
+			
+		}
 		AppController.getInstance().getRequestQueue().getCache().remove(url);
 		Log.i(TAG, "url"+url);
 		ImageLoader imageLoader = AppController.getInstance().getImageLoader();

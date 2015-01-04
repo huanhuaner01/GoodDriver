@@ -70,7 +70,7 @@ public class MessageDialog_ui extends Dialog implements View.OnClickListener{
 		case 0 :
 		if(isluck){ 
 			message.setText("¹§Ï²Äú»ñµÃ");
-			message.append(TextStyleUtil.setTextAppearanceSpan(this.activity,this.content, 1.0f));
+			message.append(TextStyleUtil.getTextAppearanceSpan(this.activity,this.content, 1.0f));
 			message.append("½±Àø") ;
 		}else{
 			message.setText(this.content);

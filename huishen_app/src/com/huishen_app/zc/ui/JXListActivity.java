@@ -44,7 +44,7 @@ public class JXListActivity extends BaseActivity implements SwipeRefreshLayout.O
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("jxname", "蜀鹃驾校");
 		map.put("addr", "郫县红光镇川交厂内     >2km");
-		map.put("price", TextStyleUtil.setTextAppearanceSpan(this, "3999"));
+		map.put("price", TextStyleUtil.getTextAppearanceSpan(this, "3999"));
 		listview_date.add(map);
         
 		adapter = new JX_Search_Adapter(this, listview_date,

@@ -10,17 +10,18 @@
    <LinearLayout
        android:layout_width="0dp"
        android:layout_height="match_parent"
-       android:layout_weight="10"
+       android:layout_weight="5"
        android:orientation="vertical"
        >
        <TextView
            android:id="@+id/trainarea_listitem_area"
            android:layout_width="match_parent"
            android:layout_height="0dp"
-           android:layout_weight="2"
+           android:layout_weight="1.7"
            android:textColor="@color/black"
            android:text="公交驾校（交大校场）"
-           android:textSize="@dimen/jl_name_textsize"
+           android:textSize="@dimen/listview_defualt_tvsize"
+           android:gravity="center_vertical"
            />
          <TextView
            android:id="@+id/trainarea_listitem_addr"
@@ -28,7 +29,8 @@
            android:layout_height="0dp"
            android:layout_weight="1"
            android:text="地址：成都信息工程学院航空港校区"
-           android:textSize="@dimen/jl_score_destsize"
+           android:textSize="@dimen/listview_defualt_tvsize"
+           android:textColor="@color/Grey_Text"
            />
           <TextView
               android:id="@+id/trainarea_listitem_tel"
@@ -36,13 +38,27 @@
            android:layout_height="0dp"
            android:layout_weight="1"
            android:text="电话：028-8888444"
-           android:textSize="@dimen/jl_score_destsize"
+           android:textSize="@dimen/listview_defualt_tvsize"
+           android:textColor="@color/Grey_Text"
            />
       </LinearLayout>
-          <View
-             android:layout_width="@dimen/see_more_iconwidth"
-             android:layout_height="@dimen/see_more_iconheight"
-             android:background="@drawable/all_go_icon"
+               <View
+             android:layout_width="@dimen/listview_divider_height"
+             android:layout_height="match_parent"
+             android:background="@color/Grey_line"
              android:layout_gravity="center_vertical"
              />
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_weight="1.2"
+               android:gravity="center"
+               >
+          <View
+             android:layout_width="@dimen/gpsicon_list_width"
+             android:layout_height="@dimen/gpsicon_list_height"
+             android:background="@drawable/gps_ic"
+             android:layout_gravity="center_vertical"
+             />
+          </LinearLayout>
 </LinearLayout>

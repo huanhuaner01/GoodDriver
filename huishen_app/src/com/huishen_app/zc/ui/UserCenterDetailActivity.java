@@ -1,4 +1,4 @@
-package com.huishen_app.zc.ui.fragment;
+package com.huishen_app.zc.ui;
 
 import net.sf.json.JSONObject;
 import android.content.Intent;
@@ -15,14 +15,14 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageLoader.ImageContainer;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
 import com.huishen_app.all.mywidget.RoundImageView;
-import com.huishen_app.zc.ui.Login_ui;
-import com.huishen_app.zc.ui.Main_fragment_ui;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
+import com.huishen_app.zc.ui.fragment.UserCenterUpdateFragment;
 import com.huishen_app.zh.netTool.AppController;
+import com.huishen_app.zh.netTool.NetUtil;
 
-public class UserCenterDetailFragment extends BaseActivity implements View.OnClickListener{
+public class UserCenterDetailActivity extends BaseActivity implements View.OnClickListener{
     private TextView name,sex,license,idnum,tel,addr ,header_title; //个人基本信息
     private RoundImageView img ;//头像
     private Button unlogin  ; //注销
@@ -30,6 +30,7 @@ public class UserCenterDetailFragment extends BaseActivity implements View.OnCli
     
 	public final static int LOGINCODE = 1000;
 	public final static String LoginstateName = "loginState";
+	private String TAG = "UserCenterDetailActivity";
 
 	/** 登录标志 */
 	private boolean logintrage = true;
@@ -72,7 +73,7 @@ public class UserCenterDetailFragment extends BaseActivity implements View.OnCli
         tel.setText(json.getString("phone"));
         addr.setText(json.optString("address","暂无"));
         //图片加载
-        getUserPhoto(json.getString("path"));
+        getUserPhoto(readString("path"));
 	}
 
 	@Override
@@ -157,15 +158,25 @@ public class UserCenterDetailFragment extends BaseActivity implements View.OnCli
 	
     /**  重新登录获取个人信息*/
 	private void updateInfo() {
-		initData();
+		initData(); 
 	}
 
 	//图片加载
 	public void getUserPhoto(String path){
+		
+		if(path.equals("")){
+			Log.i(TAG, "头像为空");
+			return ;
+			
+		}
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String url = getString(R.string.webbaseurl)+path;
-		Log.e(TAG, "url"+url);
+		Log.i(TAG, "url:"+url);
 		ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-		dialog = new LoadingDialog_ui(UserCenterDetailFragment.this, R.style.loadingstyle,
+		dialog = new LoadingDialog_ui(UserCenterDetailActivity.this, R.style.loadingstyle,
 				R.layout.dialog_loading_lay);
 		dialog.setCancelable(false);
 		dialog.show();
@@ -175,7 +186,6 @@ public class UserCenterDetailFragment extends BaseActivity implements View.OnCli
 		    @Override
 		    public void onErrorResponse(VolleyError error) {
 		    	dialog.dismiss();
-//		        Toast.makeText(UserCenterDetailFragment.this, "错误信息："+error.getMessage(), Toast.LENGTH_SHORT).show();
 		    }
 
 		    @Override

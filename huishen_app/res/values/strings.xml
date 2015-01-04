@@ -11,12 +11,12 @@
     <string name="consult">我要咨询</string>
     <string name="see_img_more">查看图文详情</string>
     <string name="see_more">查看更多</string>
-    <!-- APP的服务URL -->
-    <string name="webbaseurl">http://huishen1.wicp.net/</string> 
-    <!-- <string name="webbaseurl">http://192.168.0.210:8080/</string>  -->
-    <!--  <string name="webbaseurl">http://192.168.0.225:8080/</string> -->
+    <!-- APP的服务URL 
+    <string name="webbaseurl">http://huishen1.wicp.net/</string> -->
+    <!--  --><string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> 
+    <!--  <string name="webbaseurl">http://192.168.2.128:8080/drivingSchool/</string> -->
     <!--  
-    <string name="webbaseurl">http://huishen.wicp.net/</string>-->
+    <string name="webbaseurl">http://huishen.wicp.net/</string> -->
 
     <!-- 学生可以选择的有哪些 istu/queryTeacherLessonInfo.do -->
     <string name="get_jz_timeinfo">mobile/queryTeacherTimePlan</string>
@@ -202,6 +202,7 @@
 \n6.好司机学车网保留对此次活动的所有解释权。</string>
 
     <!-- 找教练 -->
+    <string name="jl_detail">教练详情</string>
     <string name="jl_detail_header_seniority">教龄(年)</string>
     <string name="jl_detail_header_score">评价(分)</string>
     <string name="jl_detail_header_judgenum">评价(条)</string>

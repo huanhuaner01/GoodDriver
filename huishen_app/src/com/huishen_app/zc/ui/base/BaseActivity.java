@@ -430,6 +430,8 @@ public abstract class BaseActivity extends FragmentActivity {
 		try {
 			saveString("user_id", json.get("stuId").toString());
 			saveString("login_result", json.toString());
+			saveString("path",json.optString("path", ""));
+			Log.i("ÕýÔÚ±£´æ", json.toString());
 			saveString("roleId",json.getInt("roleId")+"");
 			saveString("yuyuenum",json.optInt("lessonInfocount", 0)+"");
 			saveString("testnum",json.optInt("Testcount",0)+"");

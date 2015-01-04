@@ -25,7 +25,7 @@ public class JX_Search_Adapter extends SimpleAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = super.getView(position, convertView, parent);
 	    TextView tv = (TextView)view.findViewById(R.id.jx_select_price) ;
-	    tv.setText(TextStyleUtil.setTextAppearanceSpan(context, data.get(position).get("price").toString()));
+	    tv.setText(TextStyleUtil.getTextAppearanceSpan(context, data.get(position).get("price").toString()));
 	    tv.append("Æð");
 		return view ;
 	}

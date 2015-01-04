@@ -34,7 +34,7 @@ public class KeyValueAdapter extends SimpleAdapter {
 		try{
 	    TextView value = (TextView)view.findViewById(R.id.item_value);
 	    if((Boolean) data.get(position).get("islight")){
-	    	value.setText(TextStyleUtil.setTextAppearanceSpan(context, data.get(position).get("value").toString(), 1.2f));
+	    	value.setText(TextStyleUtil.getTextAppearanceSpan(context, data.get(position).get("value").toString(), 1.2f));
 	    }
 	    else{
 	    	value.setText(data.get(position).get("value").toString());

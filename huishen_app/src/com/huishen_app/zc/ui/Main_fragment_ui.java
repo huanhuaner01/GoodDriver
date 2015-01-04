@@ -79,23 +79,23 @@ public class Main_fragment_ui extends BaseActivity {
 			new_center = new UserCenterFragment(this);
 			switchcontent(homeTabBook, new_center);
 		} else if (homeTabBook == R.id.home_tab_djt) {
-//			DisPlay("敬请期待!" + homeTabBook, true);
-			new_center = new WeGroupFragment(this);
-			switchcontent(homeTabBook, new_center);
+			DisPlay("敬请期待!" + homeTabBook, true);
+//			new_center = new WeGroupFragment(this);
+//			switchcontent(homeTabBook, new_center);
 			
 		} else if (homeTabBook == R.id.main_menu_zjx) {
 			((ButtomFragment) buttom).clearcheck();
-
+//			DisPlay("敬请期待!" + homeTabBook, true);
 			// 打开找驾校
 				Intent i = new Intent(Main_fragment_ui.this ,JXListActivity.class);
 				startActivity(i);
 
 		} else if (homeTabBook == R.id.main_menu_zjl) {
 			((ButtomFragment) buttom).clearcheck();
-//			DisPlay("敬请期待!" + homeTabBook, true);
+			DisPlay("敬请期待!" + homeTabBook, true);
 			// 打开找教练 
-				Intent i = new Intent(Main_fragment_ui.this ,JLListActivity.class);
-				startActivity(i);
+//				Intent i = new Intent(Main_fragment_ui.this ,JLListActivity.class);
+//				startActivity(i);
 				
 		} else if (homeTabBook == R.id.main_menu_zxyy) {
 			if (Main_fragment_ui.getLoginhttpclient() == null) {

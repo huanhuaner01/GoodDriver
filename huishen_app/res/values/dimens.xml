@@ -15,6 +15,11 @@
     <dimen name="see_more_iconheight">15dp</dimen>
     <dimen name="lay_TopMargin">16dp</dimen>
     
+    <!-- listview的基本文字大小   -->
+    <dimen name="listview_defualt_tvsize">14sp</dimen>
+    <dimen name="listview_big_tvsize">16sp</dimen>
+    <dimen name="listview_small_tvsize">12sp</dimen>
+    
     <!-- listview间隔线 -->
     <dimen name="listview_divider_height">0.5dp</dimen>
     <!-- 所有listview 间隔线高度 -->
@@ -23,7 +28,7 @@
     <dimen name="listview_divider_bottom_height">1dp</dimen>
     <!-- list的高度 -->
     <dimen name="list_height">65dp</dimen>
-    <dimen name="list_bigheight">90dp</dimen>
+    <dimen name="list_bigheight">100dp</dimen>
     <!-- list里面选中按钮的大小 -->
     <dimen name="list_checkbox_size">20dp</dimen>
     <!-- 所有listview间隔下部分的 高度 -->
@@ -257,11 +262,12 @@
     <dimen name="prizelist_item_iconheight">80dp</dimen>
     <dimen name="prizelist_item_iconwidth">160dp</dimen>
     <!-- 找驾校 -->
-    <dimen name="jl_name_textsize">14sp</dimen>
-    <dimen name="jl_score_textsize">16sp</dimen>
-    <dimen name="jl_score_destsize">12sp</dimen>
     <dimen name="jl_detail_photo_width">100dp</dimen>
     <dimen name="jl_detail_photo_height">115dp</dimen>
     <dimen name="jl_trainarea_listheight">160dp</dimen>
     <dimen name="jl_judgetv_paddingleft">20dp</dimen>
+    
+    <!-- 定位图标放到listview big高度的情况下的标准大小 -->
+    <dimen name="gpsicon_list_width">18dp</dimen>
+    <dimen name="gpsicon_list_height">23dp</dimen>
 </resources>

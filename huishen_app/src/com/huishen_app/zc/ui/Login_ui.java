@@ -25,6 +25,7 @@ import com.huishen_app.zc.operate_thread.LoginThread;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.util.MyUtil;
+import com.huishen_app.zh.netTool.NetUtil;
 
 public class Login_ui extends BaseActivity {
 
@@ -134,11 +135,14 @@ public class Login_ui extends BaseActivity {
 		 * "phone":"123456","school":"长安训练场",
 		 * "sex":true,"stuId":11,"stuname":"张三"}
 		 */
-		
+		if(!NetUtil.isNetworkConnected(this)){
+			Toast.makeText(this, "网络未连接", Toast.LENGTH_SHORT).show();
+			return ;
+		}
 		String operurl = getOperateURL(R.string.webbaseurl,
 				R.string.loginurl_new);
 		// 登录10s超时 且只收一条消息
-		HanderListObject loginhander = new HanderListObject(10, true) {
+		HanderListObject loginhander = new HanderListObject(5, true) {
 			@Override
 			public void handleMessage(Message msg) {
 				
@@ -149,7 +153,12 @@ public class Login_ui extends BaseActivity {
 						
 						jobj = new JSONObject(msg.obj.toString());
 						Log.i(TAG, jobj.toString());
-						saveData(jobj);
+						int status = jobj.getInt("status");
+						if(status == 0){
+							Toast.makeText(Login_ui.this,jobj.getString("info") ,
+									Toast.LENGTH_SHORT).show();
+						}else{
+						saveData(jobj.getJSONObject("info"));
 						
 						saveString("username",user.getText().toString());
 						saveString("password",remenberState?password.getText().toString():"");
@@ -161,17 +170,14 @@ public class Login_ui extends BaseActivity {
 
 						logintrage = true;
 						Login_ui.this.finish();
+						}
 					} catch (JSONException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					// {"addr":"电子科大","id":1,"licence":"C1","name":"杨俊",
 					// "path":"/attchment/images/IMG_2014092216410302242395.jpg",
 					// "phone":"13403150491","teacherId":"00000001"}
 					// 保存用户ID
-
-	
-
 				} else {
 					Toast.makeText(Login_ui.this, msg.obj + "",
 							Toast.LENGTH_SHORT).show();

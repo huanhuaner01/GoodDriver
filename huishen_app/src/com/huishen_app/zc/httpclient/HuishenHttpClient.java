@@ -17,6 +17,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 
+import com.huishen_app.zh.netTool.NetUtil;
+
 import android.util.Log;
 
 public class HuishenHttpClient {

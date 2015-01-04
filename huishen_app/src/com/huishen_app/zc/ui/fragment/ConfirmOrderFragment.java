@@ -77,7 +77,7 @@ public class ConfirmOrderFragment extends BaseFragment {
 		KeyValueAdapter adapter = new KeyValueAdapter(this.father ,data ,R.layout.confirm_order_listitem ,from ,to );
 		list.setAdapter(adapter);
 		//设置总价
-		this.total.append(TextStyleUtil.setTextAppearanceSpan(this.father ,"2541"));
+		this.total.append(TextStyleUtil.getTextAppearanceSpan(this.father ,"2541"));
 		this.total.append("节省（2000）");
 		this.submmit.setOnClickListener(new OnClickListener(){
 

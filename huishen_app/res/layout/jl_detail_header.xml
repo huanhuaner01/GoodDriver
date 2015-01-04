@@ -34,7 +34,7 @@
                 android:singleLine="true"
                 android:text="王安石（蜀娟驾校）"
                 android:textColor="@color/jx_listview_item_title"
-                android:textSize="@dimen/jl_name_textsize"
+                android:textSize="@dimen/listview_big_tvsize"
                 android:textStyle="bold" />
             <!-- 报名价格 -->
 
@@ -45,7 +45,7 @@
                 android:layout_weight="1"
                 android:singleLine="true"
                 android:text="@string/wegroup_detail_price_pre"
-                android:textSize="@dimen/jl_score_destsize"
+                android:textSize="@dimen/listview_small_tvsize"
                 android:gravity="center_vertical"
                  />
             <!-- 教练能力等级 -->

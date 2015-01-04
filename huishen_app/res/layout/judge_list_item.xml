@@ -24,7 +24,7 @@
            android:textColor="@color/book_imitate_textcolornew"
            android:text="(XXX学员)"
            android:paddingLeft="@dimen/jl_judgetv_paddingleft"
-           android:textSize="@dimen/jl_name_textsize"
+           android:textSize="@dimen/listview_defualt_tvsize"
            />
        </LinearLayout>
        <TextView
@@ -34,7 +34,7 @@
            android:textColor="@color/book_imitate_textcolornew"
            android:text="教练人好，认真负责"
            android:layout_marginTop="@dimen/wegroup_detail_defualtmargin"
-           android:textSize="@dimen/jl_name_textsize"
+           android:textSize="@dimen/listview_defualt_tvsize"
            android:ellipsize="end"
            android:singleLine = "true"
            />
