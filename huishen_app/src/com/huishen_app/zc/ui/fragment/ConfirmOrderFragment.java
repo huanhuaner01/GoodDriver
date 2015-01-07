@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.adapter.KeyValueAdapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.util.TextStyleUtil;
+import com.huishen_app.zh.util.TextStyleUtil;
 /**
  * 订单确认界面时间
  * @author zhanghuan

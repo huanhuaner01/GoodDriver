@@ -57,14 +57,19 @@ public class JLListActivity extends BaseActivity implements SwipeRefreshLayout.O
 		int[] to = {};
 		listview_date = new ArrayList<Map<String, Object>>();
 		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("photo","http://preview.quanjing.com/mf025/mf700-00609711.jpg");
 		listview_date.add(map);
 		map = new HashMap<String, Object>();
+		map.put("photo","http://img5.imgtn.bdimg.com/it/u=3793805207,3272353858&fm=21&gp=0.jpg");
 		listview_date.add(map);
 		map = new HashMap<String, Object>();
+		map.put("photo","http://pic1.win4000.com/pic/1/ac/1fb0489694.jpg");
 		listview_date.add(map);
 		map = new HashMap<String, Object>();
+		map.put("photo","http://preview.quanjing.com/mf025/mf700-00609710.jpg");
 		listview_date.add(map);
 		map = new HashMap<String, Object>();
+		map.put("photo","http://preview.quanjing.com/mf025/mf700-00609701.jpg");
 		listview_date.add(map);
 
 		adapter = new JL_Search_Adapter(this, listview_date,
@@ -102,7 +107,6 @@ public class JLListActivity extends BaseActivity implements SwipeRefreshLayout.O
 
 	@Override
 	protected void initData() {
-		// TODO Auto-generated method stub
 		
 	}
 	

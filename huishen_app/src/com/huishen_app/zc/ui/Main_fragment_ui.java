@@ -9,6 +9,7 @@ import com.huishen_app.zc.ui.fragment.CenterFragment;
 import com.huishen_app.zc.ui.fragment.UserCenterFragment;
 import com.huishen_app.zc.ui.fragment.WeGroupFragment;
 import com.huishen_app.zh.netTool.AppController;
+import com.huishen_app.zh.util.DataCleanManager;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -186,8 +187,11 @@ public class Main_fragment_ui extends BaseActivity {
 
 	@Override
 	protected void onStop() {
+		
 		AppController.getInstance().getRequestQueue().cancelAll(getApplicationContext());
 		AppController.getInstance().getRequestQueue().getCache().clear();
+		AppController.getInstance().getRequestQueue().stop();
+		DataCleanManager.cleanInternalCache(getApplicationContext());
 		super.onStop();
 	}
 	@Override

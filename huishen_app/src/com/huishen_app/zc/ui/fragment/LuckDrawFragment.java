@@ -38,9 +38,9 @@ import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.ui.dialog.MessageDialog_ui;
-import com.huishen_app.zc.util.AndroidUtil;
-import com.huishen_app.zc.util.MyUtil;
 import com.huishen_app.zh.netTool.NetUtil;
+import com.huishen_app.zh.util.AndroidUtil;
+import com.huishen_app.zh.util.MyUtil;
 /**
  * »ý·Ö³é½±
  * @author zhanghuan

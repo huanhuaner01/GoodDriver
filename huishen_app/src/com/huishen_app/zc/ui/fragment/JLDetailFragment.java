@@ -5,29 +5,44 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.huishen_app.all.mywidget.NoScrollListView;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.util.TextStyleUtil;
+import com.huishen_app.zh.util.TextStyleUtil;
 /**
  * 教练详情界面
  * @author zhanghuan
  *
  */
-public class JLDetailFragment extends BaseFragment {
+public class JLDetailFragment extends BaseFragment implements View.OnClickListener{
     private View RootView ;  //根组件
     /**标题，教练名字，报名价格，教龄，评分成绩，评价数量 ,教练简介，学车流程*/
     private TextView title ,jlname , price ,drivingYear ,score ,judgenum ,jldes ,overleaf ; 
     private NoScrollListView jugeList  , trainList; //评价列表，培训场地列表
+    /** 教练图文详情查看更多 ， 训练场地查看更多 ，评价查看更多 */
+    private LinearLayout desMore ,trainareaMore ,judgeMore ; 
+    
+    /** 立即报名按钮，我要咨询按钮  */
+    private Button signUp , consult ;
+    
     private ArrayList<Map<String ,Object>> judgeListData ,trainareaListDate ; //评价数据  ，培训场地数据
     private SimpleAdapter judgeAdapter , trainareaAdapter ;  //评价列表适配器，培训场地适配器
+    
+    /** 显示listFragment(这里作为二级fragment) */
+    private ListFragment fragment ; 
+    
 	public JLDetailFragment(BaseActivity father) {
 		super(father);
 	}
@@ -61,6 +76,12 @@ public class JLDetailFragment extends BaseFragment {
 		overleaf = (TextView)RootView.findViewById(R.id.wegroup_detail_tv_overleaf);
 		jugeList = (NoScrollListView)RootView.findViewById(R.id.judge_list);
 		trainList = (NoScrollListView)RootView.findViewById(R.id.trainarea_list);
+		desMore = (LinearLayout)RootView.findViewById(R.id.jl_detail_des_more) ;
+		trainareaMore = (LinearLayout)RootView.findViewById(R.id.trainarea_seemore);
+		judgeMore = (LinearLayout)RootView.findViewById(R.id.judge_seemore) ;
+		signUp = (Button)RootView.findViewById(R.id.jl_detail_btn_signup);
+		consult = (Button)RootView.findViewById(R.id.jl_detail_btn_consult) ;
+		
 	}
  
 	
@@ -100,6 +121,16 @@ public class JLDetailFragment extends BaseFragment {
 		}
 		trainareaAdapter = new SimpleAdapter(this.father,trainareaListDate ,R.layout.trainarea_list_item ,tfrom , tto);
 		trainList.setAdapter(trainareaAdapter);
+		//立即报名，我要咨询监听事件
+		signUp.setOnClickListener(this);
+		consult.setOnClickListener(this);
+		//设置教练图文详情查看更多监听事件
+		desMore.setOnClickListener(this);
+		//设置训练场地查看更多监听事件
+		trainareaMore.setOnClickListener(this);
+		//设置评价查看更多监听事件
+		judgeMore.setOnClickListener(this) ;
+		
 	}
 	
 	
@@ -145,6 +176,52 @@ public class JLDetailFragment extends BaseFragment {
 		 this.overleaf.append(Html.fromHtml(des));
 		}
 	}
-	
+
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()){
+		//切换到教练图文详情页面
+		case R.id.jl_detail_des_more: 
+			fragment = new ListFragment(this.father ,"王教练" ,0 ,new ListFragment.ListFragmentAdapter(){
+
+				@Override
+				public void setDes(String result, TextView tv) {
+					//教练简介
+					tv.setText(TextStyleUtil.getTextAppearanceSpan(father ,"教        龄：","7年" ,R.color.book_imitate_textcolornew));
+					tv.append("\n") ;
+					tv.append(TextStyleUtil.getTextAppearanceSpan(father ,"驾        龄：","10年" ,R.color.book_imitate_textcolornew));
+					tv.append("\n") ;
+					tv.append(TextStyleUtil.getTextAppearanceSpan(father ,"教练证号：","川00268" ,R.color.book_imitate_textcolornew));
+					tv.append("\n") ;
+					tv.append(TextStyleUtil.getTextAppearanceSpan(father ,"教练介绍：\n","  教练非常好" ,R.color.book_imitate_textcolornew));
+				} 
+
+				@Override
+				public void setList(String result, NoScrollListView list) {
+					
+				}
+				
+			});
+	        FragmentManager fm = getFragmentManager();  
+	        FragmentTransaction tx = fm.beginTransaction();
+	        tx.hide(this);   
+	        tx.add(R.id.container,fragment , "jldes");
+	        tx.addToBackStack(null);  
+	        tx.commit();  
+			break ;
+			//切换到训练场地列表页面
+		case R.id.trainarea_seemore:
+			break ;
+			//切换到评价列表页面
+		case R.id.judge_seemore:
+			break ;
+			//立即报名页面
+		case R.id.jl_detail_btn_signup:
+			break ;
+			//我要咨询界面
+		case R.id.jl_detail_btn_consult:
+			break ;
+		}
+	}
 
 }

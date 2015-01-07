@@ -37,9 +37,9 @@ import com.huishen_app.zc.operate_thread.GetHttpResultThread;
 import com.huishen_app.zc.operate_thread.GetHttpResultThreadMore;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
-import com.huishen_app.zc.util.AndroidUtil;
-import com.huishen_app.zc.util.DateStruct;
 import com.huishen_app.zh.netTool.NetUtil;
+import com.huishen_app.zh.util.AndroidUtil;
+import com.huishen_app.zh.util.DateStruct;
 
 public class Book_dateselect_ui extends BaseActivity implements
 		OnTouchListener, OnCheckedChangeListener, OnClickListener {

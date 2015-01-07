@@ -28,8 +28,8 @@ import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 import com.huishen_app.zc.ui.dialog.SelectDialog_ui;
 import com.huishen_app.zc.ui.dialog.adapter.DialogItemSelectInterface;
-import com.huishen_app.zc.util.DateStruct;
 import com.huishen_app.zh.netTool.NetUtil;
+import com.huishen_app.zh.util.DateStruct;
 
 @SuppressLint("SimpleDateFormat")
 public class Book_imitate_ui extends BaseActivity implements

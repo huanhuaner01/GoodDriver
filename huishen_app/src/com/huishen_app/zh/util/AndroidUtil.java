@@ -1,4 +1,4 @@
-package com.huishen_app.zc.util;
+package com.huishen_app.zh.util;
 
 import com.huishen_app.zc.ui.base.BaseActivity;
 

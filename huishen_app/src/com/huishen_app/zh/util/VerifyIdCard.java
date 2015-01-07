@@ -1,4 +1,4 @@
-package com.huishen_app.zc.util;
+package com.huishen_app.zh.util;
 
 public class VerifyIdCard {
 	// wi =2(n-1)(mod 11);加权因子

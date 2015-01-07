@@ -1,7 +1,7 @@
 package com.huishen_app.all.mywidget;
 
 import com.huishen_app.zc.ui.R;
-import com.huishen_app.zc.util.AndroidUtil;
+import com.huishen_app.zh.util.AndroidUtil;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.huishen_app.all.mywidget.ListGridView;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.util.TextStyleUtil;
+import com.huishen_app.zh.util.TextStyleUtil;
 
 public class WeGroupSuFragment extends BaseFragment implements OnClickListener{
 	public WeGroupSuFragment(BaseActivity father ,Object tag ) {

@@ -1,4 +1,4 @@
-package com.huishen_app.zc.util;
+package com.huishen_app.zh.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

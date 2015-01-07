@@ -17,11 +17,12 @@
             android:layout_width="65dp"
             android:layout_height="match_parent" >
 
-            <ImageView
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/jl_item_photo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/img_desc"
-                android:background="@drawable/jl_test_icon" />
+                 />
         </LinearLayout>
 
         <LinearLayout

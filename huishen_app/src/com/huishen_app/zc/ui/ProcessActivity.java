@@ -1,7 +1,7 @@
 package com.huishen_app.zc.ui;
 
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.util.AndroidUtil;
+import com.huishen_app.zh.util.AndroidUtil;
 
 import android.view.KeyEvent;
 import android.view.View;

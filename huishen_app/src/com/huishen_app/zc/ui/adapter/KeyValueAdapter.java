@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.huishen_app.zc.ui.R;
-import com.huishen_app.zc.util.TextStyleUtil;
+import com.huishen_app.zh.util.TextStyleUtil;
 
 import android.content.Context;
 import android.view.View;

@@ -1,10 +1,22 @@
 package com.huishen_app.zc.ui;
 
+import java.util.Map;
+
 import com.huishen_app.zc.ui.base.BaseActivity;
+import com.huishen_app.zc.ui.fragment.ConfirmInfoFragment;
+import com.huishen_app.zc.ui.fragment.ConfirmOrderFragment;
 import com.huishen_app.zc.ui.fragment.JXDetailFragment;
+import com.huishen_app.zc.ui.fragment.TipFragment;
+
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
-
+/**
+ * 教练详情
+ * @author zhanghuan
+ *
+ */
 public class JXDetailActivity extends BaseActivity {
     
 
@@ -17,17 +29,12 @@ public class JXDetailActivity extends BaseActivity {
 	}
 
 	@Override
-	protected void initView() {
-		// TODO Auto-generated method stub
-		
+	protected void initView() {	
 	}
 
 	@Override
-	protected void initData() {
-		// TODO Auto-generated method stub
-		
+	protected void initData() {	
 	}
-	
 	/**
 	 * 通用返回按钮
 	 * 

@@ -203,7 +203,6 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 			Toast.makeText(this.father, "ÍøÂçÎ´Á¬½Ó", Toast.LENGTH_SHORT).show();
 			return ;
 		}
-		AppController.getInstance().getRequestQueue().getCache().remove(url);
 		Log.i(TAG, "url"+url);
 		ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 		dialog = new LoadingDialog_ui(this.father, R.style.loadingstyle,

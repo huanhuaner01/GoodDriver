@@ -226,6 +226,7 @@
             android:name=".PrizeListActivity"
             android:label="@string/title_activity_prize_list" >
         </activity>
-    </application>
+
+</application>
 
 </manifest>

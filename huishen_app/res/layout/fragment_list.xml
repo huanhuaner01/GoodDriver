@@ -8,9 +8,9 @@
      >
     <include layout="@layout/header_withback" />
         <TextView
+            android:id="@+id/f_list_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/jl_detail_tv_overleaf"
         android:gravity="left"
         android:padding="@dimen/wegroup_detail_defualtmargin"
         android:textSize="@dimen/listview_defualt_tvsize"
@@ -18,8 +18,8 @@
         android:lineSpacingMultiplier="1.5"
         /> 
         
-        <ListView
-            android:id="@+id/list"
+        <com.huishen_app.all.mywidget.NoScrollListView
+            android:id="@+id/f_list_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:divider="@null"

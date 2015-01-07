@@ -54,29 +54,26 @@ public class WegroupSActivity extends BaseActivity {
 
 			   confirminfo = new ConfirmInfoFragment(this ,1);
 		    	tx.setTransition(FragmentTransaction.TRANSIT_UNSET);
-		        tx.hide(wesu); 
-//		        tx.replace(R.id.id_content, fTwo, "TWO");  
+		        tx.hide(wesu);  
 		        tx.add(R.id.container, confirminfo, "TWO");
 		        tx.addToBackStack(null);  
-		        tx.commit();
+		        
 	        break ;
 		   case 1:
 				confirmorder = new ConfirmOrderFragment(this,2);
 		        tx.setTransition(FragmentTransaction.TRANSIT_UNSET);
-		        tx.hide(confirminfo); 
-//		      tx.replace(R.id.id_content, fTwo, "TWO");  
+		        tx.hide(confirminfo);   
 		        tx.add(R.id.container, confirmorder, "confirmorder");
-		        tx.addToBackStack(null);  
-		        tx.commit();
+		        tx.addToBackStack(null); 
 			   break ;
 		   case 2:
 			   tx.hide(confirmorder);
 			   tx.add(R.id.container, new TipFragment(this),"tipfragment"); 
 			   tx.addToBackStack(null);
-		       tx.commit();
 			   break ;
 			   
 		   }
+		   tx.commit();
 	}
 	/**
 	 * 通用返回按钮

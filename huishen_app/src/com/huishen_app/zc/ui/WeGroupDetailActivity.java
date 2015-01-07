@@ -20,8 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.util.AndroidUtil;
-import com.huishen_app.zc.util.TextStyleUtil;
+import com.huishen_app.zh.util.AndroidUtil;
+import com.huishen_app.zh.util.TextStyleUtil;
 
 public class WeGroupDetailActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener{
 	private static final int REFRESH_COMPLETE = 0X110;

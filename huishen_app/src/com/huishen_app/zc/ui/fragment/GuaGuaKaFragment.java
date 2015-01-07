@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.huishen_app.all.mywidget.GuaGuaKa;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.util.AndroidUtil;
+import com.huishen_app.zh.util.AndroidUtil;
 
 public class GuaGuaKaFragment extends BaseFragment {
 	   private View headerimg ;

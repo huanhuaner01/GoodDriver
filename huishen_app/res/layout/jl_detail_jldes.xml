@@ -38,8 +38,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/wegroup_item_line_size"
         android:background="@color/wegroup_item_line_color" />
-           
+        <!-- 查看更多  --> 
         <LinearLayout
+        android:id="@+id/jl_detail_des_more"
         android:layout_width="match_parent"
         android:layout_height="@dimen/see_more_layheight"
         android:orientation="horizontal"
