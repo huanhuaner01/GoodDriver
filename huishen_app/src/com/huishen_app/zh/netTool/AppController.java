@@ -4,6 +4,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.baidu.mapapi.SDKInitializer;
 
 import android.app.Application;
 import android.text.TextUtils;
@@ -22,6 +23,8 @@ private static AppController mInstance;
 public void onCreate() {
     super.onCreate();
     mInstance = this;
+	// 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
+	SDKInitializer.initialize(this);
 }
 
 public static synchronized AppController getInstance() {

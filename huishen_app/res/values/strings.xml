@@ -11,12 +11,14 @@
     <string name="consult">我要咨询</string>
     <string name="see_img_more">查看图文详情</string>
     <string name="see_more">查看更多</string>
-    <!-- APP的服务URL 
-    <string name="webbaseurl">http://huishen1.wicp.net/</string> -->
-    <!--  <string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> -->
-    <!--  <string name="webbaseurl">http://192.168.2.128:8080/drivingSchool/</string> -->
+    <!--
+    APP的服务URL 
+    <string name="webbaseurl">http://huishen1.wicp.net/</string>
+    -->
+    <!-- <string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> -->
+    <!-- <string name="webbaseurl">http://192.168.2.128:8080/drivingSchool/</string> -->
     <!--  -->
-    <string name="webbaseurl">http://huishen.wicp.net/</string> 
+    <string name="webbaseurl">http://huishen.wicp.net/</string>
 
     <!-- 学生可以选择的有哪些 istu/queryTeacherLessonInfo.do -->
     <string name="get_jz_timeinfo">mobile/queryTeacherTimePlan</string>
@@ -77,7 +79,7 @@
     <string name="main_tab_book">在线预约</string>
     <string name="main_tab_usercenter">个人中心</string>
     <string name="main_city">成都</string>
-    
+
     <!-- menu -->
     <string name="main_menu_zjx">找驾校</string>
     <string name="main_menu_zjl">找教练</string>
@@ -87,7 +89,7 @@
     <string name="main_menu_djt">大家团</string>
 
     <!-- main_lay 结束 -->
-    
+
 
     <!-- 在线预约 开始 -->
     <string name="book_title_text">在线预约</string>
@@ -157,7 +159,7 @@
     <!-- 大家团 -->
     <string name="wegroup_item_header_tv">所有团购</string>
     <string name="title_activity_we_group_detail">WeGroupDetailActivity</string>
-    
+
     <!-- 大家团详细 -->
     <string name="wegroup_detail_title">团购详细</string>
     <string name="wegroup_detail_header_des">大学生团(分期付款，无忧学车)</string>
@@ -218,5 +220,6 @@
     <string name="title_activity_jxdetail">JXDetailActivity</string>
     <string name="title_activity_gua_gua_ka">GuaGuaKaActivity</string>
     <string name="title_activity_prize_list">PrizeListActivity</string>
+    <string name="title_activity_show_map">ShowMapActivity</string>
 
 </resources>

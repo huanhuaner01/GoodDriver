@@ -4,11 +4,14 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.huishen_app.zc.ui.LocationActivity;
 import com.huishen_app.zc.ui.R;
+import com.huishen_app.zc.ui.ShowMapActivity;
 import com.huishen_app.zc.ui.adapter.ViewPageAdapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,6 +20,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageButton;
@@ -116,15 +120,15 @@ public class CenterFragment extends BaseFragment implements
 	protected void initView(View f_view) {
 		// 初始数据初始化
 		init();
-//		city.setOnClickListener(new OnClickListener(){
-//
-//			@Override
-//			public void onClick(View arg0) {
-//				Intent i = new Intent(father ,LocationActivity.class);
-//				father.startActivity(i);
-//			}
-//			
-//		});
+		city.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(father ,ShowMapActivity.class);
+				father.startActivity(i);
+			}
+			
+		});
 		// 获取大小
 		View viewpager = inflater.inflate(R.layout.main_center_viewpage_lay,
 				null);

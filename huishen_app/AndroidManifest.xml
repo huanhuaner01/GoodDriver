@@ -3,11 +3,14 @@
     package="com.huishen_app.zc.ui"
     android:versionCode="1006"
     android:versionName="1.0" >
+
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
 
     <!-- ****************定义权限 *********************************** -->
+    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </permission>
     <!-- 调用系统拨号 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- 这个权限用于进行网络定位 -->
@@ -39,6 +42,15 @@
     </uses-permission>
     <!-- 运行访问Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+    
+       <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <!-- *****************定义权限结束******************************** -->
     <application
         android:name="com.huishen_app.zh.netTool.AppController"
@@ -52,10 +64,6 @@
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote" >
-            <intent-filter>
-                <action android:name="com.baidu.location.service_v2.2" >
-                </action>
-            </intent-filter>
         </service>
 
         <meta-data
@@ -68,7 +76,6 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >
-        
         </activity>
         <activity
             android:name=".TrainHisTabActivity"
@@ -163,7 +170,7 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >
-                <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -226,7 +233,10 @@
             android:name=".PrizeListActivity"
             android:label="@string/title_activity_prize_list" >
         </activity>
-
-</application>
+        <activity
+            android:name=".ShowMapActivity"
+            android:label="@string/title_activity_show_map" >
+        </activity>
+    </application>
 
 </manifest>
