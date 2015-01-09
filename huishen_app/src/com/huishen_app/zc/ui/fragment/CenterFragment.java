@@ -124,7 +124,7 @@ public class CenterFragment extends BaseFragment implements
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(father ,ShowMapActivity.class);
+				Intent i = new Intent(father ,LocationActivity.class);
 				father.startActivity(i);
 			}
 			

@@ -4,21 +4,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
 import com.huishen_app.all.mywidget.NoScrollListView;
 import com.huishen_app.zc.ui.R;
+import com.huishen_app.zc.ui.ShowMapActivity;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zh.util.TextStyleUtil;
 /**
@@ -28,6 +30,7 @@ import com.huishen_app.zh.util.TextStyleUtil;
  */
 public class JLDetailFragment extends BaseFragment implements View.OnClickListener{
     private View RootView ;  //根组件
+    private String TAG = "JLDetailFragment" ;
     /**标题，教练名字，报名价格，教龄，评分成绩，评价数量 ,教练简介，学车流程*/
     private TextView title ,jlname , price ,drivingYear ,score ,judgenum ,jldes ,overleaf ; 
     private NoScrollListView jugeList  , trainList; //评价列表，培训场地列表
@@ -121,6 +124,16 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		}
 		trainareaAdapter = new SimpleAdapter(this.father,trainareaListDate ,R.layout.trainarea_list_item ,tfrom , tto);
 		trainList.setAdapter(trainareaAdapter);
+		// listView注册一个元素点击事件监听器
+		trainList.setOnItemClickListener(new OnItemClickListener() {
+	
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				Intent i = new Intent(father ,ShowMapActivity.class);
+				father.startActivity(i);
+			}
+		});
 		//立即报名，我要咨询监听事件
 		signUp.setOnClickListener(this);
 		consult.setOnClickListener(this);
@@ -179,10 +192,13 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 
 	@Override
 	public void onClick(View v) {
+
+        FragmentManager fm = getFragmentManager();  
+        FragmentTransaction tx = fm.beginTransaction();
 		switch(v.getId()){
 		//切换到教练图文详情页面
 		case R.id.jl_detail_des_more: 
-			fragment = new ListFragment(this.father ,"王教练" ,0 ,new ListFragment.ListFragmentAdapter(){
+			fragment = new ListFragment(this.father ,"王教练" ,"",0 ,new ListFragment.ListFragmentAdapter(){
 
 				@Override
 				public void setDes(String result, TextView tv) {
@@ -202,18 +218,62 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 				}
 				
 			});
-	        FragmentManager fm = getFragmentManager();  
-	        FragmentTransaction tx = fm.beginTransaction();
 	        tx.hide(this);   
 	        tx.add(R.id.container,fragment , "jldes");
 	        tx.addToBackStack(null);  
-	        tx.commit();  
+	          
 			break ;
 			//切换到训练场地列表页面
 		case R.id.trainarea_seemore:
+			fragment = new ListFragment(this.father ,"训练场地" ,"",0 ,new ListFragment.ListFragmentAdapter(){
+
+				@Override
+				public void setDes(String result, TextView tv) {
+					tv.setVisibility(View.GONE);
+				} 
+
+				@Override
+				public void setList(String result, NoScrollListView list) {
+					String[] tfrom = new String[]{"area","addr" ,"tel"};
+					int[] tto = new int[]{R.id.trainarea_listitem_area ,R.id.trainarea_listitem_addr ,R.id.trainarea_listitem_tel};
+				
+					trainareaAdapter = new SimpleAdapter(father,trainareaListDate ,R.layout.trainarea_list_item ,tfrom , tto);
+					list.setAdapter(trainareaAdapter);
+					// listView注册一个元素点击事件监听器
+					list.setOnItemClickListener(new OnItemClickListener() {
+				
+						@Override
+						public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+								long arg3) {
+							Intent i = new Intent(father ,ShowMapActivity.class);
+							father.startActivity(i);
+						}
+					});
+				}
+				
+			});
+	        tx.hide(this);   
+	        tx.add(R.id.container,fragment , "jltrainarea");
+	        tx.addToBackStack(null); 
 			break ;
 			//切换到评价列表页面
 		case R.id.judge_seemore:
+			fragment = new ListFragment(this.father ,"训练场地" ,"",0,new ListFragment.ListFragmentAdapter(){
+
+				@Override
+				public void setDes(String result, TextView tv) {
+					tv.setVisibility(View.GONE);
+				} 
+
+				@Override
+				public void setList(String result, NoScrollListView list) {
+					list.setAdapter(judgeAdapter);
+				}
+				
+			});
+	        tx.hide(this);   
+	        tx.add(R.id.container,fragment , "jltrainarea");
+	        tx.addToBackStack(null);
 			break ;
 			//立即报名页面
 		case R.id.jl_detail_btn_signup:
@@ -222,6 +282,7 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		case R.id.jl_detail_btn_consult:
 			break ;
 		}
+		tx.commit();
 	}
 
 }

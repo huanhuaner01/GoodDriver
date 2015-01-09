@@ -15,10 +15,10 @@
     APP的服务URL 
     <string name="webbaseurl">http://huishen1.wicp.net/</string>
     -->
-    <!-- <string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> -->
+    <!-- --> <string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> 
     <!-- <string name="webbaseurl">http://192.168.2.128:8080/drivingSchool/</string> -->
-    <!--  -->
-    <string name="webbaseurl">http://huishen.wicp.net/</string>
+    <!--  
+    <string name="webbaseurl">http://huishen.wicp.net/</string> -->
 
     <!-- 学生可以选择的有哪些 istu/queryTeacherLessonInfo.do -->
     <string name="get_jz_timeinfo">mobile/queryTeacherTimePlan</string>

@@ -190,7 +190,6 @@ public class Main_fragment_ui extends BaseActivity {
 		
 		AppController.getInstance().getRequestQueue().cancelAll(getApplicationContext());
 		AppController.getInstance().getRequestQueue().getCache().clear();
-		AppController.getInstance().getRequestQueue().stop();
 		DataCleanManager.cleanInternalCache(getApplicationContext());
 		super.onStop();
 	}
@@ -200,7 +199,7 @@ public class Main_fragment_ui extends BaseActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK
                  && event.getRepeatCount() == 0) {
              if(backindex == 0){
-            	 DisPlay("再按一次退出好司机!", true);
+            	 DisPlay("再按一次退出好司机!", false);
             	 backindex++;
             	 return false ;
              }

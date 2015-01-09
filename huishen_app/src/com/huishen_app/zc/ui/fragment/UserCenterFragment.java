@@ -203,11 +203,11 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 			Toast.makeText(this.father, "ÍøÂçÎ´Á¬½Ó", Toast.LENGTH_SHORT).show();
 			return ;
 		}
-		Log.i(TAG, "url"+url);
+		Log.i(TAG, "url£º"+url);
 		ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 		dialog = new LoadingDialog_ui(this.father, R.style.loadingstyle,
 				R.layout.dialog_loading_lay);
-		dialog.setCancelable(false);
+		dialog.setCancelable(true);
 		dialog.show();
 		// If you are using normal ImageView
 		imageLoader.get(url, new ImageListener() {

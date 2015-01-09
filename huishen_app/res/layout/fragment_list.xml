@@ -7,6 +7,16 @@
     
      >
     <include layout="@layout/header_withback" />
+      <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="@null"
+         >
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             >
         <TextView
             android:id="@+id/f_list_content"
         android:layout_width="match_parent"
@@ -22,8 +32,9 @@
             android:id="@+id/f_list_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@null"
-            android:dividerHeight="10dp"
+            android:divider="@color/Grey_line"
+           android:dividerHeight="@dimen/listview_divider_height"
             /> 
-
+            </LinearLayout>
+   </ScrollView>
 </LinearLayout>

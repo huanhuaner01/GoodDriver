@@ -2,8 +2,10 @@ package com.huishen_app.zc.ui.fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,7 +13,6 @@ import android.widget.TextView;
 import com.huishen_app.all.mywidget.NoScrollListView;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.ui.fragment.ListFragment.ListFragmentAdapter;
 
 /**
  * 具有文字，列表和标题的Fragment(通用)
@@ -26,14 +27,17 @@ import com.huishen_app.zc.ui.fragment.ListFragment.ListFragmentAdapter;
 	private NoScrollListView list ; //列表
 	private ListFragmentAdapter fragmentAdapter ; //fragment适配器
 	private String result  ,titleStr;
-	private int url ;
+	private String url ;
+	public int BACK_FRAGMENT = 0 ;
+	public int BACK_ACTIVITY =1 ;
+	private int backmodel = 0;
 	
-	
-	public ListFragment(BaseActivity father ,String title, int url ,ListFragmentAdapter fragmentApdater) {
+	public ListFragment(BaseActivity father ,String title,String url ,int backmodel,ListFragmentAdapter fragmentApdater) {
 		super(father);
 		this.fragmentAdapter = fragmentApdater;
 		this.titleStr = title ;
 		this.url = url ;
+		this.backmodel = backmodel ;
 	}
 
 	@Override
@@ -53,24 +57,30 @@ import com.huishen_app.zc.ui.fragment.ListFragment.ListFragmentAdapter;
 		title = (TextView)RootView.findViewById(R.id.header_title) ;
 		des = (TextView)RootView.findViewById(R.id.f_list_content) ;
 		list = (NoScrollListView)RootView.findViewById(R.id.f_list_list);
-		back = (Button)RootView.findViewById(R.id.head_back) ;
+		back = (Button)RootView.findViewById(R.id.header_back) ;
 	}
     
 	private void initView() {
 	   this.title.setText(titleStr) ;
+
 	   getWebData();
 	   fragmentAdapter.setDes(result, des);
 	   fragmentAdapter.setList(result, list);
+	   this.back.setOnClickListener(new OnClickListener(){
+
+		@Override
+		public void onClick(View arg0) {
+			if(backmodel== BACK_FRAGMENT){
+				 FragmentManager fm = getFragmentManager();  
+			     fm.popBackStack();
+			}
+		}
+		   
+	   });
 	}
 	
 	private void getWebData(){
 		
-	}
-	
-	public void setBack(View.OnClickListener listener){
-		if(listener != null){
-		this.back.setOnClickListener(listener);
-		}
 	}
 	/**
 	 * listFragment 的接口函数
