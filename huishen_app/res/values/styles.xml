@@ -221,7 +221,7 @@
     <!-- 找驾校 -->
     <style name="style_jl_score">
         <item name="android:textColor">@color/jx_listview_item_title</item>
-        <item name="android:textSize">@dimen/listview_defualt_tvsize</item>
+        <item name="android:textSize">@dimen/listview_big_tvsize</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center_horizontal</item>
     </style>

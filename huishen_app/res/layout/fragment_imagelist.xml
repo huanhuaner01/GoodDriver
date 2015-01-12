@@ -32,7 +32,7 @@
             android:id="@+id/f_list_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@color/Grey_line"
+            android:divider="@null"
            android:dividerHeight="@dimen/listview_divider_height"
             /> 
             </LinearLayout>

@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import com.huishen_app.all.alarmservice.PollingUtils;
 import com.huishen_app.all.alarmservice.TaskServer;
 import com.huishen_app.all.calendar.Calendar_ui;
+import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 
 import android.annotation.SuppressLint;
