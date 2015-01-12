@@ -15,26 +15,25 @@ import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.base.BaseActivity;
 
 /**
- * 具有文字，列表和标题的Fragment(通用)
+ * 带图片的文本列表
  * @author zhanghuan
  *
  */
-@SuppressLint("InflateParams") public class ListFragment extends BaseFragment {
+@SuppressLint("InflateParams") 
+public class ImageListFragment extends BaseFragment {
 	private View RootView ;  //根组件
 	private TextView title ; //标题
 	private TextView des ; //简介
 	private Button back  ; //返回键
 	private NoScrollListView list ; //列表
-	private ListFragmentAdapter fragmentAdapter ; //fragment适配器
 	private String result  ,titleStr;
 	private String url ;
 	public int BACK_FRAGMENT = 0 ;
 	public int BACK_ACTIVITY =1 ;
 	private int backmodel = 0;
 	
-	public ListFragment(BaseActivity father ,String title,String url ,int backmodel,ListFragmentAdapter fragmentApdater) {
+	public ImageListFragment(BaseActivity father ,String title,String url ,int backmodel) {
 		super(father);
-		this.fragmentAdapter = fragmentApdater;
 		this.titleStr = title ;
 		this.url = url ;
 		this.backmodel = backmodel ;
@@ -64,8 +63,6 @@ import com.huishen_app.zc.ui.base.BaseActivity;
 	   this.title.setText(titleStr) ;
 
 	   getWebData();
-	   fragmentAdapter.setDes(result, des);
-	   fragmentAdapter.setList(result, list);
 	   this.back.setOnClickListener(new OnClickListener(){
 
 		@Override
@@ -82,14 +79,19 @@ import com.huishen_app.zc.ui.base.BaseActivity;
 	private void getWebData(){
 		
 	}
+	
 	/**
-	 * listFragment 的接口函数
-	 * @author zhanghuan
-	 * 
+	 * 设置内容文本
 	 */
-	public interface ListFragmentAdapter{
-		void setDes(String result ,TextView tv);
-		void setList(String result ,NoScrollListView list);
+	private void setDes(){
+		
+	}
+	
+	/**
+	 * 设置内容列表
+	 */
+	private void setList(){
+		
 	}
     
 }

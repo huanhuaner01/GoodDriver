@@ -44,7 +44,7 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
     private SimpleAdapter judgeAdapter , trainareaAdapter ;  //评价列表适配器，培训场地适配器
     
     /** 显示listFragment(这里作为二级fragment) */
-    private ListFragment fragment ; 
+    private ImageListFragment fragment ; 
     
 	public JLDetailFragment(BaseActivity father) {
 		super(father);
@@ -198,26 +198,7 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		switch(v.getId()){
 		//切换到教练图文详情页面
 		case R.id.jl_detail_des_more: 
-			fragment = new ListFragment(this.father ,"王教练" ,"",0 ,new ListFragment.ListFragmentAdapter(){
-
-				@Override
-				public void setDes(String result, TextView tv) {
-					//教练简介
-					tv.setText(TextStyleUtil.getTextAppearanceSpan(father ,"教        龄：","7年" ,R.color.book_imitate_textcolornew));
-					tv.append("\n") ;
-					tv.append(TextStyleUtil.getTextAppearanceSpan(father ,"驾        龄：","10年" ,R.color.book_imitate_textcolornew));
-					tv.append("\n") ;
-					tv.append(TextStyleUtil.getTextAppearanceSpan(father ,"教练证号：","川00268" ,R.color.book_imitate_textcolornew));
-					tv.append("\n") ;
-					tv.append(TextStyleUtil.getTextAppearanceSpan(father ,"教练介绍：\n","  教练非常好" ,R.color.book_imitate_textcolornew));
-				} 
-
-				@Override
-				public void setList(String result, NoScrollListView list) {
-					
-				}
-				
-			});
+			fragment = new ImageListFragment(this.father ,"王教练" ,"",0);
 	        tx.hide(this);   
 	        tx.add(R.id.container,fragment , "jldes");
 	        tx.addToBackStack(null);  
@@ -225,52 +206,14 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 			break ;
 			//切换到训练场地列表页面
 		case R.id.trainarea_seemore:
-			fragment = new ListFragment(this.father ,"训练场地" ,"",0 ,new ListFragment.ListFragmentAdapter(){
-
-				@Override
-				public void setDes(String result, TextView tv) {
-					tv.setVisibility(View.GONE);
-				} 
-
-				@Override
-				public void setList(String result, NoScrollListView list) {
-					String[] tfrom = new String[]{"area","addr" ,"tel"};
-					int[] tto = new int[]{R.id.trainarea_listitem_area ,R.id.trainarea_listitem_addr ,R.id.trainarea_listitem_tel};
-				
-					trainareaAdapter = new SimpleAdapter(father,trainareaListDate ,R.layout.trainarea_list_item ,tfrom , tto);
-					list.setAdapter(trainareaAdapter);
-					// listView注册一个元素点击事件监听器
-					list.setOnItemClickListener(new OnItemClickListener() {
-				
-						@Override
-						public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-								long arg3) {
-							Intent i = new Intent(father ,ShowMapActivity.class);
-							father.startActivity(i);
-						}
-					});
-				}
-				
-			});
+			fragment = new ImageListFragment(this.father ,"训练场地" ,"",0);
 	        tx.hide(this);   
 	        tx.add(R.id.container,fragment , "jltrainarea");
 	        tx.addToBackStack(null); 
 			break ;
 			//切换到评价列表页面
 		case R.id.judge_seemore:
-			fragment = new ListFragment(this.father ,"训练场地" ,"",0,new ListFragment.ListFragmentAdapter(){
-
-				@Override
-				public void setDes(String result, TextView tv) {
-					tv.setVisibility(View.GONE);
-				} 
-
-				@Override
-				public void setList(String result, NoScrollListView list) {
-					list.setAdapter(judgeAdapter);
-				}
-				
-			});
+			fragment = new ImageListFragment(this.father ,"训练场地" ,"",0);
 	        tx.hide(this);   
 	        tx.add(R.id.container,fragment , "jltrainarea");
 	        tx.addToBackStack(null);
