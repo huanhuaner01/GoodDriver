@@ -19,7 +19,7 @@ import com.huishen_app.zc.ui.base.BaseActivity;
  * @author zhanghuan
  *
  */
-public class TitleListFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener{
+public abstract class TitleListFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener{
 	//下拉刷新组件
 	private SwipeRefreshLayout mSwipeLayout;
 	/** 返回上一个fragment */
@@ -33,21 +33,17 @@ public class TitleListFragment extends BaseFragment implements SwipeRefreshLayou
     private String titlestr ;
     private String url ;
     private String data ; //数据列表
-    private TitleListInterface listinterface ; 
-    private int backmodel ;
     
-	public TitleListFragment(BaseActivity father,String titlestr , String url ,int backmodel) {
+	public TitleListFragment(BaseActivity father,String titlestr , String url) {
 		super(father);
 		this.titlestr = titlestr ;
 		this.url = url ;
-		this.backmodel = backmodel ;
 	}
 
-	public TitleListFragment(BaseActivity father, Object tag,String titlestr , String url ,int bakmodel) {
+	public TitleListFragment(BaseActivity father, Object tag,String titlestr , String url ) {
 		super(father, tag);
 		this.titlestr = titlestr ;
 		this.url = url ;
-		this.backmodel = backmodel ;
 	}
 	
 	@Override
@@ -82,6 +78,33 @@ public class TitleListFragment extends BaseFragment implements SwipeRefreshLayou
 		//获取网络数据
 		getWebData();
 		
+	
+	}
+	
+	/**
+	 * 访问网络，获取网络数据
+	 */
+	private void getWebData(){
+		//如果url为空或者list接口为空则不访问网络，直接返回
+//		if(url == null || url.equals("")||listinterface == null){
+//			return ;
+//		}
+		setList(data, list);
+	}
+	
+	
+	public abstract void setList(String data,ListView list);
+	/**
+	 * 设置标题栏备注备注
+	 * @param isShow
+	 * @param listener
+	 */
+	public abstract void setNote(TextView note);
+	/**
+	 * 
+	 * @param note
+	 */
+	public void setBack(Button back){
 		//设置返回键监听
 		back.setOnClickListener(new OnClickListener(){
 
@@ -94,41 +117,7 @@ public class TitleListFragment extends BaseFragment implements SwipeRefreshLayou
 		}) ;
 	}
 	
-	/**
-	 * 访问网络，获取网络数据
-	 */
-	private void getWebData(){
-		//如果url为空或者list接口为空则不访问网络，直接返回
-//		if(url == null || url.equals("")||listinterface == null){
-//			return ;
-//		}
-		listinterface.setList(data, list);
-	}
 	
-	/***
-	 * 设置接口
-	 * @param listinterface
-	 */
-	public void setTitleList(TitleListInterface listinterface){
-		this.listinterface = listinterface ;
-	}
-	/**
-	 * 设置标题栏备注备注
-	 * @param isShow
-	 * @param listener
-	 */
-	public void setNote(boolean isShow ,OnClickListener listener){
-		this.note.setVisibility(View.VISIBLE) ;
-		this.note.setOnClickListener(listener);
-	}
-	/**
-	 * 用于列表项的接口
-	 * @author zhanghuan
-	 * 
-	 */
-	public interface TitleListInterface {
-		public void setList(String data , ListView list);
-	}
 	@Override
 	public void onRefresh() {
 		getWebData() ;

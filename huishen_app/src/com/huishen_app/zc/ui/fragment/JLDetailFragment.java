@@ -22,8 +22,8 @@ import android.widget.TextView;
 import com.huishen_app.all.mywidget.NoScrollListView;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.ShowMapActivity;
+import com.huishen_app.zc.ui.adapter.RattingBarListAdapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.ui.fragment.TitleListFragment.TitleListInterface;
 import com.huishen_app.zh.util.TextStyleUtil;
 /**
  * 教练详情界面
@@ -43,7 +43,11 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
     private Button signUp , consult ;
     
     private ArrayList<Map<String ,Object>> judgeListData ,trainareaListDate ; //评价数据  ，培训场地数据
-    private SimpleAdapter judgeAdapter , trainareaAdapter ;  //评价列表适配器，培训场地适配器
+    private SimpleAdapter  trainareaAdapter ;  //培训场地适配器
+    /** 评价列表适配器  */
+    private RattingBarListAdapter judgeAdapter ;
+    /** 二级fragment */
+    private TitleListFragment fragment ;
     
 	public JLDetailFragment(BaseActivity father) {
 		super(father);
@@ -98,16 +102,16 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		setOverleaf() ;
 		//评价添加数据
 		judgeListData = new ArrayList<Map<String ,Object>>();
-		String[] jfrom = new String[]{"star","stuname" ,"content"};
-		int[] jto = new int[]{R.id.judge_listitem_star ,R.id.judge_listitem_stuname ,R.id.judge_listitem_content};
+		String[] jfrom = new String[]{"stuname" ,"content"};
+		int[] jto = new int[]{R.id.judge_listitem_stuname ,R.id.judge_listitem_content};
 		for(int i = 0 ; i<4 ; i++){
 			HashMap<String , Object> map = new HashMap<String , Object>();
-			map.put("star",R.drawable.star_four);
+			map.put("numstar",2.7);
 			map.put("stuname","(XXX学员)");
 			map.put("content","老师教的不错");
 			judgeListData.add(map);
 		}
-		judgeAdapter = new SimpleAdapter(this.father,judgeListData ,R.layout.judge_list_item ,jfrom , jto);
+		judgeAdapter = new RattingBarListAdapter(this.father,judgeListData ,R.layout.judge_list_item ,jfrom , jto);
 		jugeList.setAdapter(judgeAdapter);
 		
 		//设置培训场地列表和按钮
@@ -197,52 +201,23 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		switch(v.getId()){
 		//切换到教练图文详情页面
 		case R.id.jl_detail_des_more: 
-			ImageListFragment fragment = new ImageListFragment(this.father ,"王教练" ,"",0);
+			fragment = new JLDetailDesFragment(this.father ,"王教练" ,"");
 	        tx.hide(this);   
 	        tx.add(R.id.container,fragment , "jldes");
 	        tx.addToBackStack(null);  
-	          
 			break ;
 			//切换到训练场地列表页面
 		case R.id.trainarea_seemore:
-			TitleListFragment trainfragment = new TitleListFragment(this.father ,"训练场地" ,"",0);
-			trainfragment.setTitleList(new TitleListInterface(){
-
-				@Override
-				public void setList(String data, ListView list) {
-					//设置培训场地列表和按钮
-					list.setAdapter(trainareaAdapter);
-					// listView注册一个元素点击事件监听器
-					list.setOnItemClickListener(new OnItemClickListener() {
-				
-						@Override
-						public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-								long arg3) {
-							Intent i = new Intent(father ,ShowMapActivity.class);
-							father.startActivity(i);
-						}
-					});
-				}
-				
-			}) ;
+			fragment = new TainareaListFragment(this.father ,"王教练" ,"");
 	        tx.hide(this);   
-	        tx.add(R.id.container,trainfragment , "jltrainarea");
+	        tx.add(R.id.container,fragment , "jltrainarea");
 	        tx.addToBackStack(null); 
 			break ;
 			//切换到评价列表页面
 		case R.id.judge_seemore:
-			TitleListFragment judgefragment = new TitleListFragment(this.father ,"训练场地" ,"",0);
-			judgefragment.setTitleList(new TitleListInterface(){
-
-				@Override
-				public void setList(String data, ListView list) {
-					list.setAdapter(judgeAdapter);
-				}
-				
-			});
-			
+//			fragment = new TitleListFragment(this.father ,"训练场地" ,"",0);
 	        tx.hide(this);   
-	        tx.add(R.id.container,judgefragment , "jltrainarea");
+	        tx.add(R.id.container,fragment , "jltrainarea");
 	        tx.addToBackStack(null);
 			break ;
 			//立即报名页面
