@@ -1,15 +1,9 @@
 package com.huishen_app.zc.ui;
 
-import java.util.Map;
 
 import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.ui.fragment.ConfirmInfoFragment;
-import com.huishen_app.zc.ui.fragment.ConfirmOrderFragment;
 import com.huishen_app.zc.ui.fragment.JXDetailFragment;
-import com.huishen_app.zc.ui.fragment.TipFragment;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 /**

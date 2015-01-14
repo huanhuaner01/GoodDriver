@@ -5,16 +5,16 @@ import java.util.Map;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.fragment.ConfirmInfoFragment;
 import com.huishen_app.zc.ui.fragment.ConfirmOrderFragment;
+import com.huishen_app.zc.ui.fragment.OrderSelectFragment;
 import com.huishen_app.zc.ui.fragment.TipFragment;
-import com.huishen_app.zc.ui.fragment.WeGroupSuFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
-public class WegroupSActivity extends BaseActivity {
-	private WeGroupSuFragment wesu ;
+public class OrderActivity extends BaseActivity {
+	private OrderSelectFragment orderSelect ;
 	private ConfirmInfoFragment confirminfo ;
 	private ConfirmOrderFragment confirmorder ;
 	@Override
@@ -22,28 +22,26 @@ public class WegroupSActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_container);
 		if (savedInstanceState == null) {
-			    wesu = new WeGroupSuFragment(this ,0) ;
-			    FragmentManager fm = this.getSupportFragmentManager();  
-		        FragmentTransaction tx = fm.beginTransaction();  
-		        tx.add(R.id.container, wesu,"wesu");  
-		        tx.commit();
-		}
+			orderSelect = new OrderSelectFragment(this ,0) ;
+		    FragmentManager fm = this.getSupportFragmentManager();  
+	        FragmentTransaction tx = fm.beginTransaction();  
+	        tx.add(R.id.container, orderSelect,"wesu");  
+	        tx.commit();
+	}
+		
 	}
 	@Override
 	protected void findViewById_Init() {
 		
 	}
-
 	@Override
 	protected void initView() {
 		
 	}
-
 	@Override
 	protected void initData() {
 		
 	}
-	
 	
 	@Override
 	public void switchcenter(Object tag ,Map<String, Object> param) {
@@ -54,7 +52,7 @@ public class WegroupSActivity extends BaseActivity {
 
 			   confirminfo = new ConfirmInfoFragment(this ,1);
 		    	tx.setTransition(FragmentTransaction.TRANSIT_UNSET);
-		        tx.hide(wesu);  
+		        tx.hide(orderSelect);  
 		        tx.add(R.id.container, confirminfo, "TWO");
 		        tx.addToBackStack(null);  
 		        

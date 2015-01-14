@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/wegroup_detail_defualtmargin"
-                android:text="@string/wegroup_detail_order_selectinfo"
+                android:text="@string/order_select"
                 android:textColor="@color/book_imitate_textcolornew"
                 android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
 
@@ -37,32 +37,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/wegroup_item_line_size"
                 android:background="@color/wegroup_item_line_color" />
-            <!-- 参团人数 -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="@dimen/wegroup_detail_defualtmargin" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:padding="@dimen/wegroup_detail_defualtmargin"
-                    android:text="@string/wegroup_detail_order_num"
-                    android:textColor="@color/book_imitate_textcolornew"
-                    android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
-
-                <TextView
-                    android:id="@+id/wegroup_s_num"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:padding="@dimen/wegroup_detail_defualtmargin"
-                    android:textColor="@color/book_imitate_textcolornew"
-                    android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
-            </LinearLayout>
             
             
             <!-- 学车类型 -->
@@ -83,7 +57,7 @@
                     android:textSize="@dimen/wegroup_item_pricebtn_tsize" />
 
                 <com.huishen_app.all.mywidget.ListGridView
-                    android:id="@+id/wegroup_s_gv"
+                    android:id="@+id/order_select_cartype"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -117,7 +91,7 @@
                     />
                  <!-- 合计  -->
                      <TextView
-                         android:id="@+id/wegroup_s_total"
+                         android:id="@+id/order_select_total"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -133,7 +107,7 @@
                 android:background="@color/wegroup_item_line_color" />
                  <!-- 提交订单 -->
             <Button
-                android:id="@+id/wegroup_order_btn"
+                android:id="@+id/order_select_btn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/login_input_height"
                 android:layout_margin="@dimen/wegroup_detail_defualtmargin"

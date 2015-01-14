@@ -3,6 +3,7 @@ package com.huishen_app.zc.ui.fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -77,7 +78,7 @@ public abstract class TitleListFragment extends BaseFragment implements SwipeRef
 		}
 		//获取网络数据
 		getWebData();
-		
+		setBack(back);
 	
 	}
 	
@@ -100,9 +101,10 @@ public abstract class TitleListFragment extends BaseFragment implements SwipeRef
 	 * @param listener
 	 */
 	public abstract void setNote(TextView note);
+	
 	/**
-	 * 
-	 * @param note
+	 * 返回键监听
+	 * @param back
 	 */
 	public void setBack(Button back){
 		//设置返回键监听
@@ -110,6 +112,7 @@ public abstract class TitleListFragment extends BaseFragment implements SwipeRef
 
 			@Override
 			public void onClick(View arg0) {
+				Log.i("TitleListFragment", "点击了返回键");
 				 FragmentManager fm = getFragmentManager();  
 			     fm.popBackStack();
 			}

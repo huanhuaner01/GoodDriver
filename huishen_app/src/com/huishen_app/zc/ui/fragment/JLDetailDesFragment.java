@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.adapter.ImageTvListAdapter;
@@ -61,5 +65,6 @@ public class JLDetailDesFragment extends TitleListFragment {
 	public void setNote(TextView note) {
 		
 	}
+	
 
 }

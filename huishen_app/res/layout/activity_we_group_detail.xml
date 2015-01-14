@@ -32,8 +32,6 @@
                 <include layout="@layout/wegroup_detail_item_des"/>
                 <!-- 报名须知  -->
                 <include layout="@layout/wegroup_detail_item_overleaf"/>
-                <!-- 学车流程  -->
-                <include layout="@layout/wegroup_detail_item_procedure"/>
             </LinearLayout>
         </ScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>

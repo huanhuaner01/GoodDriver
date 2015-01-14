@@ -5,10 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import com.huishen_app.all.mywidget.NoScrollListView;
+import com.huishen_app.zc.ui.OrderActivity;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.ShowMapActivity;
 import com.huishen_app.zc.ui.adapter.RattingBarListAdapter;
@@ -38,7 +41,7 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
     private NoScrollListView jugeList  , trainList; //评价列表，培训场地列表
     /** 教练图文详情查看更多 ， 训练场地查看更多 ，评价查看更多 */
     private LinearLayout desMore ,trainareaMore ,judgeMore ; 
-    
+    private LinearLayout hyear ,hscore , hjudnum ; //教练教龄 ，教龄评分 ，教练评价数
     /** 立即报名按钮，我要咨询按钮  */
     private Button signUp , consult ;
     
@@ -62,6 +65,7 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		
 		try {
 			RootView = inflater.inflate(R.layout.fragment_jldetail, null);
+			Log.i(TAG, "这也不科学") ;
 			regsitView();
 			initView();
 		  } catch (Exception e) {
@@ -85,6 +89,9 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		desMore = (LinearLayout)RootView.findViewById(R.id.jl_detail_des_more) ;
 		trainareaMore = (LinearLayout)RootView.findViewById(R.id.trainarea_seemore);
 		judgeMore = (LinearLayout)RootView.findViewById(R.id.judge_seemore) ;
+		hyear = (LinearLayout)RootView.findViewById(R.id.jl_de_hyear) ;
+		hscore= (LinearLayout)RootView.findViewById(R.id.jl_de_hscore) ;
+		hjudnum = (LinearLayout)RootView.findViewById(R.id.jl_de_hjudnum) ;
 		signUp = (Button)RootView.findViewById(R.id.jl_detail_btn_signup);
 		consult = (Button)RootView.findViewById(R.id.jl_detail_btn_consult) ;
 		
@@ -106,7 +113,7 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		int[] jto = new int[]{R.id.judge_listitem_stuname ,R.id.judge_listitem_content};
 		for(int i = 0 ; i<4 ; i++){
 			HashMap<String , Object> map = new HashMap<String , Object>();
-			map.put("numstar",2.7);
+			map.put("rating",2.7);
 			map.put("stuname","(XXX学员)");
 			map.put("content","老师教的不错");
 			judgeListData.add(map);
@@ -146,6 +153,9 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 		trainareaMore.setOnClickListener(this);
 		//设置评价查看更多监听事件
 		judgeMore.setOnClickListener(this) ;
+		hyear.setOnClickListener(this);
+		hscore.setOnClickListener(this);
+		hjudnum.setOnClickListener(this) ;
 		
 	}
 	
@@ -199,7 +209,9 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
         FragmentManager fm = getFragmentManager();  
         FragmentTransaction tx = fm.beginTransaction();
 		switch(v.getId()){
+		
 		//切换到教练图文详情页面
+		case R.id.jl_de_hyear:
 		case R.id.jl_detail_des_more: 
 			fragment = new JLDetailDesFragment(this.father ,"王教练" ,"");
 	        tx.hide(this);   
@@ -208,23 +220,33 @@ public class JLDetailFragment extends BaseFragment implements View.OnClickListen
 			break ;
 			//切换到训练场地列表页面
 		case R.id.trainarea_seemore:
-			fragment = new TainareaListFragment(this.father ,"王教练" ,"");
+			fragment = new TainareaListFragment(this.father ,"训练场地" ,"");
 	        tx.hide(this);   
 	        tx.add(R.id.container,fragment , "jltrainarea");
 	        tx.addToBackStack(null); 
 			break ;
 			//切换到评价列表页面
+		case R.id.jl_de_hscore:
+		case R.id.jl_de_hjudnum:
 		case R.id.judge_seemore:
-//			fragment = new TitleListFragment(this.father ,"训练场地" ,"",0);
+			fragment = new JudgeListFragment(this.father ,"评价" ,"");
 	        tx.hide(this);   
 	        tx.add(R.id.container,fragment , "jltrainarea");
 	        tx.addToBackStack(null);
 			break ;
 			//立即报名页面
 		case R.id.jl_detail_btn_signup:
+			Intent i = new Intent(father ,OrderActivity.class);
+			father.startActivity(i);
 			break ;
 			//我要咨询界面
 		case R.id.jl_detail_btn_consult:
+            //调用系统的拨号服务实现电话拨打功能
+            //封装一个拨打电话的intent，并且将电话号码包装成一个Uri对象传入
+			//（1）ACTION_CALL：直接拨号；
+			//（2）ACTION_DIAL：调用拨号程序，手工拨出。
+            Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:02887877236"));
+            this.father.startActivity(intent);//内部类
 			break ;
 		}
 		tx.commit();

@@ -42,8 +42,7 @@
     </uses-permission>
     <!-- 运行访问Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
-    
-       <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.CAMERA" >
     </uses-permission>
     <uses-permission android:name="android.permission.RECORD_AUDIO" >
@@ -236,6 +235,10 @@
         <activity
             android:name=".ShowMapActivity"
             android:label="@string/title_activity_show_map" >
+        </activity>
+        <activity
+            android:name=".OrderActivity"
+            android:label="@string/title_activity_order" >
         </activity>
     </application>
 

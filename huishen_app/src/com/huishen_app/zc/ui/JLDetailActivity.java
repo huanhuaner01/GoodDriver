@@ -2,7 +2,7 @@ package com.huishen_app.zc.ui;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.KeyEvent;
+import android.util.Log;
 import android.view.View;
 
 import com.huishen_app.zc.ui.base.BaseActivity;
@@ -10,6 +10,7 @@ import com.huishen_app.zc.ui.fragment.JLDetailFragment;
 
 
 public class JLDetailActivity extends BaseActivity {
+   private String TAG = "JLDetailActivity" ; 
    private JLDetailFragment f_jldetail ;
 
 	@Override

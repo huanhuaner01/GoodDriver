@@ -19,7 +19,6 @@
            <include layout="@layout/wegroup_detail_item_safeguard"/>
            <include layout="@layout/jl_detail_jldes"/>
            <include layout="@layout/wegroup_detail_item_overleaf"/>
-           <include layout="@layout/wegroup_detail_item_procedure"/>
            <include layout="@layout/train_area_lay" />
            <include layout="@layout/judgelist_lay"/>
          </LinearLayout>

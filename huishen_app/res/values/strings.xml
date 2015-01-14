@@ -11,14 +11,15 @@
     <string name="consult">我要咨询</string>
     <string name="see_img_more">查看图文详情</string>
     <string name="see_more">查看更多</string>
+    <string name="judge_all">总体评价</string>
     <!--
     APP的服务URL 
-    <string name="webbaseurl">http://huishen1.wicp.net/</string>
+    <string name="webbaseurl">http://huishen1.wicp.net/</string>
     -->
-    <!--  <string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> -->
+    <!-- <string name="webbaseurl">http://192.168.0.210:8080/drivingSchool/</string> -->
     <!-- <string name="webbaseurl">http://192.168.2.128:8080/drivingSchool/</string> -->
     <!--  -->
-    <string name="webbaseurl">http://huishen.wicp.net/</string> 
+    <string name="webbaseurl">http://huishen.wicp.net/</string>
 
     <!-- 学生可以选择的有哪些 istu/queryTeacherLessonInfo.do -->
     <string name="get_jz_timeinfo">mobile/queryTeacherTimePlan</string>
@@ -90,6 +91,9 @@
 
     <!-- main_lay 结束 -->
 
+
+    <!-- 确认订单order -->
+    <string name="order_select">选择订单信息</string>
 
     <!-- 在线预约 开始 -->
     <string name="book_title_text">在线预约</string>
@@ -221,5 +225,6 @@
     <string name="title_activity_gua_gua_ka">GuaGuaKaActivity</string>
     <string name="title_activity_prize_list">PrizeListActivity</string>
     <string name="title_activity_show_map">ShowMapActivity</string>
+    <string name="title_activity_order">OrderActivity</string>
 
 </resources>

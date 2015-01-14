@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/wegroup_detail_defualtmargin" >
+
+    <TextView
+        android:id="@+id/list_ji_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:lineSpacingMultiplier="1.5"
+        android:text="nihao"
+        android:textColor="@color/black"
+        android:textSize="@dimen/listview_big_tvsize" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/wegroup_detail_defualtmargin"
+        android:paddingBottom="@dimen/wegroup_detail_defualtmargin"
+         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:lineSpacingMultiplier="1.5"
+            android:text="@string/judge_all"
+            android:textColor="@color/Grey_Text"
+            android:textSize="@dimen/listview_defualt_tvsize"
+             />
+
+        <RatingBar
+            android:id="@+id/list_ji_ratingbar"
+            style="@style/RatingBar_Mini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="2.5"
+            android:stepSize="0.1"
+            android:layout_marginLeft="@dimen/wegroup_detail_defualtmargin"
+            android:layout_marginRight="@dimen/wegroup_detail_defualtmargin"
+             />
+               <TextView
+                   android:id="@+id/list_ji_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:lineSpacingMultiplier="1.5"
+            android:text="2.5"
+            android:textColor="@color/Grey_Text"
+            android:textSize="@dimen/listview_defualt_tvsize"
+             />
+    </LinearLayout>
+
+</LinearLayout>

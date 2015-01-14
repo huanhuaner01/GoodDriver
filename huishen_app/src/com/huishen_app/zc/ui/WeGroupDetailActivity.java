@@ -34,7 +34,6 @@ public class WeGroupDetailActivity extends BaseActivity implements SwipeRefreshL
 		setContentView(R.layout.activity_we_group_detail);
 		this.mSwipeLayout = (SwipeRefreshLayout)findViewById(R.id.id_swipe_ly);
 		this.desimg = (ImageView)findViewById(R.id.wegroup_detail_img_des);
-		this.proimg = (ImageView)findViewById(R.id.wegroup_detail_img_procedure);
 		this.headerimg  = (ImageView)findViewById(R.id.wegroup_detail_img_header);
 		this.price = (TextView) findViewById(R.id.wegroup_detail_price);
 		this.overleaf = (TextView) findViewById(R.id.wegroup_detail_tv_overleaf);
@@ -51,9 +50,6 @@ public class WeGroupDetailActivity extends BaseActivity implements SwipeRefreshL
 		//重修设置各种图片的大小
 		if(AndroidUtil.getImageScaleParams(this, R.drawable.wegroup_info )!= null){
 		this.desimg.setLayoutParams(AndroidUtil.getImageScaleParams(this, R.drawable.wegroup_info));
-		}
-		if(AndroidUtil.getImageScaleParams(this, R.drawable.wegroup_info )!= null){
-		this.proimg.setLayoutParams(AndroidUtil.getImageScaleParams(this, R.drawable.wegroup_pro));
 		}
 		if(AndroidUtil.getImageScaleParams(this, R.drawable.wegroup_info )!= null){
 		this.headerimg.setLayoutParams(AndroidUtil.getImageScaleParams(this, R.drawable.wegroup_bg));

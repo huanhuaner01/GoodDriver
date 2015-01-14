@@ -79,7 +79,7 @@ public class ImageTvListAdapter extends BaseAdapter {
             	view = inflater.inflate(R.layout.list_tv_item,
         				null);
             	tvHolder = new TextViewHolder();
-     
+            	tvHolder.tv = (TextView)view.findViewById(R.id.item_tv);
             	view.setTag(tvHolder) ;
             	break ;
             case TYPE_IMAGE:
@@ -104,7 +104,7 @@ public class ImageTvListAdapter extends BaseAdapter {
 		// 设置资源
 		switch(type){
 		case TYPE_TEXT:
-	       	tvHolder.tv = (TextView)view.findViewById(R.id.item_tv);
+	       	
         	tvHolder.tv.setText(TextStyleUtil.getTextAppearanceSpan(this.context ,"教        龄：","7年" ,R.color.book_imitate_textcolornew));
         	tvHolder.tv.append("\n") ;
         	tvHolder.tv.append(TextStyleUtil.getTextAppearanceSpan(this.context ,"驾        龄：","10年" ,R.color.book_imitate_textcolornew));
@@ -114,7 +114,6 @@ public class ImageTvListAdapter extends BaseAdapter {
         	tvHolder.tv.append(TextStyleUtil.getTextAppearanceSpan(this.context ,"教练介绍：\n","  教练非常好" ,R.color.book_imitate_textcolornew));
     		break ;
     	case TYPE_IMAGE:
-    		imageHolder = (ImageViewHolder)view.getTag() ;
     		if(data.get(position).get("photo").toString()!= null && !data.get(position).get("photo").toString().equals("")){
     			imageHolder.image.setDefaultImageResId(R.drawable.jl_test_icon);
     			imageHolder.image.setErrorImageResId(R.drawable.ic_launcher);

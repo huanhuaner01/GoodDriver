@@ -23,9 +23,9 @@ public class RattingBarListAdapter extends SimpleAdapter{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = super.getView(position, convertView, parent);
 		RatingBar ratingbar = (RatingBar)view.findViewById(R.id.ratingbar);
-		if (data.get(position).get("numstar").toString()!= null && !data.get(position).get("numstar").toString().equals("")) {
+		if (data.get(position).get("rating").toString()!= null && !data.get(position).get("rating").toString().equals("")) {
 			
-			ratingbar.setRating(Float.parseFloat(data.get(position).get("numstar").toString()));
+			ratingbar.setRating(Float.parseFloat(data.get(position).get("rating").toString()));
 		}
 		return view ;
 	}
