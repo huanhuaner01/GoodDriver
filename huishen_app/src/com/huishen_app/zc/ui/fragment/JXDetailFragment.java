@@ -1,25 +1,41 @@
 package com.huishen_app.zc.ui.fragment;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
+import com.huishen_app.all.mywidget.NoScrollListView;
+import com.huishen_app.zc.ui.JLListActivity;
+import com.huishen_app.zc.ui.OrderActivity;
 import com.huishen_app.zc.ui.R;
+import com.huishen_app.zc.ui.ShowMapActivity;
+import com.huishen_app.zc.ui.adapter.RattingBarListAdapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zh.util.AndroidUtil;
 import com.huishen_app.zh.util.TextStyleUtil;
 
-public class JXDetailFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener{
+public class JXDetailFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
 
 	public JXDetailFragment(BaseActivity father) {
 		super(father);
@@ -30,7 +46,16 @@ public class JXDetailFragment extends BaseFragment implements SwipeRefreshLayout
 		private TextView title , overleaf ,headerdes ,price , note;
 		private ImageView jximg,infoimg ,proimg ;
 		private Button btn ;
-
+		private NoScrollListView jugeList  , trainList; //评价列表，培训场地列表
+		private ArrayList<Map<String ,Object>> judgeListData ,trainareaListDate ; //评价数据  ，培训场地数据
+		   /** 训练场地查看更多 ，评价查看更多 */
+	    private LinearLayout trainareaMore ,judgeMore ; 
+		/** 培训场地适配器  */
+	    private SimpleAdapter  trainareaAdapter ;  
+	    /** 评价列表适配器  */
+	    private RattingBarListAdapter judgeAdapter ;
+	    /** 二级fragment */
+	    private TitleListFragment fragment ;
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
@@ -54,6 +79,10 @@ public class JXDetailFragment extends BaseFragment implements SwipeRefreshLayout
 			infoimg = (ImageView)rootView.findViewById(R.id.wegroup_detail_img_des) ;
 			btn = (Button)rootView.findViewById(R.id.wegroup_detail_submmit) ;
 			note = (TextView)rootView.findViewById(R.id.header_note) ;
+			jugeList = (NoScrollListView)rootView.findViewById(R.id.judge_list);
+			trainList = (NoScrollListView)rootView.findViewById(R.id.trainarea_list);
+			trainareaMore = (LinearLayout)rootView.findViewById(R.id.trainarea_seemore);
+			judgeMore = (LinearLayout)rootView.findViewById(R.id.judge_seemore) ;
 		}
 		/**
 		 * 初始化组件
@@ -62,8 +91,8 @@ public class JXDetailFragment extends BaseFragment implements SwipeRefreshLayout
 			title.setText("驾校详情");
 			
 			mSwipeLayout.setOnRefreshListener(this);
-			mSwipeLayout.setColorScheme(android.R.color.holo_green_dark, android.R.color.holo_green_light,
-					android.R.color.holo_orange_light, android.R.color.holo_red_light);
+			mSwipeLayout.setColorScheme(R.color.color_refresh_1, R.color.color_refresh_2,
+					R.color.color_refresh_3, R.color.color_refresh_4);
 			//重修设置各种图片的大小
 			//修改驾校简介图片的大小
 			if(AndroidUtil.getImageScaleParams(this.father, R.drawable.wegroup_info )!= null){
@@ -125,9 +154,76 @@ public class JXDetailFragment extends BaseFragment implements SwipeRefreshLayout
 				}
 				
 			});
-			
+			setTrainAreaList() ;
+			setJudgeList() ;
 			setNote();
 			
+		}
+		
+		/**
+		 * 设置训练场地列表
+		 */
+		private void setTrainAreaList(){
+	
+			
+			//设置培训场地列表和按钮
+			trainareaListDate = new ArrayList<Map<String ,Object>>();
+			String[] tfrom = new String[]{"area","addr" ,"tel"};
+			int[] tto = new int[]{R.id.trainarea_listitem_area ,R.id.trainarea_listitem_addr ,R.id.trainarea_listitem_tel};
+			for(int i = 0 ; i<4 ; i++){
+				HashMap<String , Object> map = new HashMap<String , Object>();
+				map.put("area",TextStyleUtil.getTextAppearanceSpan(father, "蜀娟驾校", "(郫县校区)"));
+				map.put("addr","地址：成都市");
+				map.put("tel","联系电话：13888888888");
+				trainareaListDate.add(map);
+			}
+			trainareaAdapter = new SimpleAdapter(this.father,trainareaListDate ,R.layout.trainarea_list_item ,tfrom , tto);
+			trainList.setAdapter(trainareaAdapter);
+			// listView注册一个元素点击事件监听器
+			trainList.setOnItemClickListener(new OnItemClickListener() {
+		
+				@Override
+				public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+						long arg3) {
+					Intent i = new Intent(father ,ShowMapActivity.class);
+					father.startActivity(i);
+				}
+			});
+			trainareaMore.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					OnViewClick(v) ;
+				}
+				
+			});
+		}
+		
+		/**
+		 * 设置评价列表
+		 */
+		private void setJudgeList(){
+			//评价添加数据
+			judgeListData = new ArrayList<Map<String ,Object>>();
+			String[] jfrom = new String[]{"stuname" ,"content"};
+			int[] jto = new int[]{R.id.judge_listitem_stuname ,R.id.judge_listitem_content};
+			for(int i = 0 ; i<4 ; i++){
+				HashMap<String , Object> map = new HashMap<String , Object>();
+				map.put("rating",2.7);
+				map.put("stuname","(XXX学员)");
+				map.put("content","老师教的不错");
+				judgeListData.add(map);
+			}
+			judgeAdapter = new RattingBarListAdapter(this.father,judgeListData ,R.layout.judge_list_item ,jfrom , jto);
+			jugeList.setAdapter(judgeAdapter);
+			judgeMore.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					OnViewClick(v) ;
+				}
+				
+			});
 		}
 		
 		/**
@@ -140,10 +236,37 @@ public class JXDetailFragment extends BaseFragment implements SwipeRefreshLayout
 
 				@Override
 				public void onClick(View arg0) {
-					
+			     Intent i = new Intent(father ,JLListActivity.class);
+			     father.startActivity(i);
 				}
 				
 			});
+		}
+		/**
+		 * 部分按钮的响应事件
+		 * @param v
+		 */
+		public void OnViewClick(View v) {
+
+	        FragmentManager fm = getFragmentManager();  
+	        FragmentTransaction tx = fm.beginTransaction();
+			switch(v.getId()){
+				//切换到训练场地列表页面
+			case R.id.trainarea_seemore:
+				fragment = new TainareaListFragment(this.father ,"训练场地" ,"");
+		        tx.hide(this);   
+		        tx.add(R.id.container,fragment , "jltrainarea");
+		        tx.addToBackStack(null); 
+				break ;
+				//切换到评价列表页面
+			case R.id.judge_seemore:
+				fragment = new JudgeListFragment(this.father ,"评价" ,"");
+		        tx.hide(this);   
+		        tx.add(R.id.container,fragment , "jltrainarea");
+		        tx.addToBackStack(null);
+				break ;
+			}     
+			tx.commit();
 		}
 		/**
 		 * 确认订单按钮响应事件

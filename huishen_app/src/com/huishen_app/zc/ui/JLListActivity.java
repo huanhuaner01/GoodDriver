@@ -77,8 +77,8 @@ public class JLListActivity extends BaseActivity implements SwipeRefreshLayout.O
 
 		jx_search_listview.setAdapter(adapter);
 		mSwipeLayout.setOnRefreshListener(this);
-		mSwipeLayout.setColorScheme(android.R.color.holo_green_dark, android.R.color.holo_green_light,
-				android.R.color.holo_orange_light, android.R.color.holo_red_light);
+		mSwipeLayout.setColorScheme(R.color.color_refresh_1, R.color.color_refresh_2,
+				R.color.color_refresh_3, R.color.color_refresh_4);
 		jx_search_listview.setOnItemClickListener(new OnItemClickListener(){
 
 			@Override

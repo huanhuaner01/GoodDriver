@@ -1,9 +1,16 @@
 package com.huishen_app.zc.ui;
 
 
-import com.huishen_app.zc.ui.base.BaseActivity;
-import com.huishen_app.zc.ui.fragment.JXDetailFragment;
+import java.util.Map;
 
+import com.huishen_app.zc.ui.base.BaseActivity;
+import com.huishen_app.zc.ui.fragment.ConfirmInfoFragment;
+import com.huishen_app.zc.ui.fragment.ConfirmOrderFragment;
+import com.huishen_app.zc.ui.fragment.JXDetailFragment;
+import com.huishen_app.zc.ui.fragment.TipFragment;
+
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 /**
@@ -37,17 +44,6 @@ public class JXDetailActivity extends BaseActivity {
 	public void backIntent(View v) {
 		finish();
 	}
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		 
-        if (keyCode == KeyEvent.KEYCODE_BACK
-                 && event.getRepeatCount() == 0) {
-             finish();
-             return true;
-         }
-         return super.onKeyDown(keyCode, event);
-     }
-
 
 
 
