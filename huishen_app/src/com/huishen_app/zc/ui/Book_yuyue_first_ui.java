@@ -3,13 +3,17 @@ package com.huishen_app.zc.ui;
 import java.util.ArrayList;
 import java.util.List;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.huishen_app.zc.ui.base.BaseActivity;
 import com.huishen_app.zc.ui.dialog.SelectDialog_ui;
 import com.huishen_app.zc.ui.dialog.adapter.DialogItemSelectInterface;
+import com.huishen_app.zh.calendar.CalendarActivity;
+import com.huishen_app.zh.calendar.CalendarUtil;
 
 public class Book_yuyue_first_ui extends BaseActivity implements
 		DialogItemSelectInterface {
@@ -32,6 +36,20 @@ public class Book_yuyue_first_ui extends BaseActivity implements
 	@Override
 	protected void initView() {
 		title.setText("Ô¤Ô¼ÅàÑµ");
+		this.book_date.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(Book_yuyue_first_ui.this,CalendarActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putBoolean("isSection", true) ;
+				bundle.putString(CalendarActivity.BEGIN_DATE, CalendarUtil.getTomorrow());
+				bundle.putString(CalendarActivity.END_DATE, null);
+				i.putExtras(bundle) ;
+				Book_yuyue_first_ui.this.startActivityForResult(i, 0);
+			}
+			
+		}) ;
 	}
 
 	@Override
@@ -86,16 +104,14 @@ public class Book_yuyue_first_ui extends BaseActivity implements
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 		try {
-			if (requestCode == open_result) {
 				if (resultCode == RESULT_OK) {
 					String structdate = data.getExtras()
-							.getString("selectDate");
+							.getString(CalendarActivity.RESULT_DATA);
 					if (structdate != null && structdate.trim().length() > 0)
 						book_date.setText(structdate);
 				}
-			}
 		} catch (Exception e) {
-		}
+		} 
 	}
 
 	@Override

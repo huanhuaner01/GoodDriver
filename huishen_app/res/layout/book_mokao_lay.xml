@@ -21,33 +21,23 @@
          >
     </ListView>
 
-    <include layout="@layout/listview_sp_line" />
 
     <RelativeLayout
+        android:id="@+id/book_mokao_cancel"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center_vertical" >
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:visibility="gone" >
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="36dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/book_dateselect_sureok"
-            android:onClick="add_mokao"
-            android:text="添加模考"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
             android:layout_alignParentLeft="true"
-            android:background="@null"
-            android:onClick="delete_mokao"
+            android:background="@drawable/button_cancel"
             android:text="删除预约"
-            android:textColor="@drawable/book_yuyue_bt_wordscolor"
+            android:onClick="delete_mokao"
+            android:textColor="@color/white"
             android:textSize="16sp" />
     </RelativeLayout>
 

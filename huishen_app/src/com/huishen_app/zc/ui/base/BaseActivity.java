@@ -16,15 +16,11 @@ import org.json.JSONObject;
 
 import com.huishen_app.all.alarmservice.PollingUtils;
 import com.huishen_app.all.alarmservice.TaskServer;
-import com.huishen_app.all.calendar.Calendar_ui;
-import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.dialog.LoadingDialog_ui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.ComponentName;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
@@ -36,14 +32,10 @@ import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public abstract class BaseActivity extends FragmentActivity {
-
-	public static final String DATASTRUCT = "yyyy/MM/dd";
-	public static final int open_result = 10000;
 	public static String[] lessons = new String[]{"科目一","科目二","科目三","科目四"};
 	public static String[] status = new String[]{"未分配","已分配","已完成","培训异常"};
 	// 获取基类名
@@ -322,21 +314,6 @@ public abstract class BaseActivity extends FragmentActivity {
 		} catch (Exception e) {
 		}
 		return value;
-	}
-
-	/**
-	 * 打开 日历选择控件
-	 * 
-	 * @param view
-	 */
-	public void openCalendar(View view) {
-		SimpleDateFormat df = new SimpleDateFormat(DATASTRUCT);// 设置日期格式
-		String datenow = df.format(new Date());// new Date()为获取当前系统时间
-		ComponentName componentName = new ComponentName(this, Calendar_ui.class);
-		Intent intent = new Intent();
-		intent.setComponent(componentName);
-		intent.putExtra("default_cal", datenow);
-		startActivityForResult(intent, open_result);
 	}
 
 	/**

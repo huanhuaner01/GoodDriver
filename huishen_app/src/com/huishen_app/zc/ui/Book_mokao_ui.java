@@ -21,20 +21,22 @@ import android.content.Intent;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class Book_mokao_ui extends BaseActivity {
 
-	private TextView head_title;
+	private TextView head_title ,note;
 
 	private ListView book_mokao_selected;
-
+    
+	private RelativeLayout book_mokao_cancel ;
+	
 	private List<Map<String, Object>> listview_date;
 
 	private Book_Mokao_Adapter adapter;
@@ -52,7 +54,8 @@ public class Book_mokao_ui extends BaseActivity {
 
 		head_title = (TextView) findViewById(R.id.header_title);
 		book_mokao_selected = (ListView) findViewById(R.id.book_mokao_selected);
-
+        note = (TextView)findViewById(R.id.header_note);
+        book_mokao_cancel = (RelativeLayout) findViewById(R.id.book_mokao_cancel);
 		select_id = new ArrayList<String>();
 
 	}
@@ -66,7 +69,16 @@ public class Book_mokao_ui extends BaseActivity {
 			opentype = true;
 		// 设置标题
 		head_title.setText(getString(R.string.book_head_mokao));
-		
+		note.setVisibility(View.VISIBLE);
+		note.setText("添加");
+		note.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				add_mokao(arg0);
+			}
+			
+		});
 		//***************************初始化列表*******************************************//
 		//设置选择模式为多选模式
 		book_mokao_selected.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
@@ -102,7 +114,13 @@ public class Book_mokao_ui extends BaseActivity {
         					--index;
         				}
         			}
-        		}   
+        		} 
+
+        		if(select_id.size() > 0){
+        			book_mokao_cancel.setVisibility(View.VISIBLE) ;
+        		}else{
+        			book_mokao_cancel.setVisibility(View.GONE) ;
+        		}
             }    
         });
 		//***************************初始化列表结束*******************************************//
@@ -129,8 +147,8 @@ public class Book_mokao_ui extends BaseActivity {
 				if (msg.what == 11) {
 					try {
 						his_imitate = new JSONArray(msg.obj.toString());
-				        int testnum = Integer.parseInt(readString("yuyuenum"));
-		                   if(his_imitate.length()!=testnum){
+				        int testnum = Integer.parseInt(readString("testnum"));
+		                   if(his_imitate.length()!= testnum){
 		                	   saveString("testnum",his_imitate.length()+"");
 		                   }
 					} catch (JSONException e1) {
@@ -174,7 +192,7 @@ public class Book_mokao_ui extends BaseActivity {
 						listview_date.add(map);
 					}
 					adapter.notifyDataSetChanged();
-
+					book_mokao_cancel.setVisibility(View.GONE) ;
 				} else {
 
 				}
@@ -244,17 +262,8 @@ public class Book_mokao_ui extends BaseActivity {
 					Main_fragment_ui.setLoginhttpclient(null);
 				}else
 				if (msg.what == 11) {
-					try {
-						his_imitate = new JSONArray(msg.obj.toString());
-				        int testnum = Integer.parseInt(readString("yuyuenum"));
-		                   if(his_imitate.length()!=testnum){
-		                	   saveString("testnum",his_imitate.length()+"");
-		                   }
-					} catch (JSONException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					org.json.JSONObject json;
+					
+					JSONObject json;
 					try {
 						json = new JSONObject(msg.obj.toString());
 						saveData(json);

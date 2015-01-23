@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+       <!-- 有先后顺序  即最后的是才是默认的 -->
+    <item android:state_pressed="true"><shape>
+            <gradient android:endColor="@color/red_dark" android:startColor="@color/red_dark" />
+
+            <!-- <stroke android:width="2dp" android:color="@color/main_title_textedgecolor" /> -->
+
+            <corners android:radius="@dimen/button_radius" />
+            <!-- padding：Button里面的文字与Button边界的间隔 -->
+            <padding android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp" />
+        </shape></item>
+    <item><shape>
+            <gradient android:endColor="@color/cancel_bgcolor" android:startColor="@color/cancel_bgcolor" />
+
+            <!-- <stroke android:width="2dp" android:color="@color/main_title_textedgecolor" /> -->
+
+            <corners android:radius="@dimen/button_radius" />
+            <!-- padding：Button里面的文字与Button边界的间隔 -->
+            <padding android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp" />
+        </shape></item>
+
+</selector>

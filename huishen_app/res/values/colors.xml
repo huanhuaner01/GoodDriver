@@ -10,11 +10,12 @@
     <color name="title_bg_color">#ffff6604</color>
     <color name="dialog_text_color">#ff393939</color>
     <color name="all_back_bt_press_color">#ffe71b1b</color>
-    
+    <color name="week">#545454</color>
     <color name="Grey">#f5f5f5</color>
     <color name="Grey_line">#d8d8d8</color>
     <color name="red_dark">#da251c</color>
     <color name="Grey_Text">#999999</color>
+    <color name="cancel_bgcolor">#e74c3c</color>
     <!-- 通用颜色结束 -->
     
     <!-- 历史培训折线图所用颜色 -->

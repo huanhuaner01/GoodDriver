@@ -142,7 +142,7 @@
         </service>
 
         <activity
-            android:name="com.huishen_app.all.calendar.Calendar_ui"
+            android:name="com.huishen_app.zh.calendar.CalendarActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >

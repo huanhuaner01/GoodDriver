@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <!-- 
+   <!-- 
   shape可以绘制矩形环形以及椭圆，所以只需要用椭圆即可，在使用的时候将控件比如imageview或textview的高宽设置成一样就是正圆，
   solid表示远的填充色，stroke则代表远的边框线，所以两者结合可以实现带边缘的圆，当然也可以直接加上size控制高宽，下面的代码实现效果是一个带白边的红圆。
    -->
    <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape= "oval"
     android:useLevel= "false" >
-    <solid android:color= "@color/title_bg_color" />
+    <solid android:color= "@color/white" />
+    <stroke
+        android:width= "1dp"
+        android:color= "@color/Grey_line" />
     <!--  
     <size android:width= "20dp"
           android:height= "20dp" />

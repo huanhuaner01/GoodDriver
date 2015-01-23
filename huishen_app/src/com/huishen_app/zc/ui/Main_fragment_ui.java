@@ -123,8 +123,8 @@ public class Main_fragment_ui extends BaseActivity {
 			}
 			
 		} else if (homeTabBook == R.id.main_menu_djt) {
-			DisPlay("¾´ÇëÆÚ´ý!" + homeTabBook, true);
-//			((ButtomFragment) buttom).setcheck(R.id.home_tab_djt);
+//			DisPlay("¾´ÇëÆÚ´ý!" + homeTabBook, true);
+			((ButtomFragment) buttom).setcheck(R.id.home_tab_djt);
 		}else {
 			DisPlay("¾´ÇëÆÚ´ý!" + homeTabBook, true);
 		}

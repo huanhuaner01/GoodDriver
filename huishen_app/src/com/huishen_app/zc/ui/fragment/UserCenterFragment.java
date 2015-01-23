@@ -51,17 +51,17 @@ public class UserCenterFragment extends BaseFragment implements OnClickListener 
 	
 	@Override
 	public void onResume() {
-
-	    AppController.getInstance().getRequestQueue().getCache().clear();
+		super.onResume();
 			if(father.readString("city")!= null &&!father.readString("city").equals("")){
 				city.setText(father.readString("city").toString());
 			}
 		
 		if(showstate){
+			Log.i(TAG, "应该会重新布局吧") ;
 		initView();	
 		}
 		showstate = true ;
-		super.onResume();
+		
 	}
 
 

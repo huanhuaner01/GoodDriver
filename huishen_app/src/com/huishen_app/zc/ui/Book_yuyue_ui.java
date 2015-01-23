@@ -25,19 +25,23 @@ import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressLint("SimpleDateFormat")
 public class Book_yuyue_ui extends BaseActivity {
 
-	private TextView head_title;
+	private TextView head_title ,note;
 
 	private ListView book_xuyue_selected;
-
+    
+	private RelativeLayout book_yuyue_cancel ;
+	
 	private List<Map<String, Object>> listview_date;
 
 	private Book_YuYue_Adapter adapter;
@@ -55,14 +59,25 @@ public class Book_yuyue_ui extends BaseActivity {
 		setContentView(R.layout.book_yuyue_lay);
 
 		head_title = (TextView) findViewById(R.id.header_title);
+		note = (TextView) findViewById(R.id.header_note);
 		book_xuyue_selected = (ListView) findViewById(R.id.book_yuyue_selected);
-
+		book_yuyue_cancel = (RelativeLayout) findViewById(R.id.book_yuyue_cancel);
 	}
 
 	protected void initView() {
 		select_id = new ArrayList<String>();
 		// 设置标题
 		head_title.setText(getString(R.string.book_head_xuece));
+		note.setVisibility(View.VISIBLE);
+		note.setText("添加");
+		note.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				addyuyue(arg0);
+			}
+			
+		});
 		//***************************初始化列表*******************************************//
 		
 		//设置选择模式为多选模式
@@ -100,7 +115,13 @@ public class Book_yuyue_ui extends BaseActivity {
         					--index;
         				}
         			}
-        		}   
+        		} 
+        		
+        		if(select_id.size() > 0){
+        			book_yuyue_cancel.setVisibility(View.VISIBLE) ;
+        		}else{
+        			book_yuyue_cancel.setVisibility(View.GONE) ;
+        		}
             }    
         });
 		
@@ -237,7 +258,7 @@ public class Book_yuyue_ui extends BaseActivity {
 					}
 					//通知列表适配器更新数据
 					adapter.notifyDataSetChanged();
-				    
+					book_yuyue_cancel.setVisibility(View.GONE) ;
 				} else {
                     
 				}

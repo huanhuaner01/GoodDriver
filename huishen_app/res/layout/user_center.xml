@@ -98,8 +98,8 @@
 
                     <TextView
                         android:id="@+id/user_center_tip1"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
                         android:layout_toRightOf="@id/user_center_yuyue"
                         android:background="@drawable/cricle_red"
                         android:gravity="center"
@@ -133,8 +133,8 @@
 
                     <TextView
                         android:id="@+id/user_center_tip2"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
                         android:layout_toRightOf="@id/user_center_mokao"
                         android:background="@drawable/cricle_red"
                         android:gravity="center"

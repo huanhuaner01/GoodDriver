@@ -185,7 +185,6 @@
                         android:drawableRight="@drawable/exam_time_icon"
                         android:focusable="false"
                         android:hint="@string/nullvalue"
-                        android:onClick="openCalendar"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:paddingBottom="6dp"

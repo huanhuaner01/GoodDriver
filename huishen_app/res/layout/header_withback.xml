@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/main_title_height"
+    android:layout_height="50dp"
     android:layout_alignParentTop="true"
     android:background="@color/main_title_background"
     android:orientation="vertical" >
@@ -18,9 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/all_back_bt_selector"
-            android:contentDescription="@string/img_desc"
-            android:drawableLeft="@drawable/head_back"
-            android:text="@string/head_back"
+            android:text="返回"
             android:layout_alignParentLeft="true" 
             android:onClick="backIntent"
             />
@@ -35,7 +33,6 @@
             android:layout_centerInParent="true" 
             android:ellipsize="marquee"
             android:singleLine="true"
-            android:maxWidth="@dimen/header_title_width"
             />
             <TextView
             android:id="@+id/header_note"
@@ -47,27 +44,7 @@
             android:background="@drawable/all_back_bt_selector"
             android:ellipsize="marquee"
             android:singleLine="true"
-            android:maxWidth="@dimen/header_title_width"
             />
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/main_tab_splitcolor_fisrt"
-            android:contentDescription="@string/img_desc" />
-
-        <ImageView
-            android:id="@+id/title_spilt_buttom"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/main_tab_splitcolor_end"
-            android:contentDescription="@string/img_desc" />
-    </LinearLayout>
 
 </LinearLayout>
