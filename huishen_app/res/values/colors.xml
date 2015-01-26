@@ -16,6 +16,7 @@
     <color name="red_dark">#da251c</color>
     <color name="Grey_Text">#999999</color>
     <color name="cancel_bgcolor">#e74c3c</color>
+    <color name="pop_bg_dark">#64000000</color>
     <!-- 通用颜色结束 -->
     
     <!-- 历史培训折线图所用颜色 -->

@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/all_back_bt_selector"
+            android:drawableLeft="@drawable/head_back"
             android:text="返回"
             android:layout_alignParentLeft="true" 
             android:onClick="backIntent"

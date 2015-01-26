@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+>
+   <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+ <GridView
+     android:id="@+id/grid"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/activity_horizontal_margin"
+     android:numColumns="3" 
+    android:stretchMode="columnWidth"  
+       android:verticalSpacing="10dp"  
+    android:horizontalSpacing="10dp"  
+    android:gravity="center"
+    android:listSelector="@android:color/transparent"
+     />
+</LinearLayout>
+   <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wegroup_item_line_size"
+        android:background="@color/wegroup_item_line_color" />
+   <View
+    android:id="@+id/pop_darkbg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pop_bg_dark"
+    android:onClick="conditionSearch"
+    />
+</LinearLayout>
