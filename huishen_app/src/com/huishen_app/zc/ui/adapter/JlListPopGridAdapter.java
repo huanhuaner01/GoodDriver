@@ -19,14 +19,17 @@ public class JlListPopGridAdapter extends SimpleAdapter {
 		super(context, data, resource, from, to);
 		this.data = data ;
 	}
-
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = super.getView(position, convertView, parent);
+		TextView tv= (TextView)view.findViewById(R.id.jl_pop_itemtv) ;
+		
 		if(Integer.parseInt(data.get(position).get("status").toString()) == 1){
-			TextView tv= (TextView)view.findViewById(R.id.jl_pop_itemtv) ;
 			tv.setSelected(true) ;
+		}else{
+			tv.setSelected(false) ;
 		}
+		view.setTag(data.get(position).get("value").toString());
 		return view ;
 	}
     

@@ -11,9 +11,14 @@ import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.adapter.JX_Search_Adapter;
@@ -26,7 +31,12 @@ public class JXListActivity extends BaseActivity implements SwipeRefreshLayout.O
 
 	private static final int REFRESH_COMPLETE = 0X110;
 	private SwipeRefreshLayout mSwipeLayout;
+	
 	private TextView title ;
+	private Button cancel , search ;
+	private ImageButton searchimg ;
+	private EditText searchEdit ;
+	private RelativeLayout lay1 ,lay2 ;
 	
 	private List<Map<String, Object>> listview_date;
 	private JX_Search_Adapter adapter;
@@ -62,8 +72,8 @@ public class JXListActivity extends BaseActivity implements SwipeRefreshLayout.O
 			
 		});
 		mSwipeLayout.setOnRefreshListener(this);
-		mSwipeLayout.setColorScheme(android.R.color.holo_green_dark, android.R.color.holo_green_light,
-				android.R.color.holo_orange_light, android.R.color.holo_red_light);
+		mSwipeLayout.setColorScheme(R.color.color_refresh_1, R.color.color_refresh_2,
+				R.color.color_refresh_3, R.color.color_refresh_4);
 	}
 
 	@Override
@@ -72,12 +82,36 @@ public class JXListActivity extends BaseActivity implements SwipeRefreshLayout.O
 		jx_search_listview = (ListView) findViewById(R.id.jx_list);
 		mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.id_swipe_ly);
 		title = (TextView)findViewById(R.id.header_title);
-		init_data();
+		cancel = (Button)findViewById(R.id.header_cancel);
+		searchimg = (ImageButton)findViewById(R.id.header_search);
+		search = (Button) findViewById(R.id.header_btn_search);
+		lay1 = (RelativeLayout) findViewById(R.id.header_lay1);
+		lay2 = (RelativeLayout) findViewById(R.id.header_lay2);
+		
 	}
 
 	@Override
 	protected void initView() {
 		title.setText("’“º›–£");
+		this.searchimg.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+			    lay1.setVisibility(View.GONE) ;
+			    lay2.setVisibility(View.VISIBLE) ;
+			}
+			
+		});
+		this.cancel.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				 lay1.setVisibility(View.VISIBLE) ;
+				 lay2.setVisibility(View.GONE) ;
+			}
+			
+		}) ;
+		init_data();
 	}
 
 	@Override
@@ -107,9 +141,7 @@ public class JXListActivity extends BaseActivity implements SwipeRefreshLayout.O
 	
 	public void onRefresh()
 	{
-		// Log.e("xxx", Thread.currentThread().getName());
-		// UI Thread
-
+		
 		mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 2000);
 
 	}
@@ -123,8 +155,7 @@ public class JXListActivity extends BaseActivity implements SwipeRefreshLayout.O
 			case REFRESH_COMPLETE:
 				adapter.notifyDataSetChanged();
 				mSwipeLayout.setRefreshing(false);
-				break;
-
+				break;       
 			}
 		};
 	};

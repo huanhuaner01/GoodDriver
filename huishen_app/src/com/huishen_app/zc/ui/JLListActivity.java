@@ -14,28 +14,48 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.huishen_app.zc.ui.R;
 import com.huishen_app.zc.ui.adapter.JL_Search_Adapter;
+import com.huishen_app.zc.ui.adapter.JlListPopGridAdapter;
 import com.huishen_app.zc.ui.base.BaseActivity;
-
+/**
+ * 教练列表
+ * @author zhanghuan
+ *
+ */
 @SuppressLint("ValidFragment")
 public class JLListActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener{
 
 	private static final int REFRESH_COMPLETE = 0X110;
 	private SwipeRefreshLayout mSwipeLayout;
+	
+	//标题栏相关
 	private TextView title ;
+	private Button cancel , search ;
+	private ImageButton searchimg ;
+	private EditText searchEdit ;
+	private RelativeLayout lay1 ,lay2 ;
+	
 	private PopupWindow conditionPopWindow;// 条件搜索浮动窗口
 	private GridView popGrid ; 
-	private ArrayList<HashMap<String , Object>> popdata ; //popwindow的数据
-	private 
+	private List<Map<String , Object>> popdata ; //popwindow的数据
+	private JlListPopGridAdapter popAdapter ;
+	
 	private List<Map<String, Object>> listview_date;
 	private JL_Search_Adapter adapter;
 
@@ -105,12 +125,36 @@ public class JLListActivity extends BaseActivity implements SwipeRefreshLayout.O
 		jx_search_listview = (ListView) findViewById(R.id.jl_list);
 		mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.id_swipe_ly);
 		title = (TextView)findViewById(R.id.header_title);
-		init_data();
+		cancel = (Button)findViewById(R.id.header_cancel);
+		searchimg = (ImageButton)findViewById(R.id.header_search);
+		search = (Button) findViewById(R.id.header_btn_search);
+		lay1 = (RelativeLayout) findViewById(R.id.header_lay1);
+		lay2 = (RelativeLayout) findViewById(R.id.header_lay2);
 	}
 
 	@Override
 	protected void initView() {
 		title.setText("找教练");
+		this.searchimg.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+			    lay1.setVisibility(View.GONE) ;
+			    lay2.setVisibility(View.VISIBLE) ;
+			}
+			
+		});
+		this.cancel.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View arg0) {
+				 lay1.setVisibility(View.VISIBLE) ;
+				 lay2.setVisibility(View.GONE) ;
+			}
+			
+		}) ;
+		init_data();
+		setPopWindow();
 	}
 
 	@Override
@@ -150,19 +194,90 @@ public class JLListActivity extends BaseActivity implements SwipeRefreshLayout.O
 	 * @param v
 	 */
 	public void conditionSearch(View v){
-
-	
+		final TextView tv = (TextView)v ;
+		popdata.clear() ;
+		  HashMap<String ,Object> map = new HashMap<String ,Object>();
+	    	map.put("value", "不限") ;
+	    	map.put("status", 1 ) ;
+	    	popdata.add(map) ;
 		switch(v.getId()){
 		case R.id.jl_list_condition_location:
-		
+		    for(int i = 0 ; i<10 ; i++){
+		    	map = new HashMap<String ,Object>();
+		    	map.put("value", "双流") ;
+		    	map.put("status", 0 ) ;
+		    	popdata.add(map) ;
+		    }
+	    	popAdapter.notifyDataSetChanged();
+	    	popGrid.setOnItemClickListener(new OnItemClickListener(){
+				@Override
+				public void onItemClick(AdapterView<?> arg0, View view,
+						int arg2, long arg3) {
+					conditionPopWindow.dismiss() ;
+					tv.setText(view.getTag()+"") ;
+				}
+	    	});
 			conditionPopWindow.showAsDropDown(v);
 			break ;
 		case R.id.jl_list_condition_year:
+			 String[] years = new String[]{"5年以下","5-10年" ,"10年以上"};
+			   for(int i = 0 ; i<years.length ; i++){
+			    	map = new HashMap<String ,Object>();
+			    	map.put("value", years[i]) ;
+			    	map.put("status", 0 ) ;
+			    	popdata.add(map) ;
+			    }
+		    	popAdapter.notifyDataSetChanged();
+		    	popGrid.setOnItemClickListener(new OnItemClickListener(){
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View view,
+							int arg2, long arg3) {
+						conditionPopWindow.dismiss() ;
+						tv.setText(view.getTag()+"") ;
+					}
+		    	});
+				conditionPopWindow.showAsDropDown(v);
 			conditionPopWindow.showAsDropDown(v);
 			break ;
 		case R.id.jl_list_condition_sex :
+			 String[] sexs = new String[]{"男","女" };
+			   for(int i = 0 ; i<sexs.length ; i++){
+			    	map = new HashMap<String ,Object>();
+			    	map.put("value", sexs[i]) ;
+			    	map.put("status", 0 ) ;
+			    	popdata.add(map) ;
+			    }
+		    	popAdapter.notifyDataSetChanged();
+		    	popGrid.setOnItemClickListener(new OnItemClickListener(){
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View view,
+							int arg2, long arg3) {
+						conditionPopWindow.dismiss() ;
+						tv.setText(view.getTag()+"") ;
+					}
+		    	});
+				conditionPopWindow.showAsDropDown(v);
+			conditionPopWindow.showAsDropDown(v);
 			break ;
 		case R.id.jl_list_condition_more:
+			 String[] mores = new String[]{"评价最高","驾龄最高","教龄最高","通过率最高"};
+			   for(int i = 0 ; i<mores.length ; i++){
+			    	map = new HashMap<String ,Object>();
+			    	map.put("value", mores[i]) ;
+			    	map.put("status", 0 ) ;
+			    	popdata.add(map) ;
+			    }
+		    	popAdapter.notifyDataSetChanged();
+		    	popGrid.setOnItemClickListener(new OnItemClickListener(){
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View view,
+							int arg2, long arg3) {
+						conditionPopWindow.dismiss() ;
+						tv.setText(view.getTag()+"") ;
+					}
+		    	});
+				conditionPopWindow.showAsDropDown(v);
+			conditionPopWindow.showAsDropDown(v);
 			break ;
 	    default :
 				if(conditionPopWindow.isShowing()){
@@ -175,14 +290,10 @@ public class JLListActivity extends BaseActivity implements SwipeRefreshLayout.O
 	 */
 	private void setPopWindow(){
 		View layout = LayoutInflater.from(this).inflate(R.layout.popwindow_ly, null); 
-		GridView grid = (GridView)layout.findViewById(R.id.grid);
-		popdata = new ArrayList<HashMap<String ,Object>>();
-		for(int i = 0 ;i< 10 ;i++){
-			HashMap<String , Object> map = new HashMap<String , Object>();
-			popdata.add(map) ;
-		}
-		adapter = new SimpleAdapter(this,popdata ,R.layout.popwindow_item ,new String[]{} ,new int[]{});
-		grid.setAdapter(adapter) ;
+		popGrid = (GridView)layout.findViewById(R.id.grid);
+		popdata = new ArrayList<Map<String ,Object>>();
+		popAdapter = new JlListPopGridAdapter(this,popdata ,R.layout.popwindow_item ,new String[]{"value"} ,new int[]{R.id.jl_pop_itemtv});
+		popGrid.setAdapter(popAdapter) ;
 		conditionPopWindow = new PopupWindow(layout,LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
 		conditionPopWindow.setFocusable(true);// 加上这个popupwindow中的ListView才可以接收点击事件
 

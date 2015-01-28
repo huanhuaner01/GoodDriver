@@ -1,0 +1,94 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/main_title_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" 
+        android:id="@+id/header_lay1"
+        >
+
+        <Button
+            android:id="@+id/header_back"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/all_back_bt_selector"
+            android:drawableLeft="@drawable/head_back"
+            android:text="返回"
+            android:layout_alignParentLeft="true" 
+            android:onClick="backIntent"
+            />
+
+        <TextView
+            android:id="@+id/header_title"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="培训历史"
+            android:textSize="18sp"
+            android:layout_centerInParent="true" 
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            />
+        
+        <ImageButton
+            android:id="@+id/header_search"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true" 
+            android:background="@drawable/all_back_bt_selector"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:src="@drawable/head_title_search"
+            />
+    </RelativeLayout>
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" 
+        android:visibility="gone"
+        android:id="@+id/header_lay2"
+        >
+
+        <Button
+            android:id="@+id/header_cancel"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/all_back_bt_selector"
+            android:text="取消"
+            android:layout_alignParentLeft="true"
+            />
+
+         <EditText
+            android:id="@+id/head_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/head_searchtext_height"
+            android:background="@drawable/home_title_edge"
+            android:singleLine="true"
+            android:hint="@string/nullvalue"
+            android:paddingLeft="@dimen/main_head_textradiu"
+            android:paddingRight="@dimen/main_head_textradiu_right" 
+            android:layout_toLeftOf="@+id/header_btn_search"
+            android:layout_toRightOf="@id/header_cancel"
+            android:layout_centerInParent="true"
+            />
+          <Button
+            android:id="@+id/header_btn_search"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/all_back_bt_selector"
+            android:text="搜索"
+            android:layout_alignParentRight="true" 
+            />
+    </RelativeLayout>
+</FrameLayout>
